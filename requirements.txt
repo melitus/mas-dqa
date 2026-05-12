@@ -1,1 +1,14 @@
-# pandas, numpy, scipy, river, litellm, pydantic, pytest
+# Core
+pandas>=2.0.0
+numpy>=1.24.0
+pydantic>=2.0.0
+
+# LLM
+litellm>=1.0.0
+
+# Caching (async-safe)
+cachetools>=5.3.0
+
+# Testing (move tests to tests/test_validator.py)
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
