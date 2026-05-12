@@ -1,10 +1,8 @@
+# src/agreement.py
 """Decision Diamond logic for MAS-DQA.
 
 Evaluates consensus between Profiler and Validator agents.
 Returns a RoutingDecision that the Orchestrator will execute.
-
-Note: The Decision Diamond *determines* the routing path.
-      The Orchestrator *acts* on it (triggers agents, fallbacks, etc.).
 
 Reference: MAS-DQA Knowledge Base §3 (Decision Diamond), §5 (Validation)
 """
@@ -20,7 +18,7 @@ class RoutingDecision(str, Enum):
     """Routing directives determined by the Decision Diamond."""
     TRUST = "TRUST"           # High confidence + valid → Route to Trust Agent
     JUDGE = "JUDGE"          # Conflict or low confidence → Route to Judge Agent
-    QUARANTINE = "QUARANTINE" # Severe anomaly + invalid → Isolate
+    QUARANTINE = "QUARANTINE" # Severe anomaly or invalid → Isolate
     AMBIGUOUS = "AMBIGUOUS"  # Fallback → escalate to Judge
 
 

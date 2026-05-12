@@ -5,7 +5,6 @@ Prevents accidental leakage of API keys, tokens, or endpoints in logs.
 Reference: MAS-DQA Knowledge Base §4 (Security Constraints)
 """
 import re
-from typing import str
 
 
 def sanitize_error_message(message: str, max_length: int = 200) -> str:
