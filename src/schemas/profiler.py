@@ -24,10 +24,22 @@ class ProfilerOutput(BaseModel):
     confidence: float
         Proxy for confidence in the detection – currently mirrors the
         ``deviation_score``.
+    flagged_features: List[str]
+        Features exceeding 3-sigma threshold.
+    feature_scores: Dict[str, float]
+        Per-feature Z-scores for explainability.
+    verdict: str
+        Validity assessment: ``Valid``, ``Invalid``, or ``Unknown``.
+    reason: str
+        Explanation for the verdict.
+    metrics: Dict[str, Any]
+        Additional diagnostic information, e.g., domain rule violations.
     """
     deviation_score: float = Field(..., ge=0.0, le=1.0, description="0.0 (bad) → 1.0 (normal)")
     point_anomaly_detected: bool = Field(..., description="Indicates statistical significance")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Proxy for statistical confidence")
-    # XAI & debugging support (extends original structure)
     flagged_features: List[str] = Field(default_factory=list, description="Features exceeding 3-sigma threshold")
     feature_scores: Dict[str, float] = Field(default_factory=dict, description="Per-feature Z-scores for explainability")
+    verdict: str = Field(..., description="Validity assessment: Valid, Invalid, or Unknown")
+    reason: str = Field(..., description="Explanation for the verdict")
+    metrics: Dict[str, Any] = Field(default_factory=dict, description="Additional diagnostic information")
