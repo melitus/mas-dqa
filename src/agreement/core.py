@@ -1,4 +1,3 @@
-# src/agreement.py
 """Decision Diamond logic for MAS-DQA.
 
 Evaluates consensus between Profiler and Validator agents.
@@ -28,37 +27,37 @@ def determine_routing_decision(
     thresholds: Optional[ValidationThresholds] = None
 ) -> RoutingDecision:
     """
-    Decision Diamond: Evaluate Profiler + Validator consensus.
+    Routing decision based on *verdict* agreement first, mirroring the contract
+    defined in the Knowledge Base. Confidence thresholds are used only as a
+    secondary filter when both agents agree on a "Valid" verdict.
     
-    Args:
-        prof_out: Statistical profiling result (deviation_score 0.0→1.0)
-        val_out: Semantic validation result (verdict + confidence)
-        thresholds: Optional custom thresholds (uses defaults if None)
-        
-    Returns:
-        RoutingDecision enum value for the Orchestrator to execute
+    Key logic:
+    - TRUST: Both Valid + high confidence
+    - QUARANTINE: Both Invalid (severe, agreed-upon anomaly)
+    - JUDGE: Any conflict or uncertainty (Profiler ≠ Validator, or low confidence)
+    - AMBIGUOUS: Fallback for edge cases
     """
     t = thresholds or DEFAULT_THRESHOLDS
-    
-    # Normalize signals
-    p_normal = prof_out.deviation_score >= t.TRUST_MIN_CONFIDENCE
-    v_valid = val_out.confidence >= t.TRUST_MIN_CONFIDENCE and val_out.verdict == "Valid"
-    v_invalid = val_out.verdict == "Invalid"
-    
-    # Explicit TRUST path: both agents confident + valid + normal stats
-    if p_normal and v_valid:
-        return RoutingDecision.TRUST
 
-    # Explicit QUARANTINE path: severe anomaly or clear invalid verdict
-    if prof_out.deviation_score < t.ANOMALY_SKIP_THRESHOLD or v_invalid:
-        return RoutingDecision.QUARANTINE
-
-    # Explicit JUDGE path: low confidence or conflicting signals
-    if (
-        val_out.confidence < t.JUDGE_ESCALATION_CONFIDENCE or
-        prof_out.deviation_score < t.JUDGE_ESCALATION_CONFIDENCE
-    ):
+    # 1️⃣ Both agents agree on Valid + high confidence → TRUST
+    if prof_out.verdict == "Valid" and val_out.verdict == "Valid":
+        if (prof_out.confidence >= t.TRUST_MIN_CONFIDENCE and 
+            val_out.confidence >= t.TRUST_MIN_CONFIDENCE):
+            return RoutingDecision.TRUST
+        # Low confidence despite agreement → human review
         return RoutingDecision.JUDGE
 
-    # Fallback: ambiguous but not severe → escalate to Judge
+    # 2️⃣ Both agents agree on Invalid → QUARANTINE (only when BOTH agree)
+    if prof_out.verdict == "Invalid" and val_out.verdict == "Invalid":
+        return RoutingDecision.QUARANTINE
+
+    # 3️⃣ Mismatched verdicts → conflict, route to Judge
+    if prof_out.verdict != val_out.verdict:
+        return RoutingDecision.JUDGE
+
+    # 4️⃣ One Invalid + one Unknown → Judge decides severity
+    if "Invalid" in [prof_out.verdict, val_out.verdict]:
+        return RoutingDecision.JUDGE
+
+    # 5️⃣ Fallback for Unknown/Unknown or other edge cases
     return RoutingDecision.AMBIGUOUS

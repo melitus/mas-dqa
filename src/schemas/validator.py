@@ -77,7 +77,7 @@ class ValidatorInput(BaseModel):
     """Input to the Semantic Validator."""
     record: Dict[str, Any]
     domain_context: DomainContext
-    profiler_result: Optional[ProfilerResult] = None
+    profiler_result: Optional[Any] = None  # Accept ProfilerOutput from profiler
 
 
 class ValidatorOutput(BaseModel):

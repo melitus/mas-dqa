@@ -7,7 +7,7 @@ Reference: MAS-DQA Knowledge Base §3 (Component Specifications)
 """
 from __future__ import annotations
 
-from typing import Dict, List
+from typing import Dict, List, Any  # ← ADD 'Any' HERE
 from pydantic import BaseModel, Field
 
 

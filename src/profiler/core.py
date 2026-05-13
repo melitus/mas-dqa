@@ -10,6 +10,7 @@ from __future__ import annotations
 import logging
 from typing import Dict, Optional
 import pandas as pd
+import numpy as np
 
 from src.schemas.profiler import ProfilerOutput
 from src.profiler.stats import _AnalysisModule
@@ -44,7 +45,7 @@ class Profiler:
         """Precompute mean and std for all numeric columns."""
         numeric_df = df.select_dtypes(include="number")
         return {
-            col: (float(numeric_df[col].mean()), float(numeric_df[col].std()))
+            col: (float(numeric_df[col].mean()), float(numeric_df[col].std() + 1e-8))  # Avoid div-by-zero
             for col in numeric_df.columns
         }
 
@@ -72,27 +73,64 @@ class Profiler:
 
     def evaluate_record(self, record: Dict) -> ProfilerOutput:
         """Evaluate *record* and return a :class:`ProfilerOutput`.
+        
+        Schema: deviation_score 0.0 (bad) → 1.0 (normal)
         """
         z_scores_dict = self._compute_z_scores(record)
 
         # Convert to list for scoring, keep dict for explainability
         z_scores_list = list(z_scores_dict.values())
-        deviation = self._analysis.compute_deviation_score(z_scores_list)
-        anomaly = self._analysis.determine_drift(
-            deviation, threshold=self._thresholds.ANOMALY_PROFILER_THRESHOLD
-        )
+        
+        # Compute deviation score: 0.0 = bad, 1.0 = normal
+        if not z_scores_list:
+            deviation = 1.0  # No numeric features → assume normal
+        else:
+            # Use mean absolute z-score inverted: higher z = lower deviation score
+            mean_abs_z = np.mean([abs(z) for z in z_scores_list])
+            # Map: z=0 → deviation=1.0, z=3 → deviation=0.5, z=6 → deviation=0.0
+            deviation = max(0.0, min(1.0, 1.0 - (mean_abs_z / 6.0)))
+
+        anomaly = deviation < self._thresholds.ANOMALY_PROFILER_THRESHOLD
 
         # Identify flagged features (3-sigma rule)
-        flagged = [col for col, z in z_scores_dict.items() if z > 3.0]
+        flagged = [col for col, z in z_scores_dict.items() if abs(z) > 3.0]
 
-        if anomaly:
-            logger.debug("Point anomaly detected. deviation=%.3f, threshold=%.2f",
-                         deviation, self._thresholds.ANOMALY_PROFILER_THRESHOLD)
+        # Derive verdict and confidence from deviation score
+        if deviation >= self._thresholds.ANOMALY_PROFILER_THRESHOLD:
+            verdict = "Valid"
+            reason = "Record is within normal statistical range"
+            confidence = deviation  # Higher deviation score = higher confidence in "Valid"
+            metrics = {
+                "max_abs_z": max(abs(z) for z in z_scores_dict.values()) if z_scores_dict else 0.0,
+                "deviation_score": round(deviation, 3)
+            }
+        elif deviation >= self._thresholds.ANOMALY_PROFILER_THRESHOLD * 0.5:
+            # Buffer zone: uncertain
+            verdict = "Unknown"
+            reason = f"Uncertain: borderline deviation (score: {deviation:.2f})"
+            confidence = 0.5  # Neutral confidence for uncertain cases
+            metrics = {
+                "deviation_score": round(deviation,  3),
+                "uncertain_zone": True
+            }
+        else:
+            # Clear anomaly
+            verdict = "Invalid"
+            reason = f"Statistical anomaly detected in features: {', '.join(flagged)}" if flagged else "Deviation exceeds baseline threshold"
+            confidence = 1.0 - deviation  # Lower deviation score = higher confidence in "Invalid"
+            metrics = {
+                "flagged_features": flagged,
+                "deviation_score": round(deviation, 3),
+                "anomaly_threshold": self._thresholds.ANOMALY_PROFILER_THRESHOLD
+            }
 
         return ProfilerOutput(
             deviation_score=round(deviation, 3),
             point_anomaly_detected=anomaly,
-            confidence=round(deviation, 3),
+            confidence=round(confidence, 3),
             flagged_features=flagged,
             feature_scores={k: round(v, 3) for k, v in z_scores_dict.items()},
+            verdict=verdict,
+            reason=reason,
+            metrics=metrics
         )
