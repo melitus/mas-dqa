@@ -2,45 +2,56 @@
 
 🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍
    MAS-DQA: Automated Pipeline Test & Demo
-   Testing: 'Bad Data = No Data' → 'Trusted Data = Confident Decisions'
 🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍
 
+INFO:__main__:📄 Generated aligned baseline & stream data (80% normal, 20% anomalies)
+INFO:__main__:🏷️  Ground truth labels saved to data/buspas_labels.json
+INFO:__main__:🏷️  Loaded 300 ground truth labels
 ⚙️  Initializing MAS-DQA components...
 INFO:src.ingestion:✅ StreamIngestor initialized. Required fields: ['timestamp']
 🤖 Using SIMPLE RULE‑BASED Validator
 INFO:__main__:▶️  Processing 300 records...
 INFO:src.ingestion:▶ Starting stream: data/buspas_stream.json | Producer: test_agency
-INFO:__main__:🔍 First record payload: {"timestamp": "2026-05-12T10:00:00Z", "speed_kmh": 67.9, "lat": 45.4669, "lon": -73.5817, "passenger_count": 25}...
+INFO:__main__:🔍 First record payload: {"record_id": "rec_0000", "timestamp": "2026-05-12T10:00:00Z", "speed_kmh": 45.3, "lat": 45.404, "lon": -73.6007, "passenger_count": 40}...
 INFO:src.ingestion:📊 Streamed 100 records...
 INFO:src.ingestion:📊 Streamed 200 records...
 INFO:src.ingestion:📊 Streamed 300 records...
 
 🔍 DEBUG: First 3 Record Decisions
-#   Speed    Prof.Dev  Prof.V   Conf   Val.V    Routing      Reason
---------------------------------------------------------------------------------------------------------------
-1   67.9     1.00      Valid    1.00   Valid    TRUST        All checks passed
-2   46.0     1.00      Valid    1.00   Valid    TRUST        All checks passed
-3   52.5     1.00      Valid    1.00   Valid    TRUST        All checks passed
+#   ID         Speed    Prof.Dev  Prof.V   Conf   Val.V    Routing      GT   Reason
+----------------------------------------------------------------------------------------------------------------------------------
+1   rec_0000   45.3     0.83      Valid    0.83   Valid    TRUST        1    All checks passed
+2   rec_0001   38.1     0.87      Valid    0.87   Valid    TRUST        1    All checks passed
+3   rec_0002   42.2     0.90      Valid    0.90   Valid    TRUST        1    All checks passed
 
 📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊
    STAKEHOLDER TEST REPORT
 📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊
 
 ✅ Records Processed: 300
-⏱️  Avg Latency: 0.0 ms/record  ✅ MEETS TARGET (<100ms)
-🕒 Total Time: 0.39 sec
+⏱️  Avg Latency: 0.2 ms/record  ✅ MEETS TARGET (<100ms)
+🕒 Total Time: 0.44 sec
 
 🔀 Routing Distribution:
-   TRUST        ████████████████████████████████████████ 240 (80%)
-   JUDGE        ██████████  60 (20%)
-   QUARANTINE      0 (0%)
+   TRUST        █████████████████████████████████████████ 251 (84%)
+   JUDGE        ███  23 (8%)
+   QUARANTINE   ████  26 (9%)
    AMBIGUOUS       0 (0%)
 
+📈 Phase I Validation Metrics (Detection Accuracy):
+   • Precision:  1.000  ✅ PASS (≥0.85)
+   • Recall:     1.000  ✅ PASS (≥0.80)
+   • F1-Score:   1.000  ✅ PASS (≥0.82)
+   • Accuracy:   1.000
+   • False Positive Rate:  0.000
+   • False Negative Rate:  0.000
+   • Confusion Matrix: TP=251, TN=49, FP=0, FN=0
+
 📈 Quality & Safety Metrics:
-   • Trust Rate (Clean Data):  80.0% ✅ PASS (≥75%)
-   • Anomaly Capture Rate:     20.0%
-   • Quarantined/Blocked:      0
-   • Escalated to Judge:       60
+   • Trust Rate (Clean Data):  83.7% ✅ PASS (≥75%)
+   • Anomaly Capture Rate:     16.3%
+   • Quarantined/Blocked:      26
+   • Escalated to Judge:       23
    • XAI Audit Trail:          ✅ Enabled
 
 💡 Key Insights for Leadership:
@@ -48,6 +59,7 @@ INFO:src.ingestion:📊 Streamed 300 records...
    • Validator enforces semantic/business rules
    • Conflicts route to Judge Agent (no guessing)
    • All decisions logged for compliance & debugging
+   • Phase I F1-Score: 1.000 — detection quality validated
 
 🎯 Phase I Readiness: ✅ READY FOR PHASE I
 🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍

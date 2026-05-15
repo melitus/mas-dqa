@@ -3,8 +3,9 @@
 MAS-DQA: Unified Pipeline Runner & Automated Test/Demo
 =======================================================
 Run: python main.py
-- Auto-generates aligned synthetic test data
+- Auto-generates aligned synthetic test data WITH GROUND TRUTH LABELS
 - Runs full pipeline: Ingestion → Profiler → Validator → Agreement
+- Computes Phase I metrics: Precision, Recall, F1-Score
 - Outputs boss-ready metrics with clear pass/fail status
 - Includes MOCK_MODE for instant testing without LLM API keys
 
@@ -18,7 +19,7 @@ import json
 import os
 import sys
 import random
-from typing import Dict, List
+from typing import Dict, List, Optional
 from datetime import datetime
 
 import pandas as pd
@@ -35,6 +36,14 @@ from src.validator.rule_validator import SimpleRuleValidator
 from src.agreement import determine_routing_decision, RoutingDecision
 from src.config.thresholds import DEFAULT_THRESHOLDS
 
+# For Phase I metrics
+try:
+    from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
+    SKLEARN_AVAILABLE = True
+except ImportError:
+    SKLEARN_AVAILABLE = False
+    print("⚠️  sklearn not installed. Install with: pip install scikit-learn")
+
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
@@ -43,13 +52,16 @@ logger = logging.getLogger(__name__)
 MOCK_MODE = True  # Set to False to use real LLM (requires litellm API key)
 
 # ──────────────────────────────────────────────────────────────────────────────
-# SYNTHETIC DATA GENERATOR (Aligned with Profiler schema: deviation_score 0.0=bad → 1.0=normal)
+# SYNTHETIC DATA GENERATOR WITH GROUND TRUTH LABELS
 # ──────────────────────────────────────────────────────────────────────────────
 def _generate_test_files():
+    """Generate synthetic test data WITH ground truth labels for Phase I validation."""
     os.makedirs("data", exist_ok=True)
     baseline_path, stream_path = "data/buspas_baseline.csv", "data/buspas_stream.json"
+    labels_path = "data/buspas_labels.json"  # NEW: ground truth labels
     
     np.random.seed(42)
+    
     # Baseline: clean historical data (for Profiler to learn normal distribution)
     baseline = pd.DataFrame({
         "timestamp": pd.date_range("2026-01-01", periods=500, freq="min"),
@@ -60,39 +72,60 @@ def _generate_test_files():
     })
     baseline.to_csv(baseline_path, index=False)
     
-    # Stream: 80% normal (overlaps baseline → high deviation_score ~0.8-1.0), 20% anomalies (low deviation_score ~0.0-0.3)
+    # Stream: 80% normal (label=1/Valid), 20% anomalies (label=0/Invalid)
     records = []
+    labels = []  # Ground truth: 1=Valid/Normal, 0=Invalid/Anomaly
+    
     for i in range(300):
-        if random.random() < 0.8:  # Normal record → should get HIGH deviation_score (good)
+        is_anomaly = random.random() < 0.2  # 20% anomaly rate
+        
+        if not is_anomaly:  # Normal record → label=1
             rec = {
+                "record_id": f"rec_{i:04d}",
                 "timestamp": f"2026-05-12T10:{i%60:02d}:00Z",
                 "speed_kmh": round(np.random.normal(45, 10), 1),
                 "lat": round(np.random.normal(45.5, 0.05), 4),
                 "lon": round(np.random.normal(-73.6, 0.05), 4),
                 "passenger_count": int(np.random.poisson(30))
             }
-        else:  # Anomaly → should get LOW deviation_score (bad)
-            anomaly = random.choice(["speed", "lat", "passenger"])
+            labels.append({"record_id": rec["record_id"], "ground_truth": 1, "reason": "Normal record"})
+            
+        else:  # Anomaly → label=0
+            anomaly_type = random.choice(["speed", "lat", "passenger"])
             rec = {
+                "record_id": f"rec_{i:04d}",
                 "timestamp": f"2026-05-12T10:{i%60:02d}:00Z",
                 "speed_kmh": round(np.random.normal(45, 10), 1),
                 "lat": round(np.random.normal(45.5, 0.05), 4),
                 "lon": round(np.random.normal(-73.6, 0.05), 4),
                 "passenger_count": int(np.random.poisson(30))
             }
-            if anomaly == "speed": 
-                rec["speed_kmh"] = round(random.uniform(180, 250), 1)  # Extreme speed → low deviation_score
-            elif anomaly == "lat": 
-                rec["lat"] = 99.9999  # Out-of-bounds → low deviation_score
-            elif anomaly == "passenger": 
-                rec["passenger_count"] = -random.randint(5, 20)  # Negative → low deviation_score
+            if anomaly_type == "speed": 
+                rec["speed_kmh"] = round(random.uniform(180, 250), 1)
+                reason = f"Extreme speed anomaly ({rec['speed_kmh']} km/h)"
+            elif anomaly_type == "lat": 
+                rec["lat"] = 99.9999
+                reason = f"Latitude out of bounds ({rec['lat']})"
+            else:  # passenger
+                rec["passenger_count"] = -random.randint(5, 20)
+                reason = f"Negative passenger count ({rec['passenger_count']})"
+            
+            labels.append({"record_id": rec["record_id"], "ground_truth": 0, "reason": reason, "anomaly_type": anomaly_type})
+            
         records.append(rec)
     
+    # Save stream data
     with open(stream_path, "w") as f:
-        json.dump(records, f)
+        json.dump(records, f, indent=2)
     
-    logger.info("📄 Generated aligned baseline & stream data (80% normal, 20% anomalies)")
-    return baseline_path, stream_path
+    # Save ground truth labels
+    with open(labels_path, "w") as f:
+        json.dump(labels, f, indent=2)
+    
+    logger.info(f"📄 Generated aligned baseline & stream data (80% normal, 20% anomalies)")
+    logger.info(f"🏷️  Ground truth labels saved to {labels_path}")
+    
+    return baseline_path, stream_path, labels_path
 
 # ──────────────────────────────────────────────────────────────────────────────
 # MOCK VALIDATOR (For zero-setup testing) - CORRECTED
@@ -112,9 +145,9 @@ class MockValidator:
         
         # Rule 1: Speed limit (tuned for transit: allow highway speeds)
         speed = rec.get("speed_kmh")
-        if speed is not None and speed > 150:  # ← Increased from 100 to 150
+        if speed is not None and speed > 150:
             valid = False
-            reason = f"Speed exceeds 150 km/h limit ({speed} km/h)"  # ← Fixed f-string
+            reason = f"Speed exceeds 150 km/h limit ({speed} km/h)"
             conf = 0.80
         # Rule 2: Latitude bounds
         elif rec.get("lat") is not None and not (40.0 <= rec["lat"] <= 50.0):
@@ -128,8 +161,7 @@ class MockValidator:
             conf = 0.80
         # Rule 4: Profiler confidence check - CORRECTED LOGIC
         # deviation_score: 0.0 (bad) → 1.0 (normal)
-        # So LOW score = BAD data → flag as invalid
-        elif input_.profiler_result and input_.profiler_result.deviation_score < 0.3:  # ← Fixed: < 0.3 = bad
+        elif input_.profiler_result and input_.profiler_result.deviation_score < 0.3:
             valid = False
             conf = 0.60
             reason = f"Low statistical confidence (deviation: {input_.profiler_result.deviation_score:.2f})"
@@ -142,11 +174,68 @@ class MockValidator:
         )
 
 # ──────────────────────────────────────────────────────────────────────────────
-# MAIN RUNNER
+# PHASE I METRICS COMPUTATION
+# ──────────────────────────────────────────────────────────────────────────────
+def compute_phase1_metrics(
+    y_true: List[int], 
+    y_pred: List[int], 
+    routing_decisions: List[RoutingDecision]
+) -> Dict[str, float]:
+    """
+    Compute Phase I validation metrics: Precision, Recall, F1.
+    
+    Args:
+        y_true: Ground truth labels (1=Valid/Normal, 0=Invalid/Anomaly)
+        y_pred: Model predictions (1=Valid, 0=Invalid)
+        routing_decisions: Final routing decisions for each record
+    
+    Returns:
+        Dictionary with Phase I metrics
+    """
+    if not SKLEARN_AVAILABLE:
+        return {"error": "sklearn not installed"}
+    
+    if len(y_true) == 0 or len(y_pred) == 0:
+        return {"error": "No data to evaluate"}
+    
+    # Compute standard metrics
+    precision = precision_score(y_true, y_pred, zero_division=0)
+    recall = recall_score(y_true, y_pred, zero_division=0)
+    f1 = f1_score(y_true, y_pred, zero_division=0)
+    
+    # Confusion matrix components
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+    
+    # Additional useful metrics
+    accuracy = (tp + tn) / len(y_true) if len(y_true) > 0 else 0
+    fpr = fp / (fp + tn) if (fp + tn) > 0 else 0  # False Positive Rate
+    fnr = fn / (fn + tp) if (fn + tp) > 0 else 0  # False Negative Rate
+    
+    # Routing distribution
+    routing_dist = {dec.value: routing_decisions.count(dec) for dec in RoutingDecision}
+    
+    return {
+        "precision": round(precision, 3),
+        "recall": round(recall, 3),
+        "f1_score": round(f1, 3),
+        "accuracy": round(accuracy, 3),
+        "false_positive_rate": round(fpr, 3),
+        "false_negative_rate": round(fnr, 3),
+        "true_positives": int(tp),
+        "true_negatives": int(tn),
+        "false_positives": int(fp),
+        "false_negatives": int(fn),
+        "routing_distribution": routing_dist,
+        "n_samples": len(y_true)
+    }
+
+# ──────────────────────────────────────────────────────────────────────────────
+# MAIN RUNNER WITH PHASE I METRICS
 # ──────────────────────────────────────────────────────────────────────────────
 async def run_pipeline_and_test(
     stream_path: str = "data/buspas_stream.json",
     baseline_path: str = "data/buspas_baseline.csv",
+    labels_path: str = "data/buspas_labels.json",
     sample_size: int = 300
 ):
     print("\n" + "🔍"*50)
@@ -154,9 +243,19 @@ async def run_pipeline_and_test(
     print("   Testing: 'Bad Data = No Data' → 'Trusted Data = Confident Decisions'")
     print("🔍"*50 + "\n")
     
+    # Generate or load test data
     if not os.path.exists(stream_path) or not os.path.exists(baseline_path):
-        baseline_path, stream_path = _generate_test_files()
-        
+        baseline_path, stream_path, labels_path = _generate_test_files()
+    
+    # Load ground truth labels
+    ground_truth = {}
+    if os.path.exists(labels_path):
+        with open(labels_path, "r") as f:
+            labels_data = json.load(f)
+            for label in labels_data:
+                ground_truth[label["record_id"]] = label["ground_truth"]
+        logger.info(f"🏷️  Loaded {len(ground_truth)} ground truth labels")
+    
     print("⚙️  Initializing MAS-DQA components...")
     ingestor = StreamIngestor(required_fields=["timestamp"])
     profiler = Profiler(baseline_df=pd.read_csv(baseline_path), thresholds=DEFAULT_THRESHOLDS)
@@ -168,7 +267,7 @@ async def run_pipeline_and_test(
         validator = SemanticValidator(llm_model="gpt-4o-mini", max_autorater_retries=1, thresholds=DEFAULT_THRESHOLDS)
     
     domain_context = DomainContext(rules={
-        "max_speed_kmh": "speed <= 150",  # ← Tuned threshold
+        "max_speed_kmh": "speed <= 150",
         "lat_range": "40 <= lat <= 50",
         "lon_range": "-80 <= lon <= -70",
         "passenger_positive": "passengers >= 0"
@@ -176,6 +275,10 @@ async def run_pipeline_and_test(
     
     routing_counts = {dec: 0 for dec in RoutingDecision}
     latencies, debug_log = [], []
+    
+    # Phase I tracking
+    y_true_list, y_pred_list = [], []
+    routing_decisions_list = []
     
     logger.info(f"▶️  Processing {sample_size} records...")
     start_total = time.time()
@@ -204,6 +307,18 @@ async def run_pipeline_and_test(
             # Decision Diamond
             routing = determine_routing_decision(prof_out, val_out, DEFAULT_THRESHOLDS)
             routing_counts[routing] += 1
+            routing_decisions_list.append(routing)
+            
+            # Phase I: Track predictions vs ground truth
+            record_id = parsed.payload.get("record_id")
+            if record_id and record_id in ground_truth:
+                # Ground truth: 1=Valid/Normal, 0=Invalid/Anomaly
+                true_label = ground_truth[record_id]
+                y_true_list.append(true_label)
+                
+                # Prediction: Convert verdict to binary (Valid=1, Invalid/Unknown=0)
+                pred_label = 1 if val_out.verdict == "Valid" else 0
+                y_pred_list.append(pred_label)
             
             # Measure latency (per record, in ms)
             latency_ms = (time.time() - rec_start) * 1000
@@ -213,6 +328,7 @@ async def run_pipeline_and_test(
             if len(debug_log) < 3:
                 debug_log.append({
                     "idx": len(debug_log)+1,
+                    "record_id": parsed.payload.get("record_id"),
                     "payload_speed": parsed.payload.get("speed_kmh"),
                     "prof_deviation": prof_out.deviation_score,
                     "prof_verdict": prof_out.verdict,
@@ -222,6 +338,7 @@ async def run_pipeline_and_test(
                     "val_conf": val_out.confidence,
                     "val_reason": val_out.reason[:40],
                     "routing": routing.value,
+                    "ground_truth": ground_truth.get(record_id, "N/A")
                 })
                 
         except Exception as e:
@@ -237,13 +354,20 @@ async def run_pipeline_and_test(
     avg_latency = sum(latencies)/len(latencies) if latencies else 0
     processed = sum(routing_counts.values())
     
+    # ─── PHASE I METRICS COMPUTATION ─────────────────────────────────────────
+    phase1_metrics = {}
+    if y_true_list and y_pred_list and SKLEARN_AVAILABLE:
+        phase1_metrics = compute_phase1_metrics(y_true_list, y_pred_list, routing_decisions_list)
+    
     # ─── DEBUG PRINT (First 3 records) ────────────────────────────────────────
     print("\n🔍 DEBUG: First 3 Record Decisions")
-    print(f"{'#':<3} {'Speed':<8} {'Prof.Dev':<9} {'Prof.V':<8} {'Conf':<6} {'Val.V':<8} {'Routing':<12} {'Reason'}")
-    print("-" * 110)
+    print(f"{'#':<3} {'ID':<10} {'Speed':<8} {'Prof.Dev':<9} {'Prof.V':<8} {'Conf':<6} {'Val.V':<8} {'Routing':<12} {'GT':<4} {'Reason'}")
+    print("-" * 130)
     for d in debug_log:
-        print(f"{d['idx']:<3} {d['payload_speed']:<8.1f} {d['prof_deviation']:<9.2f} {d['prof_verdict']:<8} "
-              f"{d['prof_conf']:<6.2f} {d['val_verdict']:<8} {d['routing']:<12} {d['val_reason']}")
+        print(f"{d['idx']:<3} {d['record_id'] or 'N/A':<10} {d['payload_speed'] or 'N/A':<8.1f} "
+              f"{d['prof_deviation']:<9.2f} {d['prof_verdict']:<8} {d['prof_conf']:<6.2f} "
+              f"{d['val_verdict']:<8} {d['routing']:<12} {d['ground_truth'] if d['ground_truth'] != 'N/A' else '-':<4} "
+              f"{d['val_reason']}")
     print()
     
     # ─── BOSS REPORT ──────────────────────────────────────────────────────────
@@ -262,6 +386,22 @@ async def run_pipeline_and_test(
         print(f"   {dec.value:12s} {'█' * bar_len} {cnt:3d} ({pct:.0f}%)")
     print()
     
+    # ─── PHASE I METRICS SECTION ─────────────────────────────────────────────
+    if phase1_metrics and "error" not in phase1_metrics:
+        print("📈 Phase I Validation Metrics (Detection Accuracy):")
+        print(f"   • Precision:  {phase1_metrics['precision']:.3f}  {'✅ PASS (≥0.85)' if phase1_metrics['precision'] >= 0.85 else '⚠️ REVIEW'}")
+        print(f"   • Recall:     {phase1_metrics['recall']:.3f}  {'✅ PASS (≥0.80)' if phase1_metrics['recall'] >= 0.80 else '⚠️ REVIEW'}")
+        print(f"   • F1-Score:   {phase1_metrics['f1_score']:.3f}  {'✅ PASS (≥0.82)' if phase1_metrics['f1_score'] >= 0.82 else '⚠️ REVIEW'}")
+        print(f"   • Accuracy:   {phase1_metrics['accuracy']:.3f}")
+        print(f"   • False Positive Rate:  {phase1_metrics['false_positive_rate']:.3f}")
+        print(f"   • False Negative Rate:  {phase1_metrics['false_negative_rate']:.3f}")
+        print(f"   • Confusion Matrix: TP={phase1_metrics['true_positives']}, TN={phase1_metrics['true_negatives']}, "
+              f"FP={phase1_metrics['false_positives']}, FN={phase1_metrics['false_negatives']}")
+        print()
+    elif "error" in phase1_metrics:
+        print(f"⚠️  Phase I Metrics: {phase1_metrics['error']}")
+        print()
+    
     print("📈 Quality & Safety Metrics:")
     print(f"   • Trust Rate (Clean Data):  {trust_rate:.1%} {'✅ PASS (≥75%)' if trust_rate >= 0.75 else '⚠️ REVIEW'}")
     print(f"   • Anomaly Capture Rate:     {anomaly_rate:.1%}")
@@ -273,13 +413,17 @@ async def run_pipeline_and_test(
     print("   • Profiler catches statistical outliers automatically")
     print("   • Validator enforces semantic/business rules")
     print("   • Conflicts route to Judge Agent (no guessing)")
-    print("   • All decisions logged for compliance & debugging\n")
+    print("   • All decisions logged for compliance & debugging")
+    if phase1_metrics and "error" not in phase1_metrics:
+        print(f"   • Phase I F1-Score: {phase1_metrics['f1_score']:.3f} — detection quality validated")
+    print()
     
     # Phase I readiness check
     phase1_ready = (
         trust_rate >= 0.75 and 
         avg_latency < 100 and 
-        routing_counts[RoutingDecision.JUDGE] > 0  # Judge should be active
+        routing_counts[RoutingDecision.JUDGE] > 0 and
+        (phase1_metrics.get("f1_score", 0) >= 0.82 if phase1_metrics and "error" not in phase1_metrics else True)
     )
     status = "✅ READY FOR PHASE I" if phase1_ready else "⚠️ NEEDS TUNING"
     print(f"🎯 Phase I Readiness: {status}\n" + "🔍"*50)

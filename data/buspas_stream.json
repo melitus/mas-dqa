@@ -1,2102 +1,2402 @@
 [
   {
+    "record_id": "rec_0000",
     "timestamp": "2026-05-12T10:00:00Z",
-    "speed_kmh": 67.9,
-    "lat": 45.4669,
-    "lon": -73.5817,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:01:00Z",
-    "speed_kmh": 46.0,
-    "lat": 45.4354,
-    "lon": -73.5065,
-    "passenger_count": 42
-  },
-  {
-    "timestamp": "2026-05-12T10:02:00Z",
-    "speed_kmh": 52.5,
-    "lat": 45.4526,
-    "lon": -73.6345,
-    "passenger_count": 33
-  },
-  {
-    "timestamp": "2026-05-12T10:03:00Z",
-    "speed_kmh": 45.2,
-    "lat": 45.5553,
-    "lon": -73.6205,
-    "passenger_count": 20
-  },
-  {
-    "timestamp": "2026-05-12T10:04:00Z",
-    "speed_kmh": 49.0,
-    "lat": 45.5129,
-    "lon": -73.5186,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:05:00Z",
-    "speed_kmh": 53.5,
-    "lat": 45.4583,
-    "lon": -73.6586,
-    "passenger_count": 15
-  },
-  {
-    "timestamp": "2026-05-12T10:06:00Z",
-    "speed_kmh": 39.0,
-    "lat": 45.4732,
-    "lon": -73.6263,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:07:00Z",
-    "speed_kmh": 34.0,
-    "lat": 45.4373,
-    "lon": -73.6509,
-    "passenger_count": 21
-  },
-  {
-    "timestamp": "2026-05-12T10:08:00Z",
-    "speed_kmh": 45.1,
-    "lat": 45.5057,
-    "lon": -73.6679,
-    "passenger_count": 26
-  },
-  {
-    "timestamp": "2026-05-12T10:09:00Z",
-    "speed_kmh": 60.5,
-    "lat": 45.5055,
-    "lon": -73.6343,
-    "passenger_count": 26
-  },
-  {
-    "timestamp": "2026-05-12T10:10:00Z",
-    "speed_kmh": 53.7,
-    "lat": 45.5621,
-    "lon": -73.5887,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:11:00Z",
-    "speed_kmh": 206.2,
-    "lat": 45.5504,
-    "lon": -73.5413,
-    "passenger_count": 32
-  },
-  {
-    "timestamp": "2026-05-12T10:12:00Z",
-    "speed_kmh": 57.0,
-    "lat": 45.4645,
-    "lon": -73.6799,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:13:00Z",
-    "speed_kmh": 35.8,
-    "lat": 45.5847,
-    "lon": -73.6457,
-    "passenger_count": 14
-  },
-  {
-    "timestamp": "2026-05-12T10:14:00Z",
-    "speed_kmh": 69.3,
-    "lat": 45.5091,
-    "lon": -73.5241,
-    "passenger_count": 19
-  },
-  {
-    "timestamp": "2026-05-12T10:15:00Z",
-    "speed_kmh": 37.2,
-    "lat": 45.5657,
-    "lon": -73.5689,
-    "passenger_count": 19
-  },
-  {
-    "timestamp": "2026-05-12T10:16:00Z",
-    "speed_kmh": 49.9,
-    "lat": 45.5047,
-    "lon": -73.5112,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:17:00Z",
-    "speed_kmh": 42.3,
-    "lat": 99.9999,
-    "lon": -73.547,
-    "passenger_count": 30
-  },
-  {
-    "timestamp": "2026-05-12T10:18:00Z",
-    "speed_kmh": 61.0,
-    "lat": 45.4107,
-    "lon": -73.6722,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:19:00Z",
-    "speed_kmh": 286.6,
-    "lat": 45.5833,
-    "lon": -73.5066,
-    "passenger_count": 35
-  },
-  {
-    "timestamp": "2026-05-12T10:20:00Z",
-    "speed_kmh": 57.8,
-    "lat": 45.511,
-    "lon": -73.5316,
-    "passenger_count": 49
-  },
-  {
-    "timestamp": "2026-05-12T10:21:00Z",
-    "speed_kmh": 57.8,
-    "lat": 45.5277,
-    "lon": -73.5526,
-    "passenger_count": 21
-  },
-  {
-    "timestamp": "2026-05-12T10:22:00Z",
-    "speed_kmh": 47.4,
-    "lat": 45.4161,
-    "lon": -73.5576,
-    "passenger_count": 12
-  },
-  {
-    "timestamp": "2026-05-12T10:23:00Z",
-    "speed_kmh": 53.2,
-    "lat": 45.4221,
-    "lon": -73.5417,
-    "passenger_count": 34
-  },
-  {
-    "timestamp": "2026-05-12T10:24:00Z",
-    "speed_kmh": 43.6,
-    "lat": 45.527,
-    "lon": -73.6148,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:25:00Z",
-    "speed_kmh": 66.8,
-    "lat": 45.4307,
-    "lon": -73.6043,
-    "passenger_count": 28
-  },
-  {
-    "timestamp": "2026-05-12T10:26:00Z",
-    "speed_kmh": 38.2,
-    "lat": 45.5888,
-    "lon": -73.6369,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:27:00Z",
-    "speed_kmh": 58.5,
-    "lat": 45.5933,
-    "lon": -73.6643,
-    "passenger_count": 15
-  },
-  {
-    "timestamp": "2026-05-12T10:28:00Z",
-    "speed_kmh": 42.1,
-    "lat": 45.4991,
-    "lon": -73.5236,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:29:00Z",
-    "speed_kmh": 57.6,
-    "lat": 45.5112,
-    "lon": -73.6996,
-    "passenger_count": -20
-  },
-  {
-    "timestamp": "2026-05-12T10:30:00Z",
-    "speed_kmh": 46.8,
-    "lat": 45.4789,
-    "lon": -73.678,
-    "passenger_count": 37
-  },
-  {
-    "timestamp": "2026-05-12T10:31:00Z",
-    "speed_kmh": 42.1,
-    "lat": 45.5168,
-    "lon": -73.5955,
-    "passenger_count": -9
-  },
-  {
-    "timestamp": "2026-05-12T10:32:00Z",
-    "speed_kmh": 33.3,
-    "lat": 45.4444,
-    "lon": -73.6883,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:33:00Z",
-    "speed_kmh": 56.4,
-    "lat": 45.4532,
-    "lon": -73.5943,
-    "passenger_count": 19
-  },
-  {
-    "timestamp": "2026-05-12T10:34:00Z",
-    "speed_kmh": 179.9,
-    "lat": 45.4579,
-    "lon": -73.545,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:35:00Z",
-    "speed_kmh": 63.2,
-    "lat": 45.4701,
-    "lon": -73.6364,
-    "passenger_count": -10
-  },
-  {
-    "timestamp": "2026-05-12T10:36:00Z",
-    "speed_kmh": 55.6,
-    "lat": 45.4606,
-    "lon": -73.5893,
-    "passenger_count": 19
-  },
-  {
-    "timestamp": "2026-05-12T10:37:00Z",
-    "speed_kmh": 48.6,
-    "lat": 45.5606,
-    "lon": -73.6777,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:38:00Z",
-    "speed_kmh": 51.4,
-    "lat": 45.4584,
-    "lon": -73.6983,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:39:00Z",
-    "speed_kmh": 41.3,
-    "lat": 45.4369,
-    "lon": -73.6376,
-    "passenger_count": 50
-  },
-  {
-    "timestamp": "2026-05-12T10:40:00Z",
-    "speed_kmh": 69.9,
-    "lat": 45.5246,
-    "lon": -73.6527,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:41:00Z",
-    "speed_kmh": 62.8,
-    "lat": 45.5265,
-    "lon": -73.5463,
-    "passenger_count": 50
-  },
-  {
-    "timestamp": "2026-05-12T10:42:00Z",
-    "speed_kmh": 39.4,
-    "lat": 45.5151,
-    "lon": -73.507,
-    "passenger_count": 20
-  },
-  {
-    "timestamp": "2026-05-12T10:43:00Z",
-    "speed_kmh": 283.9,
-    "lat": 45.5453,
-    "lon": -73.6644,
-    "passenger_count": 32
-  },
-  {
-    "timestamp": "2026-05-12T10:44:00Z",
-    "speed_kmh": 32.2,
-    "lat": 45.438,
-    "lon": -73.6905,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:45:00Z",
-    "speed_kmh": 50.5,
-    "lat": 45.4445,
-    "lon": -73.5245,
-    "passenger_count": 37
-  },
-  {
-    "timestamp": "2026-05-12T10:46:00Z",
-    "speed_kmh": 43.8,
-    "lat": 99.9999,
-    "lon": -73.6056,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:47:00Z",
-    "speed_kmh": 58.3,
-    "lat": 45.4485,
-    "lon": -73.5683,
-    "passenger_count": 43
-  },
-  {
-    "timestamp": "2026-05-12T10:48:00Z",
-    "speed_kmh": 36.0,
-    "lat": 45.5532,
-    "lon": -73.5331,
-    "passenger_count": -19
-  },
-  {
-    "timestamp": "2026-05-12T10:49:00Z",
-    "speed_kmh": 52.1,
-    "lat": 99.9999,
-    "lon": -73.657,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:50:00Z",
-    "speed_kmh": 55.8,
-    "lat": 45.4612,
+    "speed_kmh": 45.3,
+    "lat": 45.404,
     "lon": -73.6007,
-    "passenger_count": 42
-  },
-  {
-    "timestamp": "2026-05-12T10:51:00Z",
-    "speed_kmh": 62.9,
-    "lat": 45.4153,
-    "lon": -73.5043,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:52:00Z",
-    "speed_kmh": 60.6,
-    "lat": 45.5329,
-    "lon": -73.6666,
-    "passenger_count": -12
-  },
-  {
-    "timestamp": "2026-05-12T10:53:00Z",
-    "speed_kmh": 40.1,
-    "lat": 45.4006,
-    "lon": -73.6224,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:54:00Z",
-    "speed_kmh": 56.2,
-    "lat": 45.5659,
-    "lon": -73.6049,
-    "passenger_count": 45
-  },
-  {
-    "timestamp": "2026-05-12T10:55:00Z",
-    "speed_kmh": 51.7,
-    "lat": 45.536,
-    "lon": -73.5852,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:56:00Z",
-    "speed_kmh": 31.6,
-    "lat": 45.4377,
-    "lon": -73.5153,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:57:00Z",
-    "speed_kmh": 42.8,
-    "lat": 45.503,
-    "lon": -73.6959,
-    "passenger_count": 45
-  },
-  {
-    "timestamp": "2026-05-12T10:58:00Z",
-    "speed_kmh": 46.8,
-    "lat": 45.4019,
-    "lon": -73.6494,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:59:00Z",
-    "speed_kmh": 69.0,
-    "lat": 45.5757,
-    "lon": -73.6755,
-    "passenger_count": 33
-  },
-  {
-    "timestamp": "2026-05-12T10:00:00Z",
-    "speed_kmh": 44.8,
-    "lat": 45.4932,
-    "lon": -73.5052,
     "passenger_count": 40
   },
   {
+    "record_id": "rec_0001",
     "timestamp": "2026-05-12T10:01:00Z",
-    "speed_kmh": 51.0,
-    "lat": 45.5009,
-    "lon": -73.5654,
-    "passenger_count": 25
+    "speed_kmh": 38.1,
+    "lat": 45.4753,
+    "lon": -73.5278,
+    "passenger_count": 33
   },
   {
+    "record_id": "rec_0002",
     "timestamp": "2026-05-12T10:02:00Z",
-    "speed_kmh": 56.0,
-    "lat": 45.5002,
-    "lon": -73.5432,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:03:00Z",
-    "speed_kmh": 47.8,
-    "lat": 45.5308,
-    "lon": -73.6209,
-    "passenger_count": 32
-  },
-  {
-    "timestamp": "2026-05-12T10:04:00Z",
-    "speed_kmh": 33.9,
-    "lat": 45.4154,
-    "lon": -73.6096,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:05:00Z",
-    "speed_kmh": 35.9,
-    "lat": 45.4565,
-    "lon": -73.6878,
-    "passenger_count": 49
-  },
-  {
-    "timestamp": "2026-05-12T10:06:00Z",
-    "speed_kmh": 65.9,
-    "lat": 99.9999,
-    "lon": -73.6088,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:07:00Z",
-    "speed_kmh": 50.6,
-    "lat": 45.4367,
-    "lon": -73.5641,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:08:00Z",
-    "speed_kmh": 239.9,
-    "lat": 45.5174,
-    "lon": -73.5315,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:09:00Z",
-    "speed_kmh": 226.4,
-    "lat": 45.5241,
-    "lon": -73.6462,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:10:00Z",
-    "speed_kmh": 64.3,
-    "lat": 45.5374,
-    "lon": -73.6564,
-    "passenger_count": 48
-  },
-  {
-    "timestamp": "2026-05-12T10:11:00Z",
-    "speed_kmh": 32.8,
-    "lat": 45.4591,
-    "lon": -73.5061,
-    "passenger_count": 43
-  },
-  {
-    "timestamp": "2026-05-12T10:12:00Z",
-    "speed_kmh": 60.2,
-    "lat": 45.5862,
-    "lon": -73.6732,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:13:00Z",
-    "speed_kmh": 67.6,
-    "lat": 45.5252,
-    "lon": -73.571,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:14:00Z",
-    "speed_kmh": 47.7,
-    "lat": 45.5545,
-    "lon": -73.5311,
-    "passenger_count": -6
-  },
-  {
-    "timestamp": "2026-05-12T10:15:00Z",
-    "speed_kmh": 68.7,
-    "lat": 45.5969,
-    "lon": -73.6972,
+    "speed_kmh": 42.2,
+    "lat": 45.486,
+    "lon": -73.5605,
     "passenger_count": 36
   },
   {
-    "timestamp": "2026-05-12T10:16:00Z",
-    "speed_kmh": 62.6,
-    "lat": 45.5311,
-    "lon": -73.6115,
-    "passenger_count": 18
+    "record_id": "rec_0003",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "speed_kmh": 48.4,
+    "lat": 45.4834,
+    "lon": -73.6306,
+    "passenger_count": 27
   },
   {
-    "timestamp": "2026-05-12T10:17:00Z",
-    "speed_kmh": 41.8,
-    "lat": 45.5391,
-    "lon": -73.527,
-    "passenger_count": 38
+    "record_id": "rec_0004",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "speed_kmh": 74.5,
+    "lat": 45.5622,
+    "lon": -73.6676,
+    "passenger_count": 27
   },
   {
-    "timestamp": "2026-05-12T10:18:00Z",
-    "speed_kmh": 69.1,
-    "lat": 45.4466,
-    "lon": -73.5858,
+    "record_id": "rec_0005",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "speed_kmh": 31.8,
+    "lat": 45.4937,
+    "lon": -73.5836,
     "passenger_count": 28
   },
   {
-    "timestamp": "2026-05-12T10:19:00Z",
-    "speed_kmh": 42.3,
-    "lat": 45.4021,
-    "lon": -73.6913,
-    "passenger_count": -9
+    "record_id": "rec_0006",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "speed_kmh": 42.7,
+    "lat": 45.4574,
+    "lon": -73.5912,
+    "passenger_count": 33
   },
   {
-    "timestamp": "2026-05-12T10:20:00Z",
-    "speed_kmh": 31.6,
-    "lat": 45.4626,
-    "lon": -73.5717,
-    "passenger_count": 48
+    "record_id": "rec_0007",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "speed_kmh": 74.9,
+    "lat": 45.521,
+    "lon": -73.5697,
+    "passenger_count": 29
   },
   {
-    "timestamp": "2026-05-12T10:21:00Z",
-    "speed_kmh": 53.0,
-    "lat": 45.4064,
-    "lon": -73.5088,
-    "passenger_count": 14
+    "record_id": "rec_0008",
+    "timestamp": "2026-05-12T10:08:00Z",
+    "speed_kmh": 49.7,
+    "lat": 45.4537,
+    "lon": -73.5722,
+    "passenger_count": 25
   },
   {
-    "timestamp": "2026-05-12T10:22:00Z",
-    "speed_kmh": 168.4,
-    "lat": 45.4048,
-    "lon": -73.6072,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:23:00Z",
-    "speed_kmh": 56.2,
-    "lat": 45.5952,
-    "lon": -73.6946,
+    "record_id": "rec_0009",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "speed_kmh": 35.8,
+    "lat": 45.5488,
+    "lon": -73.5541,
     "passenger_count": 30
   },
   {
-    "timestamp": "2026-05-12T10:24:00Z",
-    "speed_kmh": 64.1,
-    "lat": 45.5688,
-    "lon": -73.5015,
-    "passenger_count": 28
+    "record_id": "rec_0010",
+    "timestamp": "2026-05-12T10:10:00Z",
+    "speed_kmh": 37.9,
+    "lat": 45.4371,
+    "lon": -73.6109,
+    "passenger_count": 30
   },
   {
-    "timestamp": "2026-05-12T10:25:00Z",
-    "speed_kmh": 44.9,
-    "lat": 45.5966,
-    "lon": -73.5606,
-    "passenger_count": 18
+    "record_id": "rec_0011",
+    "timestamp": "2026-05-12T10:11:00Z",
+    "speed_kmh": 41.9,
+    "lat": 45.4311,
+    "lon": -73.6282,
+    "passenger_count": 32
   },
   {
-    "timestamp": "2026-05-12T10:26:00Z",
-    "speed_kmh": 69.2,
-    "lat": 45.4867,
-    "lon": -73.6541,
-    "passenger_count": 48
+    "record_id": "rec_0012",
+    "timestamp": "2026-05-12T10:12:00Z",
+    "speed_kmh": 29.1,
+    "lat": 45.406,
+    "lon": -73.5065,
+    "passenger_count": 33
   },
   {
-    "timestamp": "2026-05-12T10:27:00Z",
-    "speed_kmh": 55.7,
-    "lat": 45.4821,
-    "lon": -73.6002,
-    "passenger_count": 35
-  },
-  {
-    "timestamp": "2026-05-12T10:28:00Z",
-    "speed_kmh": 41.1,
-    "lat": 45.4934,
-    "lon": -73.5768,
-    "passenger_count": 19
-  },
-  {
-    "timestamp": "2026-05-12T10:29:00Z",
-    "speed_kmh": 56.5,
-    "lat": 45.4579,
-    "lon": -73.6977,
-    "passenger_count": 13
-  },
-  {
-    "timestamp": "2026-05-12T10:30:00Z",
-    "speed_kmh": 50.1,
-    "lat": 45.5258,
-    "lon": -73.6089,
-    "passenger_count": 34
-  },
-  {
-    "timestamp": "2026-05-12T10:31:00Z",
-    "speed_kmh": 57.9,
-    "lat": 45.5989,
-    "lon": -73.5325,
-    "passenger_count": 46
-  },
-  {
-    "timestamp": "2026-05-12T10:32:00Z",
-    "speed_kmh": 35.3,
-    "lat": 45.5071,
-    "lon": -73.6667,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:33:00Z",
-    "speed_kmh": 69.7,
-    "lat": 99.9999,
-    "lon": -73.6699,
-    "passenger_count": 28
-  },
-  {
-    "timestamp": "2026-05-12T10:34:00Z",
-    "speed_kmh": 34.1,
-    "lat": 45.5246,
-    "lon": -73.5423,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:35:00Z",
-    "speed_kmh": 33.9,
-    "lat": 45.4941,
-    "lon": -73.546,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:36:00Z",
-    "speed_kmh": 51.8,
-    "lat": 45.4528,
-    "lon": -73.6367,
-    "passenger_count": -6
-  },
-  {
-    "timestamp": "2026-05-12T10:37:00Z",
-    "speed_kmh": 62.9,
-    "lat": 45.5074,
-    "lon": -73.675,
-    "passenger_count": 12
-  },
-  {
-    "timestamp": "2026-05-12T10:38:00Z",
-    "speed_kmh": 31.1,
-    "lat": 45.4614,
-    "lon": -73.5412,
-    "passenger_count": 50
-  },
-  {
-    "timestamp": "2026-05-12T10:39:00Z",
-    "speed_kmh": 64.2,
-    "lat": 45.5315,
-    "lon": -73.6828,
-    "passenger_count": 15
-  },
-  {
-    "timestamp": "2026-05-12T10:40:00Z",
-    "speed_kmh": 50.5,
-    "lat": 45.4674,
-    "lon": -73.5158,
-    "passenger_count": 12
-  },
-  {
-    "timestamp": "2026-05-12T10:41:00Z",
-    "speed_kmh": 189.5,
-    "lat": 45.518,
-    "lon": -73.573,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:42:00Z",
-    "speed_kmh": 66.7,
-    "lat": 99.9999,
-    "lon": -73.561,
-    "passenger_count": 34
-  },
-  {
-    "timestamp": "2026-05-12T10:43:00Z",
-    "speed_kmh": 58.5,
-    "lat": 45.4294,
-    "lon": -73.6312,
-    "passenger_count": 35
-  },
-  {
-    "timestamp": "2026-05-12T10:44:00Z",
-    "speed_kmh": 230.2,
-    "lat": 45.4811,
-    "lon": -73.5066,
-    "passenger_count": 13
-  },
-  {
-    "timestamp": "2026-05-12T10:45:00Z",
-    "speed_kmh": 69.0,
-    "lat": 45.5541,
-    "lon": -73.542,
-    "passenger_count": -2
-  },
-  {
-    "timestamp": "2026-05-12T10:46:00Z",
-    "speed_kmh": 43.7,
-    "lat": 45.514,
-    "lon": -73.5247,
-    "passenger_count": 14
-  },
-  {
-    "timestamp": "2026-05-12T10:47:00Z",
-    "speed_kmh": 249.1,
-    "lat": 45.5168,
-    "lon": -73.6374,
-    "passenger_count": 50
-  },
-  {
-    "timestamp": "2026-05-12T10:48:00Z",
-    "speed_kmh": 60.7,
-    "lat": 45.427,
-    "lon": -73.5469,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:49:00Z",
-    "speed_kmh": 53.3,
-    "lat": 45.4333,
-    "lon": -73.5872,
-    "passenger_count": 35
-  },
-  {
-    "timestamp": "2026-05-12T10:50:00Z",
-    "speed_kmh": 54.5,
-    "lat": 45.536,
-    "lon": -73.5613,
-    "passenger_count": 21
-  },
-  {
-    "timestamp": "2026-05-12T10:51:00Z",
-    "speed_kmh": 64.5,
-    "lat": 45.5969,
-    "lon": -73.6185,
-    "passenger_count": -5
-  },
-  {
-    "timestamp": "2026-05-12T10:52:00Z",
-    "speed_kmh": 61.4,
-    "lat": 45.536,
-    "lon": -73.563,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:53:00Z",
-    "speed_kmh": 60.9,
-    "lat": 99.9999,
-    "lon": -73.6339,
-    "passenger_count": 20
-  },
-  {
-    "timestamp": "2026-05-12T10:54:00Z",
-    "speed_kmh": 56.7,
-    "lat": 45.4608,
-    "lon": -73.6618,
-    "passenger_count": 21
-  },
-  {
-    "timestamp": "2026-05-12T10:55:00Z",
-    "speed_kmh": 66.8,
-    "lat": 45.5833,
-    "lon": -73.6649,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:56:00Z",
-    "speed_kmh": 51.0,
-    "lat": 45.5202,
-    "lon": -73.595,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:57:00Z",
-    "speed_kmh": 199.8,
-    "lat": 45.5173,
-    "lon": -73.6332,
-    "passenger_count": 12
-  },
-  {
-    "timestamp": "2026-05-12T10:58:00Z",
-    "speed_kmh": 48.2,
-    "lat": 45.5539,
-    "lon": -73.5264,
+    "record_id": "rec_0013",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "speed_kmh": 48.9,
+    "lat": 45.3682,
+    "lon": -73.5998,
     "passenger_count": 37
   },
   {
-    "timestamp": "2026-05-12T10:59:00Z",
-    "speed_kmh": 51.3,
-    "lat": 45.572,
-    "lon": -73.6494,
+    "record_id": "rec_0014",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "speed_kmh": 34.9,
+    "lat": 45.5043,
+    "lon": -73.6463,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0015",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "speed_kmh": 47.6,
+    "lat": 45.4502,
+    "lon": -73.5674,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0016",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "speed_kmh": 45.4,
+    "lat": 45.4276,
+    "lon": -73.615,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0017",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "speed_kmh": 44.5,
+    "lat": 45.631,
+    "lon": -73.6556,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0018",
+    "timestamp": "2026-05-12T10:18:00Z",
+    "speed_kmh": 47.8,
+    "lat": 45.5879,
+    "lon": -73.5814,
     "passenger_count": 36
   },
   {
-    "timestamp": "2026-05-12T10:00:00Z",
+    "record_id": "rec_0019",
+    "timestamp": "2026-05-12T10:19:00Z",
+    "speed_kmh": 48.9,
+    "lat": 45.5548,
+    "lon": -73.6313,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0020",
+    "timestamp": "2026-05-12T10:20:00Z",
+    "speed_kmh": 37.0,
+    "lat": 45.4968,
+    "lon": -73.5381,
+    "passenger_count": 38
+  },
+  {
+    "record_id": "rec_0021",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "speed_kmh": 40.4,
+    "lat": 45.5424,
+    "lon": -73.7123,
+    "passenger_count": 46
+  },
+  {
+    "record_id": "rec_0022",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "speed_kmh": 38.9,
+    "lat": 45.5106,
+    "lon": -73.54,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0023",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "speed_kmh": 40.1,
+    "lat": 45.4682,
+    "lon": -73.6595,
+    "passenger_count": -8
+  },
+  {
+    "record_id": "rec_0024",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "speed_kmh": 39.0,
+    "lat": 45.3897,
+    "lon": -73.5551,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0025",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "speed_kmh": 57.7,
+    "lat": 45.5326,
+    "lon": -73.6569,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0026",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "speed_kmh": 51.0,
+    "lat": 45.5334,
+    "lon": -73.6367,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0027",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "speed_kmh": 45.8,
+    "lat": 45.5352,
+    "lon": -73.5605,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0028",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "speed_kmh": 49.1,
+    "lat": 45.4569,
+    "lon": -73.5298,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0029",
+    "timestamp": "2026-05-12T10:29:00Z",
     "speed_kmh": 52.0,
-    "lat": 45.4323,
-    "lon": -73.6481,
+    "lat": 45.5148,
+    "lon": -73.5768,
+    "passenger_count": 39
+  },
+  {
+    "record_id": "rec_0030",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "speed_kmh": 62.0,
+    "lat": 45.5536,
+    "lon": -73.5905,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0031",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "speed_kmh": 54.4,
+    "lat": 45.5905,
+    "lon": -73.6109,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0032",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "speed_kmh": 34.1,
+    "lat": 45.4608,
+    "lon": -73.6185,
+    "passenger_count": 39
+  },
+  {
+    "record_id": "rec_0033",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "speed_kmh": 30.9,
+    "lat": 45.4546,
+    "lon": -73.524,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0034",
+    "timestamp": "2026-05-12T10:34:00Z",
+    "speed_kmh": 38.4,
+    "lat": 45.5427,
+    "lon": -73.6546,
+    "passenger_count": 41
+  },
+  {
+    "record_id": "rec_0035",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "speed_kmh": 53.9,
+    "lat": 45.4412,
+    "lon": -73.6448,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0036",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "speed_kmh": 49.6,
+    "lat": 45.4316,
+    "lon": -73.5576,
+    "passenger_count": -12
+  },
+  {
+    "record_id": "rec_0037",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "speed_kmh": 32.7,
+    "lat": 45.513,
+    "lon": -73.6269,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0038",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "speed_kmh": 48.5,
+    "lat": 45.4218,
+    "lon": -73.5952,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0039",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "speed_kmh": 42.4,
+    "lat": 45.4835,
+    "lon": -73.5634,
+    "passenger_count": -8
+  },
+  {
+    "record_id": "rec_0040",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "speed_kmh": 52.6,
+    "lat": 45.5306,
+    "lon": -73.6508,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0041",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "speed_kmh": 42.6,
+    "lat": 45.5541,
+    "lon": -73.6656,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0042",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "speed_kmh": 51.2,
+    "lat": 45.5664,
+    "lon": -73.5807,
+    "passenger_count": -9
+  },
+  {
+    "record_id": "rec_0043",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "speed_kmh": 213.1,
+    "lat": 45.5125,
+    "lon": -73.5477,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0044",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "speed_kmh": 36.8,
+    "lat": 45.5766,
+    "lon": -73.575,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0045",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "speed_kmh": 31.0,
+    "lat": 45.5313,
+    "lon": -73.5557,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0046",
+    "timestamp": "2026-05-12T10:46:00Z",
+    "speed_kmh": 64.5,
+    "lat": 45.4747,
+    "lon": -73.6529,
+    "passenger_count": 41
+  },
+  {
+    "record_id": "rec_0047",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "speed_kmh": 59.8,
+    "lat": 45.5981,
+    "lon": -73.5998,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0048",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "speed_kmh": 37.6,
+    "lat": 45.4757,
+    "lon": -73.5385,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0049",
+    "timestamp": "2026-05-12T10:49:00Z",
+    "speed_kmh": 61.9,
+    "lat": 45.5994,
+    "lon": -73.6265,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0050",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "speed_kmh": 60.5,
+    "lat": 45.5427,
+    "lon": -73.5793,
+    "passenger_count": 44
+  },
+  {
+    "record_id": "rec_0051",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "speed_kmh": 49.6,
+    "lat": 45.3735,
+    "lon": -73.6148,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0052",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "speed_kmh": 48.9,
+    "lat": 45.4898,
+    "lon": -73.5122,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0053",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "speed_kmh": 60.7,
+    "lat": 45.4963,
+    "lon": -73.6226,
+    "passenger_count": -16
+  },
+  {
+    "record_id": "rec_0054",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "speed_kmh": 33.7,
+    "lat": 45.5311,
+    "lon": -73.5685,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0055",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "speed_kmh": 37.0,
+    "lat": 45.5127,
+    "lon": -73.559,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0056",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "speed_kmh": 39.8,
+    "lat": 45.4902,
+    "lon": -73.6103,
+    "passenger_count": 20
+  },
+  {
+    "record_id": "rec_0057",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "speed_kmh": 37.5,
+    "lat": 45.4912,
+    "lon": -73.6774,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0058",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "speed_kmh": 42.4,
+    "lat": 45.4879,
+    "lon": -73.6031,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0059",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "speed_kmh": 49.8,
+    "lat": 45.4398,
+    "lon": -73.6521,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0060",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "speed_kmh": 37.3,
+    "lat": 45.4352,
+    "lon": -73.6228,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0061",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "speed_kmh": 46.8,
+    "lat": 45.4794,
+    "lon": -73.6463,
+    "passenger_count": 37
+  },
+  {
+    "record_id": "rec_0062",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "speed_kmh": 44.7,
+    "lat": 45.4576,
+    "lon": -73.5713,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0063",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "speed_kmh": 27.1,
+    "lat": 45.5092,
+    "lon": -73.4653,
+    "passenger_count": -5
+  },
+  {
+    "record_id": "rec_0064",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "speed_kmh": 44.0,
+    "lat": 45.4112,
+    "lon": -73.604,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0065",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "speed_kmh": 36.7,
+    "lat": 45.4942,
+    "lon": -73.6318,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0066",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "speed_kmh": 63.3,
+    "lat": 45.5407,
+    "lon": -73.5759,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0067",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "speed_kmh": 48.7,
+    "lat": 45.4861,
+    "lon": -73.5577,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0068",
+    "timestamp": "2026-05-12T10:08:00Z",
+    "speed_kmh": 44.5,
+    "lat": 45.5852,
+    "lon": -73.5377,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0069",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "speed_kmh": 44.4,
+    "lat": 45.4148,
+    "lon": -73.6462,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0070",
+    "timestamp": "2026-05-12T10:10:00Z",
+    "speed_kmh": 42.6,
+    "lat": 45.485,
+    "lon": -73.5048,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0071",
+    "timestamp": "2026-05-12T10:11:00Z",
+    "speed_kmh": 61.3,
+    "lat": 45.5148,
+    "lon": -73.6758,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0072",
+    "timestamp": "2026-05-12T10:12:00Z",
+    "speed_kmh": 47.2,
+    "lat": 45.4451,
+    "lon": -73.6294,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0073",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "speed_kmh": 36.6,
+    "lat": 45.4726,
+    "lon": -73.5583,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0074",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "speed_kmh": 57.2,
+    "lat": 45.4743,
+    "lon": -73.6359,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0075",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "speed_kmh": 42.7,
+    "lat": 45.4734,
+    "lon": -73.5758,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0076",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "speed_kmh": 49.1,
+    "lat": 45.4846,
+    "lon": -73.6419,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0077",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "speed_kmh": 36.1,
+    "lat": 45.4681,
+    "lon": -73.5771,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0078",
+    "timestamp": "2026-05-12T10:18:00Z",
+    "speed_kmh": 44.7,
+    "lat": 45.4545,
+    "lon": -73.6468,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0079",
+    "timestamp": "2026-05-12T10:19:00Z",
+    "speed_kmh": 38.3,
+    "lat": 45.4697,
+    "lon": -73.5771,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0080",
+    "timestamp": "2026-05-12T10:20:00Z",
+    "speed_kmh": 39.7,
+    "lat": 45.5694,
+    "lon": -73.6193,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0081",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "speed_kmh": 48.8,
+    "lat": 45.5384,
+    "lon": -73.5892,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0082",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "speed_kmh": 24.2,
+    "lat": 45.5862,
+    "lon": -73.6144,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0083",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "speed_kmh": 47.9,
+    "lat": 45.4715,
+    "lon": -73.5835,
+    "passenger_count": -7
+  },
+  {
+    "record_id": "rec_0084",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "speed_kmh": 230.2,
+    "lat": 45.4435,
+    "lon": -73.6225,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0085",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "speed_kmh": 57.6,
+    "lat": 45.4635,
+    "lon": -73.5621,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0086",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "speed_kmh": 43.2,
+    "lat": 45.5334,
+    "lon": -73.5951,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0087",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "speed_kmh": 58.0,
+    "lat": 45.4903,
+    "lon": -73.6032,
+    "passenger_count": 40
+  },
+  {
+    "record_id": "rec_0088",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "speed_kmh": 229.1,
+    "lat": 45.5493,
+    "lon": -73.5565,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0089",
+    "timestamp": "2026-05-12T10:29:00Z",
+    "speed_kmh": 40.4,
+    "lat": 45.5438,
+    "lon": -73.5264,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0090",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "speed_kmh": 28.6,
+    "lat": 99.9999,
+    "lon": -73.5502,
+    "passenger_count": 41
+  },
+  {
+    "record_id": "rec_0091",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "speed_kmh": 40.3,
+    "lat": 45.532,
+    "lon": -73.6095,
+    "passenger_count": 19
+  },
+  {
+    "record_id": "rec_0092",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "speed_kmh": 48.2,
+    "lat": 45.4426,
+    "lon": -73.5957,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0093",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "speed_kmh": 15.1,
+    "lat": 45.5603,
+    "lon": -73.5611,
+    "passenger_count": -10
+  },
+  {
+    "record_id": "rec_0094",
+    "timestamp": "2026-05-12T10:34:00Z",
+    "speed_kmh": 35.5,
+    "lat": 99.9999,
+    "lon": -73.5534,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0095",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "speed_kmh": 42.6,
+    "lat": 45.4588,
+    "lon": -73.6304,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0096",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "speed_kmh": 57.2,
+    "lat": 45.4871,
+    "lon": -73.5824,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0097",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "speed_kmh": 202.2,
+    "lat": 45.4044,
+    "lon": -73.6034,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0098",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "speed_kmh": 54.1,
+    "lat": 45.5053,
+    "lon": -73.5368,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0099",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "speed_kmh": 36.5,
+    "lat": 45.5366,
+    "lon": -73.5856,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0100",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "speed_kmh": 43.8,
+    "lat": 45.5047,
+    "lon": -73.6565,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0101",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "speed_kmh": 69.1,
+    "lat": 45.5758,
+    "lon": -73.5699,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0102",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "speed_kmh": 47.6,
+    "lat": 45.4379,
+    "lon": -73.5833,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0103",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "speed_kmh": 43.4,
+    "lat": 99.9999,
+    "lon": -73.5056,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0104",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "speed_kmh": 49.9,
+    "lat": 45.4226,
+    "lon": -73.5459,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0105",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "speed_kmh": 208.5,
+    "lat": 45.4356,
+    "lon": -73.6699,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0106",
+    "timestamp": "2026-05-12T10:46:00Z",
+    "speed_kmh": 29.8,
+    "lat": 45.3584,
+    "lon": -73.6226,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0107",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "speed_kmh": 50.5,
+    "lat": 45.4794,
+    "lon": -73.5423,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0108",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "speed_kmh": 46.9,
+    "lat": 45.5225,
+    "lon": -73.6255,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0109",
+    "timestamp": "2026-05-12T10:49:00Z",
+    "speed_kmh": 45.3,
+    "lat": 45.5227,
+    "lon": -73.6491,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0110",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "speed_kmh": 35.4,
+    "lat": 45.4897,
+    "lon": -73.5695,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0111",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "speed_kmh": 220.5,
+    "lat": 45.5357,
+    "lon": -73.7025,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0112",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "speed_kmh": 49.3,
+    "lat": 45.5599,
+    "lon": -73.6686,
+    "passenger_count": 22
+  },
+  {
+    "record_id": "rec_0113",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "speed_kmh": 37.9,
+    "lat": 45.5867,
+    "lon": -73.6428,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0114",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "speed_kmh": 33.0,
+    "lat": 99.9999,
+    "lon": -73.5841,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0115",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "speed_kmh": 216.3,
+    "lat": 45.4243,
+    "lon": -73.5839,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0116",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "speed_kmh": 47.3,
+    "lat": 45.5346,
+    "lon": -73.6635,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0117",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "speed_kmh": 62.0,
+    "lat": 45.4633,
+    "lon": -73.5091,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0118",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "speed_kmh": 25.3,
+    "lat": 45.4441,
+    "lon": -73.6093,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0119",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "speed_kmh": 48.1,
+    "lat": 45.4024,
+    "lon": -73.5928,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0120",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "speed_kmh": 44.1,
+    "lat": 45.521,
+    "lon": -73.6432,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0121",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "speed_kmh": 57.8,
+    "lat": 45.4935,
+    "lon": -73.571,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0122",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "speed_kmh": 61.5,
+    "lat": 45.5535,
+    "lon": -73.6365,
+    "passenger_count": 41
+  },
+  {
+    "record_id": "rec_0123",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "speed_kmh": 48.6,
+    "lat": 45.4353,
+    "lon": -73.5714,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0124",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "speed_kmh": 33.4,
+    "lat": 45.4858,
+    "lon": -73.615,
+    "passenger_count": 21
+  },
+  {
+    "record_id": "rec_0125",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "speed_kmh": 32.9,
+    "lat": 45.5524,
+    "lon": -73.5172,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0126",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "speed_kmh": 49.9,
+    "lat": 45.4821,
+    "lon": -73.607,
     "passenger_count": 18
   },
   {
-    "timestamp": "2026-05-12T10:01:00Z",
-    "speed_kmh": 47.4,
-    "lat": 45.4037,
-    "lon": -73.5899,
-    "passenger_count": 10
+    "record_id": "rec_0127",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "speed_kmh": 52.4,
+    "lat": 45.4045,
+    "lon": -73.5341,
+    "passenger_count": -11
   },
   {
-    "timestamp": "2026-05-12T10:02:00Z",
-    "speed_kmh": 37.0,
-    "lat": 99.9999,
-    "lon": -73.6979,
-    "passenger_count": 16
+    "record_id": "rec_0128",
+    "timestamp": "2026-05-12T10:08:00Z",
+    "speed_kmh": 27.7,
+    "lat": 45.5747,
+    "lon": -73.5979,
+    "passenger_count": 26
   },
   {
-    "timestamp": "2026-05-12T10:03:00Z",
-    "speed_kmh": 56.8,
-    "lat": 45.4656,
-    "lon": -73.6034,
-    "passenger_count": -4
+    "record_id": "rec_0129",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "speed_kmh": 49.4,
+    "lat": 45.5237,
+    "lon": -73.6134,
+    "passenger_count": 28
   },
   {
-    "timestamp": "2026-05-12T10:04:00Z",
-    "speed_kmh": 53.8,
-    "lat": 45.4184,
-    "lon": -73.5026,
-    "passenger_count": 45
+    "record_id": "rec_0130",
+    "timestamp": "2026-05-12T10:10:00Z",
+    "speed_kmh": 44.0,
+    "lat": 45.4699,
+    "lon": -73.5784,
+    "passenger_count": 25
   },
   {
-    "timestamp": "2026-05-12T10:05:00Z",
-    "speed_kmh": 32.7,
-    "lat": 45.4856,
-    "lon": -73.6025,
-    "passenger_count": 16
+    "record_id": "rec_0131",
+    "timestamp": "2026-05-12T10:11:00Z",
+    "speed_kmh": 49.7,
+    "lat": 45.4945,
+    "lon": -73.6448,
+    "passenger_count": 27
   },
   {
-    "timestamp": "2026-05-12T10:06:00Z",
-    "speed_kmh": 68.0,
-    "lat": 45.4901,
+    "record_id": "rec_0132",
+    "timestamp": "2026-05-12T10:12:00Z",
+    "speed_kmh": 15.9,
+    "lat": 45.4813,
+    "lon": -73.6519,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0133",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "speed_kmh": 28.7,
+    "lat": 45.5664,
+    "lon": -73.5843,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0134",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "speed_kmh": 40.4,
+    "lat": 45.4653,
+    "lon": -73.6577,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0135",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "speed_kmh": 27.5,
+    "lat": 45.4952,
+    "lon": -73.6208,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0136",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "speed_kmh": 31.8,
+    "lat": 45.5388,
     "lon": -73.6501,
     "passenger_count": 28
   },
   {
-    "timestamp": "2026-05-12T10:07:00Z",
-    "speed_kmh": 54.8,
-    "lat": 45.5358,
-    "lon": -73.6199,
-    "passenger_count": 33
-  },
-  {
-    "timestamp": "2026-05-12T10:08:00Z",
-    "speed_kmh": 69.2,
-    "lat": 45.5722,
-    "lon": -73.6655,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:09:00Z",
-    "speed_kmh": 65.1,
-    "lat": 45.5277,
-    "lon": -73.5776,
-    "passenger_count": 17
-  },
-  {
-    "timestamp": "2026-05-12T10:10:00Z",
-    "speed_kmh": 45.1,
-    "lat": 45.5339,
-    "lon": -73.688,
-    "passenger_count": 28
-  },
-  {
-    "timestamp": "2026-05-12T10:11:00Z",
-    "speed_kmh": 64.7,
-    "lat": 45.5449,
-    "lon": -73.6693,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:12:00Z",
-    "speed_kmh": 62.4,
-    "lat": 45.5724,
-    "lon": -73.5242,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:13:00Z",
-    "speed_kmh": 31.8,
-    "lat": 45.4656,
-    "lon": -73.6399,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:14:00Z",
-    "speed_kmh": 59.4,
-    "lat": 45.5348,
-    "lon": -73.648,
-    "passenger_count": 49
-  },
-  {
-    "timestamp": "2026-05-12T10:15:00Z",
-    "speed_kmh": 67.0,
-    "lat": 45.5388,
-    "lon": -73.5412,
-    "passenger_count": -4
-  },
-  {
-    "timestamp": "2026-05-12T10:16:00Z",
-    "speed_kmh": 43.7,
-    "lat": 45.4211,
-    "lon": -73.5206,
-    "passenger_count": 16
-  },
-  {
+    "record_id": "rec_0137",
     "timestamp": "2026-05-12T10:17:00Z",
-    "speed_kmh": 58.1,
-    "lat": 45.5095,
-    "lon": -73.6108,
-    "passenger_count": 42
-  },
-  {
-    "timestamp": "2026-05-12T10:18:00Z",
-    "speed_kmh": 38.7,
-    "lat": 45.5333,
-    "lon": -73.6469,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:19:00Z",
-    "speed_kmh": 46.1,
-    "lat": 45.5646,
-    "lon": -73.5089,
-    "passenger_count": 28
-  },
-  {
-    "timestamp": "2026-05-12T10:20:00Z",
-    "speed_kmh": 54.1,
-    "lat": 45.5447,
-    "lon": -73.6849,
-    "passenger_count": 20
-  },
-  {
-    "timestamp": "2026-05-12T10:21:00Z",
-    "speed_kmh": 30.5,
-    "lat": 45.4574,
-    "lon": -73.5545,
-    "passenger_count": 27
-  },
-  {
-    "timestamp": "2026-05-12T10:22:00Z",
-    "speed_kmh": 39.7,
-    "lat": 45.4508,
-    "lon": -73.6533,
-    "passenger_count": 30
-  },
-  {
-    "timestamp": "2026-05-12T10:23:00Z",
-    "speed_kmh": 58.4,
-    "lat": 45.431,
-    "lon": -73.6244,
-    "passenger_count": 14
-  },
-  {
-    "timestamp": "2026-05-12T10:24:00Z",
-    "speed_kmh": 52.3,
-    "lat": 45.4708,
-    "lon": -73.631,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:25:00Z",
-    "speed_kmh": 45.6,
-    "lat": 45.5094,
-    "lon": -73.5222,
-    "passenger_count": -15
-  },
-  {
-    "timestamp": "2026-05-12T10:26:00Z",
-    "speed_kmh": 61.9,
-    "lat": 45.4543,
-    "lon": -73.6847,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:27:00Z",
-    "speed_kmh": 39.0,
-    "lat": 45.5091,
-    "lon": -73.5447,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:28:00Z",
-    "speed_kmh": 51.8,
-    "lat": 45.5787,
-    "lon": -73.5001,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:29:00Z",
-    "speed_kmh": 49.4,
-    "lat": 45.5564,
-    "lon": -73.6897,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:30:00Z",
-    "speed_kmh": 52.1,
-    "lat": 45.4243,
-    "lon": -73.6365,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:31:00Z",
-    "speed_kmh": 49.1,
-    "lat": 45.5234,
-    "lon": -73.5154,
-    "passenger_count": 40
-  },
-  {
-    "timestamp": "2026-05-12T10:32:00Z",
-    "speed_kmh": 45.4,
-    "lat": 45.4879,
-    "lon": -73.604,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:33:00Z",
-    "speed_kmh": 55.0,
-    "lat": 45.4286,
-    "lon": -73.5038,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:34:00Z",
-    "speed_kmh": 46.7,
-    "lat": 45.4695,
-    "lon": -73.6999,
-    "passenger_count": 17
-  },
-  {
-    "timestamp": "2026-05-12T10:35:00Z",
-    "speed_kmh": 61.7,
-    "lat": 45.477,
-    "lon": -73.6483,
-    "passenger_count": 46
-  },
-  {
-    "timestamp": "2026-05-12T10:36:00Z",
-    "speed_kmh": 51.9,
-    "lat": 45.4807,
-    "lon": -73.5892,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:37:00Z",
-    "speed_kmh": 36.1,
-    "lat": 45.5397,
-    "lon": -73.6006,
-    "passenger_count": 15
-  },
-  {
-    "timestamp": "2026-05-12T10:38:00Z",
-    "speed_kmh": 58.8,
-    "lat": 45.4513,
-    "lon": -73.5996,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:39:00Z",
-    "speed_kmh": 248.2,
-    "lat": 45.458,
-    "lon": -73.5035,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:40:00Z",
-    "speed_kmh": 55.4,
-    "lat": 45.534,
-    "lon": -73.5335,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:41:00Z",
-    "speed_kmh": 53.8,
-    "lat": 45.4784,
-    "lon": -73.6118,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:42:00Z",
-    "speed_kmh": 39.2,
-    "lat": 45.5268,
-    "lon": -73.6869,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:43:00Z",
-    "speed_kmh": 241.6,
-    "lat": 45.473,
-    "lon": -73.5459,
-    "passenger_count": 50
-  },
-  {
-    "timestamp": "2026-05-12T10:44:00Z",
-    "speed_kmh": 58.1,
-    "lat": 45.443,
-    "lon": -73.6115,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:45:00Z",
-    "speed_kmh": 237.8,
-    "lat": 45.5461,
-    "lon": -73.5237,
-    "passenger_count": 24
-  },
-  {
-    "timestamp": "2026-05-12T10:46:00Z",
-    "speed_kmh": 56.0,
-    "lat": 45.5237,
-    "lon": -73.6188,
-    "passenger_count": 37
-  },
-  {
-    "timestamp": "2026-05-12T10:47:00Z",
-    "speed_kmh": 62.4,
-    "lat": 45.5916,
-    "lon": -73.5061,
-    "passenger_count": 27
-  },
-  {
-    "timestamp": "2026-05-12T10:48:00Z",
-    "speed_kmh": 44.0,
-    "lat": 45.519,
-    "lon": -73.6101,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:49:00Z",
-    "speed_kmh": 62.7,
-    "lat": 45.4629,
-    "lon": -73.6356,
-    "passenger_count": 20
-  },
-  {
-    "timestamp": "2026-05-12T10:50:00Z",
-    "speed_kmh": 67.5,
-    "lat": 45.4994,
-    "lon": -73.6877,
-    "passenger_count": 30
-  },
-  {
-    "timestamp": "2026-05-12T10:51:00Z",
-    "speed_kmh": 60.0,
-    "lat": 45.4533,
-    "lon": -73.6327,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:52:00Z",
-    "speed_kmh": 33.6,
-    "lat": 45.4568,
-    "lon": -73.5106,
-    "passenger_count": 33
-  },
-  {
-    "timestamp": "2026-05-12T10:53:00Z",
-    "speed_kmh": 30.1,
-    "lat": 45.5747,
-    "lon": -73.5031,
-    "passenger_count": 44
-  },
-  {
-    "timestamp": "2026-05-12T10:54:00Z",
-    "speed_kmh": 66.6,
-    "lat": 45.4578,
-    "lon": -73.644,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:55:00Z",
-    "speed_kmh": 64.3,
-    "lat": 45.4181,
-    "lon": -73.5359,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:56:00Z",
-    "speed_kmh": 164.6,
-    "lat": 45.4563,
-    "lon": -73.5085,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:57:00Z",
-    "speed_kmh": 53.1,
-    "lat": 45.5509,
-    "lon": -73.6878,
-    "passenger_count": 33
-  },
-  {
-    "timestamp": "2026-05-12T10:58:00Z",
-    "speed_kmh": 42.6,
-    "lat": 45.484,
-    "lon": -73.5686,
-    "passenger_count": 37
-  },
-  {
-    "timestamp": "2026-05-12T10:59:00Z",
-    "speed_kmh": 53.6,
-    "lat": 45.4052,
-    "lon": -73.6977,
-    "passenger_count": 44
-  },
-  {
-    "timestamp": "2026-05-12T10:00:00Z",
-    "speed_kmh": 45.0,
-    "lat": 45.4892,
-    "lon": -73.5708,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:01:00Z",
-    "speed_kmh": 47.7,
-    "lat": 45.4434,
-    "lon": -73.6774,
-    "passenger_count": 17
-  },
-  {
-    "timestamp": "2026-05-12T10:02:00Z",
-    "speed_kmh": 52.4,
-    "lat": 45.5265,
-    "lon": -73.5525,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:03:00Z",
-    "speed_kmh": 39.8,
-    "lat": 45.5605,
-    "lon": -73.5215,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:04:00Z",
-    "speed_kmh": 58.3,
-    "lat": 45.4398,
-    "lon": -73.6758,
-    "passenger_count": -7
-  },
-  {
-    "timestamp": "2026-05-12T10:05:00Z",
-    "speed_kmh": 39.8,
-    "lat": 45.4918,
-    "lon": -73.5257,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:06:00Z",
-    "speed_kmh": 31.9,
-    "lat": 45.5152,
-    "lon": -73.5303,
-    "passenger_count": 44
-  },
-  {
-    "timestamp": "2026-05-12T10:07:00Z",
-    "speed_kmh": 46.2,
-    "lat": 45.4693,
-    "lon": -73.5697,
-    "passenger_count": 14
-  },
-  {
-    "timestamp": "2026-05-12T10:08:00Z",
-    "speed_kmh": 52.8,
-    "lat": 45.4837,
-    "lon": -73.5323,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:09:00Z",
-    "speed_kmh": 69.3,
-    "lat": 45.5504,
-    "lon": -73.5662,
-    "passenger_count": 14
-  },
-  {
-    "timestamp": "2026-05-12T10:10:00Z",
-    "speed_kmh": 43.6,
-    "lat": 45.4911,
-    "lon": -73.5818,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:11:00Z",
-    "speed_kmh": 63.4,
-    "lat": 45.4682,
-    "lon": -73.508,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:12:00Z",
-    "speed_kmh": 50.1,
-    "lat": 45.5503,
-    "lon": -73.5562,
-    "passenger_count": 36
-  },
-  {
-    "timestamp": "2026-05-12T10:13:00Z",
-    "speed_kmh": 34.3,
-    "lat": 45.542,
-    "lon": -73.524,
-    "passenger_count": 49
-  },
-  {
-    "timestamp": "2026-05-12T10:14:00Z",
-    "speed_kmh": 34.7,
-    "lat": 45.538,
-    "lon": -73.5045,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:15:00Z",
-    "speed_kmh": 60.8,
-    "lat": 45.5028,
-    "lon": -73.5255,
-    "passenger_count": 32
-  },
-  {
-    "timestamp": "2026-05-12T10:16:00Z",
-    "speed_kmh": 43.9,
-    "lat": 45.4645,
-    "lon": -73.6625,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:17:00Z",
-    "speed_kmh": 42.2,
-    "lat": 45.4373,
-    "lon": -73.661,
-    "passenger_count": 37
-  },
-  {
-    "timestamp": "2026-05-12T10:18:00Z",
-    "speed_kmh": 52.1,
-    "lat": 45.5046,
-    "lon": -73.5144,
-    "passenger_count": 45
-  },
-  {
-    "timestamp": "2026-05-12T10:19:00Z",
-    "speed_kmh": 52.1,
-    "lat": 45.4833,
-    "lon": -73.5147,
-    "passenger_count": 14
-  },
-  {
-    "timestamp": "2026-05-12T10:20:00Z",
-    "speed_kmh": 65.8,
-    "lat": 45.587,
-    "lon": -73.5429,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:21:00Z",
-    "speed_kmh": 38.4,
-    "lat": 45.5439,
-    "lon": -73.6205,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:22:00Z",
-    "speed_kmh": 44.8,
-    "lat": 45.5455,
-    "lon": -73.6891,
-    "passenger_count": 30
-  },
-  {
-    "timestamp": "2026-05-12T10:23:00Z",
-    "speed_kmh": 31.6,
-    "lat": 99.9999,
-    "lon": -73.5489,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:24:00Z",
-    "speed_kmh": 57.6,
-    "lat": 45.4788,
-    "lon": -73.501,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:25:00Z",
-    "speed_kmh": 35.6,
-    "lat": 45.4447,
-    "lon": -73.6522,
-    "passenger_count": 42
-  },
-  {
-    "timestamp": "2026-05-12T10:26:00Z",
-    "speed_kmh": 42.5,
-    "lat": 45.4884,
-    "lon": -73.5336,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:27:00Z",
-    "speed_kmh": 55.9,
-    "lat": 45.5372,
-    "lon": -73.6537,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:28:00Z",
-    "speed_kmh": 40.7,
-    "lat": 45.5822,
-    "lon": -73.6154,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:29:00Z",
-    "speed_kmh": 31.7,
-    "lat": 45.5419,
-    "lon": -73.5851,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:30:00Z",
-    "speed_kmh": 59.0,
-    "lat": 45.4083,
-    "lon": -73.6869,
-    "passenger_count": 28
-  },
-  {
-    "timestamp": "2026-05-12T10:31:00Z",
-    "speed_kmh": 64.0,
-    "lat": 45.4312,
-    "lon": -73.5833,
-    "passenger_count": 46
-  },
-  {
-    "timestamp": "2026-05-12T10:32:00Z",
-    "speed_kmh": 33.0,
-    "lat": 45.4886,
-    "lon": -73.6389,
-    "passenger_count": -3
-  },
-  {
-    "timestamp": "2026-05-12T10:33:00Z",
-    "speed_kmh": 44.3,
-    "lat": 45.4148,
-    "lon": -73.6935,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:34:00Z",
-    "speed_kmh": 31.1,
-    "lat": 45.5436,
-    "lon": -73.52,
-    "passenger_count": 37
-  },
-  {
-    "timestamp": "2026-05-12T10:35:00Z",
-    "speed_kmh": 165.7,
-    "lat": 45.4257,
-    "lon": -73.6303,
-    "passenger_count": 40
-  },
-  {
-    "timestamp": "2026-05-12T10:36:00Z",
-    "speed_kmh": 58.8,
-    "lat": 45.5083,
-    "lon": -73.561,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:37:00Z",
-    "speed_kmh": 69.3,
-    "lat": 45.5214,
-    "lon": -73.6923,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:38:00Z",
-    "speed_kmh": 66.2,
-    "lat": 45.5185,
-    "lon": -73.572,
-    "passenger_count": 27
-  },
-  {
-    "timestamp": "2026-05-12T10:39:00Z",
     "speed_kmh": 37.5,
-    "lat": 45.451,
-    "lon": -73.6724,
-    "passenger_count": 34
-  },
-  {
-    "timestamp": "2026-05-12T10:40:00Z",
-    "speed_kmh": 69.0,
-    "lat": 45.5704,
-    "lon": -73.6161,
-    "passenger_count": 17
-  },
-  {
-    "timestamp": "2026-05-12T10:41:00Z",
-    "speed_kmh": 63.8,
-    "lat": 45.5932,
-    "lon": -73.5752,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:42:00Z",
-    "speed_kmh": 54.2,
-    "lat": 45.5806,
-    "lon": -73.6707,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:43:00Z",
-    "speed_kmh": 46.0,
-    "lat": 45.5775,
-    "lon": -73.5186,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:44:00Z",
-    "speed_kmh": 58.9,
-    "lat": 45.496,
-    "lon": -73.534,
-    "passenger_count": -4
-  },
-  {
-    "timestamp": "2026-05-12T10:45:00Z",
-    "speed_kmh": 58.3,
-    "lat": 45.4805,
-    "lon": -73.6793,
-    "passenger_count": 13
-  },
-  {
-    "timestamp": "2026-05-12T10:46:00Z",
-    "speed_kmh": 61.0,
-    "lat": 45.4004,
-    "lon": -73.582,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:47:00Z",
-    "speed_kmh": 45.2,
-    "lat": 45.468,
-    "lon": -73.6345,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:48:00Z",
-    "speed_kmh": 69.6,
-    "lat": 45.52,
-    "lon": -73.6056,
-    "passenger_count": 35
-  },
-  {
-    "timestamp": "2026-05-12T10:49:00Z",
-    "speed_kmh": 59.5,
-    "lat": 45.4516,
-    "lon": -73.6293,
-    "passenger_count": 27
-  },
-  {
-    "timestamp": "2026-05-12T10:50:00Z",
-    "speed_kmh": 64.7,
-    "lat": 45.5912,
-    "lon": -73.5202,
-    "passenger_count": 20
-  },
-  {
-    "timestamp": "2026-05-12T10:51:00Z",
-    "speed_kmh": 67.2,
-    "lat": 45.4022,
-    "lon": -73.6848,
-    "passenger_count": 46
-  },
-  {
-    "timestamp": "2026-05-12T10:52:00Z",
-    "speed_kmh": 282.7,
-    "lat": 45.4455,
-    "lon": -73.5437,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:53:00Z",
-    "speed_kmh": 44.9,
-    "lat": 45.5345,
-    "lon": -73.6162,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:54:00Z",
-    "speed_kmh": 68.0,
-    "lat": 45.5969,
-    "lon": -73.6172,
-    "passenger_count": 46
-  },
-  {
-    "timestamp": "2026-05-12T10:55:00Z",
-    "speed_kmh": 35.2,
-    "lat": 45.5599,
-    "lon": -73.6503,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:56:00Z",
-    "speed_kmh": 30.6,
-    "lat": 99.9999,
-    "lon": -73.6921,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:57:00Z",
-    "speed_kmh": 39.5,
-    "lat": 45.5197,
-    "lon": -73.5916,
-    "passenger_count": 14
-  },
-  {
-    "timestamp": "2026-05-12T10:58:00Z",
-    "speed_kmh": 34.0,
-    "lat": 45.5923,
-    "lon": -73.6738,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:59:00Z",
-    "speed_kmh": 68.9,
-    "lat": 45.4241,
-    "lon": -73.5001,
-    "passenger_count": 10
-  },
-  {
-    "timestamp": "2026-05-12T10:00:00Z",
-    "speed_kmh": 58.5,
-    "lat": 45.4774,
-    "lon": -73.531,
-    "passenger_count": -4
-  },
-  {
-    "timestamp": "2026-05-12T10:01:00Z",
-    "speed_kmh": 48.4,
-    "lat": 45.5717,
-    "lon": -73.579,
-    "passenger_count": -9
-  },
-  {
-    "timestamp": "2026-05-12T10:02:00Z",
-    "speed_kmh": 41.9,
-    "lat": 45.4908,
-    "lon": -73.5566,
-    "passenger_count": 25
-  },
-  {
-    "timestamp": "2026-05-12T10:03:00Z",
-    "speed_kmh": 60.9,
-    "lat": 99.9999,
-    "lon": -73.6467,
-    "passenger_count": 49
-  },
-  {
-    "timestamp": "2026-05-12T10:04:00Z",
-    "speed_kmh": 52.7,
-    "lat": 45.4142,
-    "lon": -73.5778,
-    "passenger_count": 30
-  },
-  {
-    "timestamp": "2026-05-12T10:05:00Z",
-    "speed_kmh": 46.0,
-    "lat": 45.5129,
-    "lon": -73.6612,
-    "passenger_count": 39
-  },
-  {
-    "timestamp": "2026-05-12T10:06:00Z",
-    "speed_kmh": 30.7,
-    "lat": 45.5714,
-    "lon": -73.6814,
-    "passenger_count": 46
-  },
-  {
-    "timestamp": "2026-05-12T10:07:00Z",
-    "speed_kmh": 53.2,
-    "lat": 45.4626,
-    "lon": -73.6824,
-    "passenger_count": 19
-  },
-  {
-    "timestamp": "2026-05-12T10:08:00Z",
-    "speed_kmh": 46.7,
-    "lat": 45.4322,
-    "lon": -73.5717,
-    "passenger_count": 34
-  },
-  {
-    "timestamp": "2026-05-12T10:09:00Z",
-    "speed_kmh": 59.9,
-    "lat": 45.4762,
-    "lon": -73.5045,
-    "passenger_count": 30
-  },
-  {
-    "timestamp": "2026-05-12T10:10:00Z",
-    "speed_kmh": 35.1,
-    "lat": 45.4227,
-    "lon": -73.63,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:11:00Z",
-    "speed_kmh": 58.1,
-    "lat": 45.4017,
-    "lon": -73.6208,
-    "passenger_count": 48
-  },
-  {
-    "timestamp": "2026-05-12T10:12:00Z",
-    "speed_kmh": 54.6,
-    "lat": 45.4431,
-    "lon": -73.5316,
-    "passenger_count": 29
-  },
-  {
-    "timestamp": "2026-05-12T10:13:00Z",
-    "speed_kmh": 46.8,
-    "lat": 45.4207,
-    "lon": -73.7,
-    "passenger_count": 15
-  },
-  {
-    "timestamp": "2026-05-12T10:14:00Z",
-    "speed_kmh": 52.0,
-    "lat": 45.5034,
-    "lon": -73.5679,
-    "passenger_count": 48
-  },
-  {
-    "timestamp": "2026-05-12T10:15:00Z",
-    "speed_kmh": 262.8,
-    "lat": 45.5624,
-    "lon": -73.5559,
+    "lat": 45.5488,
+    "lon": -73.5742,
     "passenger_count": 33
   },
   {
-    "timestamp": "2026-05-12T10:16:00Z",
-    "speed_kmh": 36.0,
-    "lat": 45.4196,
-    "lon": -73.605,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:17:00Z",
-    "speed_kmh": 56.6,
-    "lat": 45.4724,
-    "lon": -73.5835,
-    "passenger_count": 11
-  },
-  {
+    "record_id": "rec_0138",
     "timestamp": "2026-05-12T10:18:00Z",
-    "speed_kmh": 42.6,
-    "lat": 45.5015,
-    "lon": -73.5199,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:19:00Z",
-    "speed_kmh": 30.9,
-    "lat": 45.5331,
-    "lon": -73.5039,
-    "passenger_count": 13
-  },
-  {
-    "timestamp": "2026-05-12T10:20:00Z",
-    "speed_kmh": 33.5,
-    "lat": 45.4644,
-    "lon": -73.6082,
-    "passenger_count": 28
-  },
-  {
-    "timestamp": "2026-05-12T10:21:00Z",
-    "speed_kmh": 66.0,
-    "lat": 45.4455,
-    "lon": -73.6571,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:22:00Z",
-    "speed_kmh": 54.8,
-    "lat": 45.5,
-    "lon": -73.5206,
-    "passenger_count": 49
-  },
-  {
-    "timestamp": "2026-05-12T10:23:00Z",
-    "speed_kmh": 62.6,
-    "lat": 45.5548,
-    "lon": -73.5332,
-    "passenger_count": 32
-  },
-  {
-    "timestamp": "2026-05-12T10:24:00Z",
-    "speed_kmh": 32.5,
-    "lat": 99.9999,
-    "lon": -73.507,
-    "passenger_count": 21
-  },
-  {
-    "timestamp": "2026-05-12T10:25:00Z",
-    "speed_kmh": 61.3,
-    "lat": 45.5417,
-    "lon": -73.5032,
-    "passenger_count": 11
-  },
-  {
-    "timestamp": "2026-05-12T10:26:00Z",
-    "speed_kmh": 35.8,
-    "lat": 45.5879,
-    "lon": -73.5158,
-    "passenger_count": 35
-  },
-  {
-    "timestamp": "2026-05-12T10:27:00Z",
-    "speed_kmh": 42.7,
-    "lat": 99.9999,
-    "lon": -73.5218,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:28:00Z",
-    "speed_kmh": 42.0,
-    "lat": 45.4555,
-    "lon": -73.5988,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:29:00Z",
-    "speed_kmh": 56.9,
-    "lat": 45.5274,
-    "lon": -73.615,
-    "passenger_count": 22
-  },
-  {
-    "timestamp": "2026-05-12T10:30:00Z",
-    "speed_kmh": 299.4,
-    "lat": 45.5569,
-    "lon": -73.6825,
-    "passenger_count": 31
-  },
-  {
-    "timestamp": "2026-05-12T10:31:00Z",
-    "speed_kmh": 53.4,
-    "lat": 45.4107,
-    "lon": -73.558,
-    "passenger_count": -20
-  },
-  {
-    "timestamp": "2026-05-12T10:32:00Z",
-    "speed_kmh": 46.5,
-    "lat": 45.5768,
-    "lon": -73.566,
-    "passenger_count": 23
-  },
-  {
-    "timestamp": "2026-05-12T10:33:00Z",
-    "speed_kmh": 64.9,
-    "lat": 45.5537,
-    "lon": -73.6599,
-    "passenger_count": 32
-  },
-  {
-    "timestamp": "2026-05-12T10:34:00Z",
-    "speed_kmh": 54.4,
-    "lat": 45.4098,
-    "lon": -73.5718,
-    "passenger_count": 36
-  },
-  {
-    "timestamp": "2026-05-12T10:35:00Z",
-    "speed_kmh": 62.1,
-    "lat": 99.9999,
-    "lon": -73.5505,
-    "passenger_count": 20
-  },
-  {
-    "timestamp": "2026-05-12T10:36:00Z",
-    "speed_kmh": 39.5,
-    "lat": 45.5489,
-    "lon": -73.5012,
-    "passenger_count": 19
-  },
-  {
-    "timestamp": "2026-05-12T10:37:00Z",
-    "speed_kmh": 47.4,
-    "lat": 45.487,
-    "lon": -73.6049,
-    "passenger_count": 30
-  },
-  {
-    "timestamp": "2026-05-12T10:38:00Z",
-    "speed_kmh": 52.7,
-    "lat": 99.9999,
-    "lon": -73.608,
-    "passenger_count": 49
-  },
-  {
-    "timestamp": "2026-05-12T10:39:00Z",
-    "speed_kmh": 60.4,
-    "lat": 45.5187,
-    "lon": -73.5592,
-    "passenger_count": 15
-  },
-  {
-    "timestamp": "2026-05-12T10:40:00Z",
-    "speed_kmh": 233.5,
-    "lat": 45.5711,
-    "lon": -73.6381,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:41:00Z",
-    "speed_kmh": 35.3,
-    "lat": 45.5673,
-    "lon": -73.5139,
-    "passenger_count": 38
-  },
-  {
-    "timestamp": "2026-05-12T10:42:00Z",
-    "speed_kmh": 287.1,
-    "lat": 45.4577,
-    "lon": -73.5872,
-    "passenger_count": 46
-  },
-  {
-    "timestamp": "2026-05-12T10:43:00Z",
-    "speed_kmh": 34.8,
-    "lat": 45.5327,
-    "lon": -73.6985,
-    "passenger_count": 24
-  },
-  {
-    "timestamp": "2026-05-12T10:44:00Z",
-    "speed_kmh": 53.9,
-    "lat": 45.4378,
-    "lon": -73.691,
-    "passenger_count": -7
-  },
-  {
-    "timestamp": "2026-05-12T10:45:00Z",
-    "speed_kmh": 207.4,
-    "lat": 45.4405,
-    "lon": -73.6204,
-    "passenger_count": 24
-  },
-  {
-    "timestamp": "2026-05-12T10:46:00Z",
-    "speed_kmh": 33.4,
-    "lat": 45.4826,
-    "lon": -73.5825,
-    "passenger_count": 41
-  },
-  {
-    "timestamp": "2026-05-12T10:47:00Z",
-    "speed_kmh": 38.7,
-    "lat": 45.5569,
-    "lon": -73.6675,
+    "speed_kmh": 34.0,
+    "lat": 45.4835,
+    "lon": -73.639,
     "passenger_count": -10
   },
   {
-    "timestamp": "2026-05-12T10:48:00Z",
-    "speed_kmh": 41.1,
-    "lat": 45.5987,
-    "lon": -73.6834,
-    "passenger_count": -4
-  },
-  {
-    "timestamp": "2026-05-12T10:49:00Z",
-    "speed_kmh": 49.6,
-    "lat": 45.5101,
-    "lon": -73.6569,
+    "record_id": "rec_0139",
+    "timestamp": "2026-05-12T10:19:00Z",
+    "speed_kmh": 58.3,
+    "lat": 45.5446,
+    "lon": -73.5085,
     "passenger_count": 37
   },
   {
-    "timestamp": "2026-05-12T10:50:00Z",
-    "speed_kmh": 54.7,
-    "lat": 45.4251,
-    "lon": -73.6429,
-    "passenger_count": -20
-  },
-  {
-    "timestamp": "2026-05-12T10:51:00Z",
-    "speed_kmh": 43.3,
-    "lat": 45.5939,
-    "lon": -73.6265,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:52:00Z",
-    "speed_kmh": 55.1,
-    "lat": 45.5196,
-    "lon": -73.6968,
-    "passenger_count": 35
-  },
-  {
-    "timestamp": "2026-05-12T10:53:00Z",
-    "speed_kmh": 35.2,
-    "lat": 45.5225,
-    "lon": -73.6356,
-    "passenger_count": 43
-  },
-  {
-    "timestamp": "2026-05-12T10:54:00Z",
-    "speed_kmh": 52.7,
-    "lat": 45.5015,
-    "lon": -73.6526,
-    "passenger_count": 15
-  },
-  {
-    "timestamp": "2026-05-12T10:55:00Z",
-    "speed_kmh": 65.5,
-    "lat": 45.5698,
-    "lon": -73.6691,
-    "passenger_count": 47
-  },
-  {
-    "timestamp": "2026-05-12T10:56:00Z",
-    "speed_kmh": 47.1,
-    "lat": 45.4041,
-    "lon": -73.5071,
-    "passenger_count": 16
-  },
-  {
-    "timestamp": "2026-05-12T10:57:00Z",
-    "speed_kmh": 31.4,
-    "lat": 45.4254,
-    "lon": -73.506,
-    "passenger_count": 18
-  },
-  {
-    "timestamp": "2026-05-12T10:58:00Z",
-    "speed_kmh": 48.3,
-    "lat": 45.5067,
-    "lon": -73.5677,
+    "record_id": "rec_0140",
+    "timestamp": "2026-05-12T10:20:00Z",
+    "speed_kmh": 67.8,
+    "lat": 45.4691,
+    "lon": -73.6768,
     "passenger_count": 27
   },
   {
+    "record_id": "rec_0141",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "speed_kmh": 26.2,
+    "lat": 45.4814,
+    "lon": -73.5781,
+    "passenger_count": 40
+  },
+  {
+    "record_id": "rec_0142",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "speed_kmh": 47.2,
+    "lat": 45.5639,
+    "lon": -73.6476,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0143",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "speed_kmh": 38.2,
+    "lat": 45.545,
+    "lon": -73.5774,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0144",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "speed_kmh": 61.7,
+    "lat": 45.5762,
+    "lon": -73.5632,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0145",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "speed_kmh": 62.8,
+    "lat": 45.4632,
+    "lon": -73.5639,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0146",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "speed_kmh": 58.7,
+    "lat": 45.5348,
+    "lon": -73.5858,
+    "passenger_count": -17
+  },
+  {
+    "record_id": "rec_0147",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "speed_kmh": 35.1,
+    "lat": 45.4577,
+    "lon": -73.5375,
+    "passenger_count": -10
+  },
+  {
+    "record_id": "rec_0148",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "speed_kmh": 40.8,
+    "lat": 45.3987,
+    "lon": -73.6535,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0149",
+    "timestamp": "2026-05-12T10:29:00Z",
+    "speed_kmh": 64.1,
+    "lat": 45.5504,
+    "lon": -73.6627,
+    "passenger_count": 45
+  },
+  {
+    "record_id": "rec_0150",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "speed_kmh": 46.8,
+    "lat": 45.5469,
+    "lon": -73.5994,
+    "passenger_count": 20
+  },
+  {
+    "record_id": "rec_0151",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "speed_kmh": 73.7,
+    "lat": 45.4166,
+    "lon": -73.5471,
+    "passenger_count": 39
+  },
+  {
+    "record_id": "rec_0152",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "speed_kmh": 49.4,
+    "lat": 99.9999,
+    "lon": -73.5886,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0153",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "speed_kmh": 26.4,
+    "lat": 45.5184,
+    "lon": -73.5926,
+    "passenger_count": -13
+  },
+  {
+    "record_id": "rec_0154",
+    "timestamp": "2026-05-12T10:34:00Z",
+    "speed_kmh": 36.2,
+    "lat": 45.4644,
+    "lon": -73.5407,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0155",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "speed_kmh": 59.4,
+    "lat": 45.4548,
+    "lon": -73.5414,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0156",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "speed_kmh": 36.2,
+    "lat": 99.9999,
+    "lon": -73.5884,
+    "passenger_count": 22
+  },
+  {
+    "record_id": "rec_0157",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "speed_kmh": 51.5,
+    "lat": 45.5441,
+    "lon": -73.5639,
+    "passenger_count": 22
+  },
+  {
+    "record_id": "rec_0158",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "speed_kmh": 35.8,
+    "lat": 45.5678,
+    "lon": -73.5415,
+    "passenger_count": -17
+  },
+  {
+    "record_id": "rec_0159",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "speed_kmh": 46.3,
+    "lat": 45.4569,
+    "lon": -73.5985,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0160",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "speed_kmh": 29.4,
+    "lat": 45.5752,
+    "lon": -73.6165,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0161",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "speed_kmh": 42.9,
+    "lat": 45.5709,
+    "lon": -73.7244,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0162",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "speed_kmh": 32.9,
+    "lat": 45.4462,
+    "lon": -73.5162,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0163",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "speed_kmh": 35.5,
+    "lat": 45.5169,
+    "lon": -73.6469,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0164",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "speed_kmh": 56.0,
+    "lat": 99.9999,
+    "lon": -73.5734,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0165",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "speed_kmh": 48.6,
+    "lat": 45.4409,
+    "lon": -73.5775,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0166",
+    "timestamp": "2026-05-12T10:46:00Z",
+    "speed_kmh": 41.4,
+    "lat": 99.9999,
+    "lon": -73.6027,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0167",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "speed_kmh": 226.6,
+    "lat": 45.5098,
+    "lon": -73.6452,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0168",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "speed_kmh": 56.0,
+    "lat": 45.5238,
+    "lon": -73.6001,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0169",
+    "timestamp": "2026-05-12T10:49:00Z",
+    "speed_kmh": 39.1,
+    "lat": 45.5457,
+    "lon": -73.6773,
+    "passenger_count": 38
+  },
+  {
+    "record_id": "rec_0170",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "speed_kmh": 60.9,
+    "lat": 45.5287,
+    "lon": -73.53,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0171",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "speed_kmh": 31.6,
+    "lat": 45.5251,
+    "lon": -73.5102,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0172",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "speed_kmh": 34.7,
+    "lat": 45.5615,
+    "lon": -73.6482,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0173",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "speed_kmh": 61.3,
+    "lat": 45.5339,
+    "lon": -73.6068,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0174",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "speed_kmh": 49.3,
+    "lat": 45.5039,
+    "lon": -73.6297,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0175",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "speed_kmh": 43.3,
+    "lat": 45.5229,
+    "lon": -73.649,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0176",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "speed_kmh": 27.1,
+    "lat": 45.4322,
+    "lon": -73.6355,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0177",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "speed_kmh": 64.5,
+    "lat": 45.52,
+    "lon": -73.5934,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0178",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "speed_kmh": 59.5,
+    "lat": 45.5904,
+    "lon": -73.6841,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0179",
     "timestamp": "2026-05-12T10:59:00Z",
-    "speed_kmh": 50.3,
-    "lat": 45.4796,
-    "lon": -73.6105,
-    "passenger_count": 14
+    "speed_kmh": 34.8,
+    "lat": 45.5253,
+    "lon": -73.6364,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0180",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "speed_kmh": 66.7,
+    "lat": 45.5595,
+    "lon": -73.5894,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0181",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "speed_kmh": 55.3,
+    "lat": 45.4592,
+    "lon": -73.5961,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0182",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "speed_kmh": 180.4,
+    "lat": 45.4599,
+    "lon": -73.6037,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0183",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "speed_kmh": 44.2,
+    "lat": 45.5253,
+    "lon": -73.5255,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0184",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "speed_kmh": 67.7,
+    "lat": 45.4798,
+    "lon": -73.5754,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0185",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "speed_kmh": 239.8,
+    "lat": 45.5218,
+    "lon": -73.7266,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0186",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "speed_kmh": 42.8,
+    "lat": 99.9999,
+    "lon": -73.6337,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0187",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "speed_kmh": 41.0,
+    "lat": 45.4725,
+    "lon": -73.6074,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0188",
+    "timestamp": "2026-05-12T10:08:00Z",
+    "speed_kmh": 38.9,
+    "lat": 45.4961,
+    "lon": -73.5787,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0189",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "speed_kmh": 49.2,
+    "lat": 45.5126,
+    "lon": -73.5308,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0190",
+    "timestamp": "2026-05-12T10:10:00Z",
+    "speed_kmh": 49.7,
+    "lat": 45.5673,
+    "lon": -73.5739,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0191",
+    "timestamp": "2026-05-12T10:11:00Z",
+    "speed_kmh": 44.0,
+    "lat": 45.5287,
+    "lon": -73.6638,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0192",
+    "timestamp": "2026-05-12T10:12:00Z",
+    "speed_kmh": 46.5,
+    "lat": 45.4693,
+    "lon": -73.593,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0193",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "speed_kmh": 210.2,
+    "lat": 45.4944,
+    "lon": -73.6402,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0194",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "speed_kmh": 40.2,
+    "lat": 45.4372,
+    "lon": -73.6064,
+    "passenger_count": -12
+  },
+  {
+    "record_id": "rec_0195",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "speed_kmh": 39.4,
+    "lat": 45.5544,
+    "lon": -73.6188,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0196",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "speed_kmh": 62.0,
+    "lat": 45.5949,
+    "lon": -73.5922,
+    "passenger_count": 44
+  },
+  {
+    "record_id": "rec_0197",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "speed_kmh": 55.2,
+    "lat": 45.5088,
+    "lon": -73.6668,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0198",
+    "timestamp": "2026-05-12T10:18:00Z",
+    "speed_kmh": 40.5,
+    "lat": 45.4891,
+    "lon": -73.6046,
+    "passenger_count": 22
+  },
+  {
+    "record_id": "rec_0199",
+    "timestamp": "2026-05-12T10:19:00Z",
+    "speed_kmh": 44.2,
+    "lat": 45.4641,
+    "lon": -73.6642,
+    "passenger_count": 42
+  },
+  {
+    "record_id": "rec_0200",
+    "timestamp": "2026-05-12T10:20:00Z",
+    "speed_kmh": 54.8,
+    "lat": 45.3947,
+    "lon": -73.5423,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0201",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "speed_kmh": 58.9,
+    "lat": 45.4819,
+    "lon": -73.6032,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0202",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "speed_kmh": 60.3,
+    "lat": 45.5332,
+    "lon": -73.6462,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0203",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "speed_kmh": 29.0,
+    "lat": 45.5248,
+    "lon": -73.6268,
+    "passenger_count": -18
+  },
+  {
+    "record_id": "rec_0204",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "speed_kmh": 53.2,
+    "lat": 45.4976,
+    "lon": -73.6092,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0205",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "speed_kmh": 41.4,
+    "lat": 45.5023,
+    "lon": -73.5974,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0206",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "speed_kmh": 48.2,
+    "lat": 45.4969,
+    "lon": -73.575,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0207",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "speed_kmh": 39.7,
+    "lat": 45.5856,
+    "lon": -73.6874,
+    "passenger_count": 37
+  },
+  {
+    "record_id": "rec_0208",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "speed_kmh": 37.0,
+    "lat": 45.5212,
+    "lon": -73.536,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0209",
+    "timestamp": "2026-05-12T10:29:00Z",
+    "speed_kmh": 22.8,
+    "lat": 45.4517,
+    "lon": -73.5185,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0210",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "speed_kmh": 39.2,
+    "lat": 45.4413,
+    "lon": -73.6099,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0211",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "speed_kmh": 65.7,
+    "lat": 45.5749,
+    "lon": -73.5071,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0212",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "speed_kmh": 66.0,
+    "lat": 45.5797,
+    "lon": -73.5661,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0213",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "speed_kmh": 36.9,
+    "lat": 99.9999,
+    "lon": -73.6539,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0214",
+    "timestamp": "2026-05-12T10:34:00Z",
+    "speed_kmh": 51.9,
+    "lat": 45.5733,
+    "lon": -73.6556,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0215",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "speed_kmh": 44.6,
+    "lat": 45.5173,
+    "lon": -73.4744,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0216",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "speed_kmh": 26.6,
+    "lat": 45.4984,
+    "lon": -73.568,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0217",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "speed_kmh": 46.2,
+    "lat": 45.5116,
+    "lon": -73.6378,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0218",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "speed_kmh": 54.6,
+    "lat": 99.9999,
+    "lon": -73.5885,
+    "passenger_count": 38
+  },
+  {
+    "record_id": "rec_0219",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "speed_kmh": 55.7,
+    "lat": 45.4851,
+    "lon": -73.5344,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0220",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "speed_kmh": 239.3,
+    "lat": 45.4681,
+    "lon": -73.6408,
+    "passenger_count": 31
+  },
+  {
+    "record_id": "rec_0221",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "speed_kmh": 34.3,
+    "lat": 45.596,
+    "lon": -73.6611,
+    "passenger_count": 21
+  },
+  {
+    "record_id": "rec_0222",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "speed_kmh": 45.7,
+    "lat": 45.4353,
+    "lon": -73.6348,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0223",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "speed_kmh": 35.8,
+    "lat": 45.5534,
+    "lon": -73.5698,
+    "passenger_count": 40
+  },
+  {
+    "record_id": "rec_0224",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "speed_kmh": 68.0,
+    "lat": 45.426,
+    "lon": -73.537,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0225",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "speed_kmh": 56.5,
+    "lat": 45.5168,
+    "lon": -73.6114,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0226",
+    "timestamp": "2026-05-12T10:46:00Z",
+    "speed_kmh": 65.5,
+    "lat": 45.5,
+    "lon": -73.5609,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0227",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "speed_kmh": 37.1,
+    "lat": 45.4325,
+    "lon": -73.6208,
+    "passenger_count": 40
+  },
+  {
+    "record_id": "rec_0228",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "speed_kmh": 51.9,
+    "lat": 45.5367,
+    "lon": -73.6493,
+    "passenger_count": -19
+  },
+  {
+    "record_id": "rec_0229",
+    "timestamp": "2026-05-12T10:49:00Z",
+    "speed_kmh": 42.2,
+    "lat": 45.4314,
+    "lon": -73.5824,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0230",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "speed_kmh": 64.0,
+    "lat": 99.9999,
+    "lon": -73.6417,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0231",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "speed_kmh": 236.7,
+    "lat": 45.5298,
+    "lon": -73.6317,
+    "passenger_count": 39
+  },
+  {
+    "record_id": "rec_0232",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "speed_kmh": 49.2,
+    "lat": 45.5133,
+    "lon": -73.617,
+    "passenger_count": 43
+  },
+  {
+    "record_id": "rec_0233",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "speed_kmh": 48.7,
+    "lat": 45.4752,
+    "lon": -73.6091,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0234",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "speed_kmh": 36.9,
+    "lat": 45.4443,
+    "lon": -73.5871,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0235",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "speed_kmh": 47.1,
+    "lat": 45.5204,
+    "lon": -73.5725,
+    "passenger_count": 23
+  },
+  {
+    "record_id": "rec_0236",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "speed_kmh": 46.5,
+    "lat": 45.5182,
+    "lon": -73.5996,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0237",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "speed_kmh": 24.1,
+    "lat": 45.482,
+    "lon": -73.6364,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0238",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "speed_kmh": 52.3,
+    "lat": 45.5295,
+    "lon": -73.6071,
+    "passenger_count": 37
+  },
+  {
+    "record_id": "rec_0239",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "speed_kmh": 48.4,
+    "lat": 45.5515,
+    "lon": -73.5564,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0240",
+    "timestamp": "2026-05-12T10:00:00Z",
+    "speed_kmh": 44.4,
+    "lat": 45.5036,
+    "lon": -73.5963,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0241",
+    "timestamp": "2026-05-12T10:01:00Z",
+    "speed_kmh": 43.5,
+    "lat": 45.444,
+    "lon": -73.6197,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0242",
+    "timestamp": "2026-05-12T10:02:00Z",
+    "speed_kmh": 51.0,
+    "lat": 45.4575,
+    "lon": -73.4757,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0243",
+    "timestamp": "2026-05-12T10:03:00Z",
+    "speed_kmh": 47.6,
+    "lat": 45.5267,
+    "lon": -73.558,
+    "passenger_count": 22
+  },
+  {
+    "record_id": "rec_0244",
+    "timestamp": "2026-05-12T10:04:00Z",
+    "speed_kmh": 57.2,
+    "lat": 45.5529,
+    "lon": -73.5564,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0245",
+    "timestamp": "2026-05-12T10:05:00Z",
+    "speed_kmh": 41.8,
+    "lat": 45.5467,
+    "lon": -73.6111,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0246",
+    "timestamp": "2026-05-12T10:06:00Z",
+    "speed_kmh": 35.8,
+    "lat": 45.4582,
+    "lon": -73.607,
+    "passenger_count": 35
+  },
+  {
+    "record_id": "rec_0247",
+    "timestamp": "2026-05-12T10:07:00Z",
+    "speed_kmh": 48.1,
+    "lat": 45.5212,
+    "lon": -73.598,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0248",
+    "timestamp": "2026-05-12T10:08:00Z",
+    "speed_kmh": 47.8,
+    "lat": 45.3934,
+    "lon": -73.5494,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0249",
+    "timestamp": "2026-05-12T10:09:00Z",
+    "speed_kmh": 43.4,
+    "lat": 45.4909,
+    "lon": -73.6053,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0250",
+    "timestamp": "2026-05-12T10:10:00Z",
+    "speed_kmh": 28.6,
+    "lat": 45.4107,
+    "lon": -73.6311,
+    "passenger_count": 36
+  },
+  {
+    "record_id": "rec_0251",
+    "timestamp": "2026-05-12T10:11:00Z",
+    "speed_kmh": 50.8,
+    "lat": 45.44,
+    "lon": -73.7158,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0252",
+    "timestamp": "2026-05-12T10:12:00Z",
+    "speed_kmh": 24.8,
+    "lat": 45.5073,
+    "lon": -73.5603,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0253",
+    "timestamp": "2026-05-12T10:13:00Z",
+    "speed_kmh": 43.8,
+    "lat": 45.4815,
+    "lon": -73.6674,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0254",
+    "timestamp": "2026-05-12T10:14:00Z",
+    "speed_kmh": 37.9,
+    "lat": 45.5261,
+    "lon": -73.5839,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0255",
+    "timestamp": "2026-05-12T10:15:00Z",
+    "speed_kmh": 46.7,
+    "lat": 45.3911,
+    "lon": -73.5911,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0256",
+    "timestamp": "2026-05-12T10:16:00Z",
+    "speed_kmh": 39.1,
+    "lat": 45.5165,
+    "lon": -73.5374,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0257",
+    "timestamp": "2026-05-12T10:17:00Z",
+    "speed_kmh": 40.5,
+    "lat": 45.5052,
+    "lon": -73.4979,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0258",
+    "timestamp": "2026-05-12T10:18:00Z",
+    "speed_kmh": 47.3,
+    "lat": 45.5009,
+    "lon": -73.6488,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0259",
+    "timestamp": "2026-05-12T10:19:00Z",
+    "speed_kmh": 58.0,
+    "lat": 45.5501,
+    "lon": -73.6249,
+    "passenger_count": 25
+  },
+  {
+    "record_id": "rec_0260",
+    "timestamp": "2026-05-12T10:20:00Z",
+    "speed_kmh": 27.3,
+    "lat": 45.5236,
+    "lon": -73.6916,
+    "passenger_count": -14
+  },
+  {
+    "record_id": "rec_0261",
+    "timestamp": "2026-05-12T10:21:00Z",
+    "speed_kmh": 32.7,
+    "lat": 45.4925,
+    "lon": -73.6163,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0262",
+    "timestamp": "2026-05-12T10:22:00Z",
+    "speed_kmh": 49.6,
+    "lat": 45.4725,
+    "lon": -73.5842,
+    "passenger_count": 22
+  },
+  {
+    "record_id": "rec_0263",
+    "timestamp": "2026-05-12T10:23:00Z",
+    "speed_kmh": 36.1,
+    "lat": 45.5091,
+    "lon": -73.5348,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0264",
+    "timestamp": "2026-05-12T10:24:00Z",
+    "speed_kmh": 47.6,
+    "lat": 45.488,
+    "lon": -73.5996,
+    "passenger_count": 38
+  },
+  {
+    "record_id": "rec_0265",
+    "timestamp": "2026-05-12T10:25:00Z",
+    "speed_kmh": 41.7,
+    "lat": 45.4503,
+    "lon": -73.6508,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0266",
+    "timestamp": "2026-05-12T10:26:00Z",
+    "speed_kmh": 32.8,
+    "lat": 45.508,
+    "lon": -73.6446,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0267",
+    "timestamp": "2026-05-12T10:27:00Z",
+    "speed_kmh": 203.5,
+    "lat": 45.5327,
+    "lon": -73.5595,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0268",
+    "timestamp": "2026-05-12T10:28:00Z",
+    "speed_kmh": 36.4,
+    "lat": 45.5049,
+    "lon": -73.6632,
+    "passenger_count": 16
+  },
+  {
+    "record_id": "rec_0269",
+    "timestamp": "2026-05-12T10:29:00Z",
+    "speed_kmh": 27.1,
+    "lat": 45.4809,
+    "lon": -73.6062,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0270",
+    "timestamp": "2026-05-12T10:30:00Z",
+    "speed_kmh": 41.0,
+    "lat": 45.5135,
+    "lon": -73.6022,
+    "passenger_count": -17
+  },
+  {
+    "record_id": "rec_0271",
+    "timestamp": "2026-05-12T10:31:00Z",
+    "speed_kmh": 46.8,
+    "lat": 45.4412,
+    "lon": -73.5756,
+    "passenger_count": 39
+  },
+  {
+    "record_id": "rec_0272",
+    "timestamp": "2026-05-12T10:32:00Z",
+    "speed_kmh": 56.8,
+    "lat": 45.524,
+    "lon": -73.6101,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0273",
+    "timestamp": "2026-05-12T10:33:00Z",
+    "speed_kmh": 39.7,
+    "lat": 45.4515,
+    "lon": -73.6199,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0274",
+    "timestamp": "2026-05-12T10:34:00Z",
+    "speed_kmh": 35.3,
+    "lat": 45.4845,
+    "lon": -73.6307,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0275",
+    "timestamp": "2026-05-12T10:35:00Z",
+    "speed_kmh": 37.9,
+    "lat": 45.5804,
+    "lon": -73.5586,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0276",
+    "timestamp": "2026-05-12T10:36:00Z",
+    "speed_kmh": 43.5,
+    "lat": 99.9999,
+    "lon": -73.6262,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0277",
+    "timestamp": "2026-05-12T10:37:00Z",
+    "speed_kmh": 49.9,
+    "lat": 45.4817,
+    "lon": -73.6076,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0278",
+    "timestamp": "2026-05-12T10:38:00Z",
+    "speed_kmh": 37.8,
+    "lat": 45.4902,
+    "lon": -73.6226,
+    "passenger_count": -12
+  },
+  {
+    "record_id": "rec_0279",
+    "timestamp": "2026-05-12T10:39:00Z",
+    "speed_kmh": 37.1,
+    "lat": 45.516,
+    "lon": -73.5173,
+    "passenger_count": 38
+  },
+  {
+    "record_id": "rec_0280",
+    "timestamp": "2026-05-12T10:40:00Z",
+    "speed_kmh": 31.1,
+    "lat": 45.5079,
+    "lon": -73.6549,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0281",
+    "timestamp": "2026-05-12T10:41:00Z",
+    "speed_kmh": 30.2,
+    "lat": 45.5475,
+    "lon": -73.5878,
+    "passenger_count": 18
+  },
+  {
+    "record_id": "rec_0282",
+    "timestamp": "2026-05-12T10:42:00Z",
+    "speed_kmh": 29.7,
+    "lat": 45.4902,
+    "lon": -73.5849,
+    "passenger_count": 29
+  },
+  {
+    "record_id": "rec_0283",
+    "timestamp": "2026-05-12T10:43:00Z",
+    "speed_kmh": 46.8,
+    "lat": 45.4968,
+    "lon": -73.5732,
+    "passenger_count": 30
+  },
+  {
+    "record_id": "rec_0284",
+    "timestamp": "2026-05-12T10:44:00Z",
+    "speed_kmh": 46.4,
+    "lat": 45.5425,
+    "lon": -73.5654,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0285",
+    "timestamp": "2026-05-12T10:45:00Z",
+    "speed_kmh": 50.8,
+    "lat": 45.4803,
+    "lon": -73.5499,
+    "passenger_count": 32
+  },
+  {
+    "record_id": "rec_0286",
+    "timestamp": "2026-05-12T10:46:00Z",
+    "speed_kmh": 49.3,
+    "lat": 45.519,
+    "lon": -73.6278,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0287",
+    "timestamp": "2026-05-12T10:47:00Z",
+    "speed_kmh": 43.7,
+    "lat": 45.5807,
+    "lon": -73.6161,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0288",
+    "timestamp": "2026-05-12T10:48:00Z",
+    "speed_kmh": 50.9,
+    "lat": 45.4632,
+    "lon": -73.6708,
+    "passenger_count": 26
+  },
+  {
+    "record_id": "rec_0289",
+    "timestamp": "2026-05-12T10:49:00Z",
+    "speed_kmh": 203.6,
+    "lat": 45.425,
+    "lon": -73.6046,
+    "passenger_count": 43
+  },
+  {
+    "record_id": "rec_0290",
+    "timestamp": "2026-05-12T10:50:00Z",
+    "speed_kmh": 54.5,
+    "lat": 45.497,
+    "lon": -73.5072,
+    "passenger_count": -11
+  },
+  {
+    "record_id": "rec_0291",
+    "timestamp": "2026-05-12T10:51:00Z",
+    "speed_kmh": 47.2,
+    "lat": 45.4869,
+    "lon": -73.6168,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0292",
+    "timestamp": "2026-05-12T10:52:00Z",
+    "speed_kmh": 33.2,
+    "lat": 45.5086,
+    "lon": -73.5664,
+    "passenger_count": 34
+  },
+  {
+    "record_id": "rec_0293",
+    "timestamp": "2026-05-12T10:53:00Z",
+    "speed_kmh": 60.3,
+    "lat": 45.503,
+    "lon": -73.5806,
+    "passenger_count": 27
+  },
+  {
+    "record_id": "rec_0294",
+    "timestamp": "2026-05-12T10:54:00Z",
+    "speed_kmh": 41.5,
+    "lat": 45.4614,
+    "lon": -73.581,
+    "passenger_count": 28
+  },
+  {
+    "record_id": "rec_0295",
+    "timestamp": "2026-05-12T10:55:00Z",
+    "speed_kmh": 57.3,
+    "lat": 45.4794,
+    "lon": -73.5543,
+    "passenger_count": 37
+  },
+  {
+    "record_id": "rec_0296",
+    "timestamp": "2026-05-12T10:56:00Z",
+    "speed_kmh": 50.4,
+    "lat": 45.5214,
+    "lon": -73.614,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0297",
+    "timestamp": "2026-05-12T10:57:00Z",
+    "speed_kmh": 32.2,
+    "lat": 45.6092,
+    "lon": -73.5715,
+    "passenger_count": 24
+  },
+  {
+    "record_id": "rec_0298",
+    "timestamp": "2026-05-12T10:58:00Z",
+    "speed_kmh": 44.1,
+    "lat": 45.488,
+    "lon": -73.5442,
+    "passenger_count": 33
+  },
+  {
+    "record_id": "rec_0299",
+    "timestamp": "2026-05-12T10:59:00Z",
+    "speed_kmh": 46.9,
+    "lat": 45.5025,
+    "lon": -73.5616,
+    "passenger_count": 26
   }
 ]
