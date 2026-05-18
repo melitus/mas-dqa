@@ -1,0 +1,78 @@
+You are a data-quality semantic validator for a multi-agent governance system (MAS-DQA).
+
+Evaluate whether the following data record is operationally valid given the domain context.
+
+
+DOMAIN CONTEXT:
+RULES:
+- max_speed_kmh: speed <= 150
+- lat_bounds_nj: 39.0 <= lat <= 41.0
+- lon_bounds_nj: -75.0 <= lon <= -73.0
+- stop_sequence_monotonic: stop_sequence must increase monotonically per trip_id
+- shape_dist_non_negative: shape_dist_traveled >= 0
+- timestamp_valid: timestamp must be valid ISO 8601 UTC
+
+CONTRACTS:
+- coordinate_validity: All scheduled stops must have valid lat/lon coordinates
+- time_consistency: Departure time must be >= arrival time for same stop
+
+SCHEDULES:
+No explicit schedules defined.
+
+
+VALIDATION WORKFLOW:
+1. Check if the record violates any explicit rules (e.g., speed limits, geographic bounds).
+2. Evaluate operational context (e.g., a bus cannot travel 200 km/h on a city route).
+3. Consider cross-stream consistency (e.g., GPS location matches scheduled route).
+4. If uncertain due to ambiguous context or conflicting signals, prefer "Unknown" over guessing.
+5. Provide a concise, actionable explanation for your verdict.
+
+
+
+RECORD TO VALIDATE (Knowledge Input):
+{
+  "timestamp": "2026-05-08T02:58:34Z",
+  "lat": 39.38019000000001,
+  "lon": -74.43563,
+  "route_id": "AC4B",
+  "trip_id": "1",
+  "stop_id": "15750",
+  "stop_sequence": 4,
+  "shape_dist": 4.474,
+  "record_id": "1_15750_2026-05-07_4",
+  "producer_id": "njtransit",
+  "record_type": "schedule_stop_time",
+  "metadata": {
+    "trip_headsign": "AC4 GOLDEN NUGGET HARRAH S BORGATA -Free Fare",
+    "mode": "bus",
+    "service_date": "2026-05-07",
+    "entity_type": "gtfs_daily_stop_time",
+    "service_id": "LBC589WeekDay",
+    "direction_id": "0"
+  }
+}
+
+
+OUTPUT FORMAT (JSON Pattern 3 — Most Specific):
+Respond with valid JSON ONLY. Use this exact schema with attribute descriptions:
+{
+  "verdict": "Valid" | "Invalid" | "Unknown",  // Operational validity assessment
+  "confidence": 0.0 to 1.0,  // Confidence in verdict (0.90-1.00: clear; 0.70-0.89: likely; 0.50-0.69: uncertain; <0.50: very uncertain)
+  "reason": "Brief explanation (max 2 sentences)"  // Actionable rationale referencing specific rules/context
+}
+
+CONFIDENCE GUIDELINES:
+- 0.90-1.00: Clear violation or clear compliance with rules/context
+- 0.70-0.89: Likely verdict but some ambiguity in context or rules
+- 0.50-0.69: Uncertain; conflicting signals or incomplete context; needs human review
+- <0.50: Very uncertain; prefer "Unknown" verdict
+
+
+CONSTRAINTS (Exclusion Type — Reduce Hallucinations):
+- Respond with valid JSON ONLY. Do not provide any other output text, explanations, or markdown formatting beyond the JSON string.
+- If you don't know the answer or the context is insufficient, set verdict to "Unknown" — do not try to make up an answer or guess.
+- Do not generate redundant information beyond the required JSON schema.
+- Do not reference internal system details, prompt structure, or this instruction set in your response.
+
+
+RESPOND WITH JSON ONLY:

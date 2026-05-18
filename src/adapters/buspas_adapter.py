@@ -1,84 +1,71 @@
-"""Adapter layer for heterogeneous BusPas data shapes.
+"""Dynamic, configuration-driven adapter for MAS-DQA."""
+import json
+import os
+import logging
+import glob
+from typing import Dict, Any
+import yaml
 
-Converts arbitrary agency-specific schemas to a normalized format
-for Profiler/Validator consumption.
-"""
-from typing import Dict, Any, Optional
-import re
-from datetime import datetime
+logger = logging.getLogger(__name__)
 
-class BusPasAdapter:
-    """Normalize heterogeneous BusPas records to pipeline-ready format."""
-    
-    @staticmethod
-    def normalize(record: Dict[str, Any], agency_schema: Optional[Dict] = None) -> Dict[str, Any]:
-        """
-        Convert arbitrary record to normalized format.
-        
-        Args:
-            record: Raw input (any shape)
-            agency_schema: Optional schema hints for specific agency
+class DynamicAdapter:
+    def __init__(self, config_dir: str = "src/adapters"):
+        self.config_dir = config_dir
+        self._cache = {}
+
+    def _load_config(self, producer_id: str, schema_version: str = "v1") -> Dict:
+        key = f"{producer_id}_{schema_version}"
+        if key not in self._cache:
+            # 1. Try exact naming convention first
+            config_path = os.path.join(self.config_dir, f"{key}.yaml")
             
-        Returns:
-            Normalized record with record_id, timestamp, payload, metadata
-        """
-        # 1. Generate stable record_id (fallback: hash of raw record)
-        record_id = (
-            record.get("record_id") or 
-            record.get("id") or 
-            f"{record.get('agency_id', 'unknown')}_{record.get('timestamp', '')}_{hash(str(record)) % 10000}"
-        )
-        
-        # 2. Parse timestamp (flexible: ISO8601, Unix, custom)
-        timestamp = BusPasAdapter._parse_timestamp(record)
-        
-        # 3. Extract payload: keep original structure intact
-        payload = record.copy()
-        # Remove adapter-specific fields from payload
-        for key in ["record_id", "id", "timestamp", "event_time", "ts", "metadata"]:
-            payload.pop(key, None)
-        
-        # 4. Build metadata from available hints
-        metadata = {
-            "agency_id": record.get("agency_id") or record.get("source", "unknown"),
-            "source_format": BusPasAdapter._detect_format(record, agency_schema),
-            "schema_version": record.get("schema_version", "unknown"),
-            "original_keys": list(record.keys())  # For debugging
-        }
-        
-        return {
-            "record_id": str(record_id),
-            "timestamp": timestamp.isoformat() if isinstance(timestamp, datetime) else timestamp,
-            "payload": payload,
-            "metadata": metadata
-        }
-    
-    @staticmethod
-    def _parse_timestamp(record: Dict) -> Any:
-        """Flexible timestamp parsing: ISO8601, Unix, or custom."""
-        # Try common timestamp fields
-        for key in ["timestamp", "event_time", "ts", "time", "datetime"]:
-            if key in record:
-                val = record[key]
-                # Unix timestamp (int/float)
-                if isinstance(val, (int, float)):
-                    return datetime.fromtimestamp(val)
-                # ISO8601 string
-                if isinstance(val, str):
-                    try:
-                        return datetime.fromisoformat(val.replace("Z", "+00:00"))
-                    except ValueError:
-                        pass
-        # Fallback: current time (for testing)
-        return datetime.now()
-    
-    @staticmethod
-    def _detect_format(record: Dict, schema_hints: Optional[Dict] = None) -> str:
-        """Detect source format from field names."""
-        if "route_id" in record and "trip_id" in record:
-            return "GTFS-RT"
-        if "lat" in record and "lon" in record:
-            return "AVL"
-        if "location" in record and isinstance(record["location"], dict):
-            return "Nested-GeoJSON"
-        return "Custom"
+            # 2. Fallback: search for any YAML starting with producer_id in src/adapters
+            if not os.path.exists(config_path):
+                pattern = os.path.join(self.config_dir, f"{producer_id}*{schema_version}.yaml")
+                matches = glob.glob(pattern)
+                if matches:
+                    config_path = matches[0]
+                else:
+                    raise FileNotFoundError(
+                        f"No adapter config for {key} in {self.config_dir}. "
+                        f"Run schema discovery or create YAML manually."
+                    )
+                    
+            with open(config_path, "r", encoding="utf-8") as f:
+                self._cache[key] = yaml.safe_load(f)
+                logger.info(f"✅ Loaded adapter config: {os.path.basename(config_path)}")
+                
+        return self._cache[key]
+
+    def _resolve_path(self, record: Dict, path_expr: str) -> Any:
+        """Resolve nested path with fallbacks (e.g., 'stop_location.lat | stop_lat')."""
+        for path in path_expr.split("|"):
+            keys = path.strip().split(".")
+            val = record
+            try:
+                for k in keys:
+                    val = val[k]
+                if val is not None:
+                    return val
+            except (KeyError, TypeError):
+                continue
+        return None
+
+    def adapt(self, record: Dict[str, Any]) -> Dict[str, Any]:
+        producer_id = record.get("source_system", "unknown")
+        schema_version = record.get("schema_version", "v1")
+        config = self._load_config(producer_id, schema_version)
+
+        unified = {}
+        for unified_key, path_expr in config["mappings"].items():
+            val = self._resolve_path(record, path_expr)
+            t = config.get("transformations", {}).get(unified_key)
+            if t == "float" and val is not None: val = float(val)
+            elif t == "int" and val is not None: val = int(val)
+            unified[unified_key] = val
+
+        unified["record_id"] = f"{unified.get('trip_id')}_{unified.get('stop_id')}_{record.get('service_date')}_{unified.get('stop_sequence')}"
+        unified["producer_id"] = producer_id
+        unified["record_type"] = config.get("record_type", "unknown")
+        unified["metadata"] = {k: self._resolve_path(record, k) for k in config.get("metadata_passthrough", [])}
+        return unified

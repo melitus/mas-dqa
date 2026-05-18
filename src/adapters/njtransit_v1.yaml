@@ -1,0 +1,52 @@
+producer_id: "njtransit"
+schema_version: "v1"
+record_type: "schedule_stop_time"
+
+# ─────────────────────────────────────────────────────────────
+# ADAPTER MAPPINGS: How to extract fields from raw data
+# ─────────────────────────────────────────────────────────────
+mappings:
+  timestamp: "scheduled_departure_utc | scheduled_arrival_utc"
+  lat: "stop_location.lat | stop_lat"
+  lon: "stop_location.lon | stop_lon"
+  route_id: "route_id"
+  trip_id: "trip_id"
+  stop_id: "stop_id"
+  stop_sequence: "stop_sequence"
+  shape_dist: "shape_dist_traveled"
+
+# ─────────────────────────────────────────────────────────────
+# VALIDATION RULES: Business constraints for semantic validation
+# ─────────────────────────────────────────────────────────────
+validation_rules:
+  max_speed_kmh: "speed <= 150"
+  lat_bounds_nj: "39.0 <= lat <= 41.0"
+  lon_bounds_nj: "-75.0 <= lon <= -73.0"
+  stop_sequence_monotonic: "stop_sequence must increase monotonically per trip_id"
+  shape_dist_non_negative: "shape_dist_traveled >= 0"
+  timestamp_valid: "timestamp must be valid ISO 8601 UTC"
+
+# ─────────────────────────────────────────────────────────────
+# CONTRACTS: Operational agreements (optional)
+# ─────────────────────────────────────────────────────────────
+contracts:
+  coordinate_validity: "All scheduled stops must have valid lat/lon coordinates"
+  time_consistency: "Departure time must be >= arrival time for same stop"
+
+# ─────────────────────────────────────────────────────────────
+# METADATA & TRANSFORMS
+# ─────────────────────────────────────────────────────────────
+metadata_passthrough:
+  - "trip_headsign"
+  - "mode"
+  - "service_date"
+  - "entity_type"
+  - "service_id"
+  - "direction_id"
+
+transformations:
+  timestamp: "utc_string"
+  lat: "float"
+  lon: "float"
+  stop_sequence: "int"
+  shape_dist: "float"

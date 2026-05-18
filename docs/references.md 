@@ -1,0 +1,37 @@
+# MAS-DQA: Reference Papers & Methodology
+
+This document catalogs key reference papers that inform MAS-DQA's design, with specific notes on how each methodology is adapted.
+
+---
+
+## 🎯 Core Prompt Engineering Reference
+
+### Mao et al. (2025) — "From Prompts to Templates: A Systematic Prompt Template Analysis for Real-world LLMapps"
+**Venue:** FSE 2025 | **arXiv:** [2504.02052](https://arxiv.org/pdf/2504.02052)
+
+#### Why This Paper Is Foundational for MAS-DQA
+- First systematic, empirical analysis of prompt templates in **production LLM apps** (not just chat/research)
+- Provides **actionable patterns** validated on real-world templates from Uber, Microsoft, etc.
+- Methodology aligns with MAS-DQA's need for **reproducible, measurable, auditable** prompt design
+
+#### Key Adaptations in MAS-DQA
+
+| Paper Finding | MAS-DQA Implementation | File/Location |
+|--------------|----------------------|--------------|
+| **7-component template structure** (Profile → Directive → Context → Workflow → Examples → Output → Constraints) | Semantic Validator prompt uses this exact order for optimal instruction-following | `src/validator/prompt.py:build_validation_prompt()` |
+| **JSON Pattern 3** (most specific attribute descriptions) achieves highest Content-Following scores | Validator output schema uses Pattern 3 with explicit type/value descriptions | `src/validator/prompt.py:output_format` |
+| **Exclusion constraints** (35.7% of templates) reduce hallucinations and redundancy | Added constraints: "Respond with JSON ONLY", "Don't guess if uncertain" | `src/validator/prompt.py:constraints` |
+| **Knowledge Input positioning**: After task intent improves consistency for long inputs | Record (Knowledge Input) placed after Directive for heterogeneous BusPas records | `src/validator/prompt.py:knowledge_input_position` |
+| **Placeholder taxonomy**: Knowledge Input, Metadata, Contextual Info, User Question | Prompt placeholders follow this taxonomy for dynamic context injection | `src/validator/prompt.py` docstring |
+| **Sample testing methodology**: Format-Following + Content-Following metrics | Phase III Cognitive Validation uses these exact metrics for Judge Agent evaluation | `tests/test_prompt_patterns.py` |
+| **Prompt versioning + control variable logging** for reproducibility | `get_prompt_metadata()` returns version + config for XAI audit trail | `src/validator/prompt.py`, `src/validator/xai.py` |
+
+#### How to Cite in MAS-DQA Publications
+```bibtex
+@inproceedings{mao2025prompts,
+  title={From Prompts to Templates: A Systematic Prompt Template Analysis for Real-world LLMapps},
+  author={Mao, Yuetian and He, Junjie and Chen, Chunyang},
+  booktitle={Proceedings of the 33rd ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (FSE '25)},
+  year={2025},
+  url={https://arxiv.org/abs/2504.02052}
+}

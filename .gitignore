@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 .env
 .KNOWLEDGE_BASE.md
+# Ignore specific raw and normalized data files
+data/normalised.buspas.ndjson
+data/raw.buspas.ndjson
