@@ -3,14 +3,22 @@ import json
 import requests
 import urllib3
 from requests.auth import HTTPBasicAuth
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-ELASTIC_URL = "https://1"
-USERNAME = "elastic"
-PASSWORD = "xxxxx"
-INDEX = "gtfs_daily_stop_times"
+# Load from .env
+ELASTIC_URL = os.getenv("ELASTIC_URL")
+USERNAME = os.getenv("ELASTIC_USERNAME")
+PASSWORD = os.getenv("ELASTIC_PASSWORD")
+INDEX = os.getenv("INDEX", "gtfs_daily_stop_times")
 
+# Basic validation
+if not all([ELASTIC_URL, USERNAME, PASSWORD]):
+    raise EnvironmentError("Missing required environment variables in .env file")
 
 def elastic_request(method, path, **kwargs):
     url = f"{ELASTIC_URL}{path}"
