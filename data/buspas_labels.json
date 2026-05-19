@@ -1,1551 +1,1502 @@
 [
   {
-    "record_id": "rec_0000",
+    "record_id": "syn_0000",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0001",
+    "record_id": "syn_0001",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0002",
+    "record_id": "syn_0002",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0003",
+    "record_id": "syn_0003",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0004",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0005",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0006",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0007",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0008",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0009",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0010",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0011",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0012",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0013",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0014",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0015",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0016",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0017",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0018",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0019",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0020",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0021",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0022",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0023",
+    "record_id": "syn_0004",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-8)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0024",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0025",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0026",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0027",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0028",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0029",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0030",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0031",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0032",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0033",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0034",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0035",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0036",
+    "record_id": "syn_0005",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-12)",
-    "anomaly_type": "passenger"
+    "reason": "Negative passenger count (-13)"
   },
   {
-    "record_id": "rec_0037",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0038",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0039",
+    "record_id": "syn_0006",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-8)",
-    "anomaly_type": "passenger"
+    "reason": "Extreme speed anomaly (206.0 km/h)"
   },
   {
-    "record_id": "rec_0040",
+    "record_id": "syn_0007",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0041",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0042",
+    "record_id": "syn_0008",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-9)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0043",
+    "record_id": "syn_0009",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (213.1 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Extreme speed anomaly (228.2 km/h)"
   },
   {
-    "record_id": "rec_0044",
+    "record_id": "syn_0010",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0045",
+    "record_id": "syn_0011",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0046",
+    "record_id": "syn_0012",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0047",
+    "record_id": "syn_0013",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0048",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0049",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0050",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0051",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0052",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0053",
+    "record_id": "syn_0014",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-16)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0054",
+    "record_id": "syn_0015",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0055",
+    "record_id": "syn_0016",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0056",
+    "record_id": "syn_0017",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0057",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0058",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0059",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0060",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0061",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0062",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0063",
+    "record_id": "syn_0018",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-5)",
-    "anomaly_type": "passenger"
+    "reason": "Extreme speed anomaly (198.1 km/h)"
   },
   {
-    "record_id": "rec_0064",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0065",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0066",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0067",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0068",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0069",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0070",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0071",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0072",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0073",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0074",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0075",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0076",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0077",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0078",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0079",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0080",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0081",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0082",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0083",
+    "record_id": "syn_0019",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-7)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0084",
+    "record_id": "syn_0020",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0021",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0022",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0023",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0024",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (230.2 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0085",
+    "record_id": "syn_0025",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0086",
+    "record_id": "syn_0026",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0087",
+    "record_id": "syn_0027",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0088",
+    "record_id": "syn_0028",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0029",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0030",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0031",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0032",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0033",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (229.1 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Negative passenger count (-15)"
   },
   {
-    "record_id": "rec_0089",
+    "record_id": "syn_0034",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0090",
+    "record_id": "syn_0035",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0036",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0091",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0092",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0093",
+    "record_id": "syn_0037",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-10)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0094",
+    "record_id": "syn_0038",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0039",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Negative passenger count (-5)"
   },
   {
-    "record_id": "rec_0095",
+    "record_id": "syn_0040",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0096",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0097",
+    "record_id": "syn_0041",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (202.2 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0098",
+    "record_id": "syn_0042",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0099",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0100",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0101",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0102",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0103",
+    "record_id": "syn_0043",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0104",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0105",
+    "record_id": "syn_0044",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (208.5 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Extreme speed anomaly (229.7 km/h)"
   },
   {
-    "record_id": "rec_0106",
+    "record_id": "syn_0045",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0107",
+    "record_id": "syn_0046",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0108",
+    "record_id": "syn_0047",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0109",
+    "record_id": "syn_0048",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0110",
+    "record_id": "syn_0049",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0111",
+    "record_id": "syn_0050",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0051",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0052",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (220.5 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0112",
+    "record_id": "syn_0053",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0113",
+    "record_id": "syn_0054",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0114",
+    "record_id": "syn_0055",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Extreme speed anomaly (231.6 km/h)"
   },
   {
-    "record_id": "rec_0115",
+    "record_id": "syn_0056",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0057",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0058",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0059",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0060",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0061",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0062",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0063",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0064",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0065",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0066",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0067",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (216.3 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0116",
+    "record_id": "syn_0068",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0117",
+    "record_id": "syn_0069",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0118",
+    "record_id": "syn_0070",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0119",
+    "record_id": "syn_0071",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0120",
+    "record_id": "syn_0072",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0121",
+    "record_id": "syn_0073",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0122",
+    "record_id": "syn_0074",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0123",
+    "record_id": "syn_0075",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0124",
+    "record_id": "syn_0076",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0125",
+    "record_id": "syn_0077",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0126",
+    "record_id": "syn_0078",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0127",
+    "record_id": "syn_0079",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0080",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0081",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0082",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0083",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0084",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0085",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0086",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0087",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0088",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0089",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0090",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-11)",
-    "anomaly_type": "passenger"
+    "reason": "Extreme speed anomaly (182.7 km/h)"
   },
   {
-    "record_id": "rec_0128",
+    "record_id": "syn_0091",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0129",
+    "record_id": "syn_0092",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0130",
+    "record_id": "syn_0093",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0131",
+    "record_id": "syn_0094",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0132",
+    "record_id": "syn_0095",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0133",
+    "record_id": "syn_0096",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0134",
+    "record_id": "syn_0097",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0135",
+    "record_id": "syn_0098",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0136",
+    "record_id": "syn_0099",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0137",
+    "record_id": "syn_0100",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0138",
+    "record_id": "syn_0101",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0102",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0103",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0104",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0105",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0106",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0107",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0108",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0109",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0110",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-10)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0139",
+    "record_id": "syn_0111",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0140",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0141",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0142",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0143",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0144",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0145",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0146",
+    "record_id": "syn_0112",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-17)",
-    "anomaly_type": "passenger"
+    "reason": "Negative passenger count (-9)"
   },
   {
-    "record_id": "rec_0147",
+    "record_id": "syn_0113",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0114",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-10)",
-    "anomaly_type": "passenger"
+    "reason": "Negative passenger count (-14)"
   },
   {
-    "record_id": "rec_0148",
+    "record_id": "syn_0115",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0149",
+    "record_id": "syn_0116",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0150",
+    "record_id": "syn_0117",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0151",
+    "record_id": "syn_0118",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0152",
+    "record_id": "syn_0119",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0120",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0121",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0122",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0153",
+    "record_id": "syn_0123",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0124",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0125",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-13)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0154",
+    "record_id": "syn_0126",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0155",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0156",
+    "record_id": "syn_0127",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Negative passenger count (-10)"
   },
   {
-    "record_id": "rec_0157",
+    "record_id": "syn_0128",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0158",
+    "record_id": "syn_0129",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-17)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0159",
+    "record_id": "syn_0130",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0160",
+    "record_id": "syn_0131",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0161",
+    "record_id": "syn_0132",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0162",
+    "record_id": "syn_0133",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0163",
+    "record_id": "syn_0134",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0164",
+    "record_id": "syn_0135",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0136",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0137",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0138",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0139",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0140",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0141",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0165",
+    "record_id": "syn_0142",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0166",
+    "record_id": "syn_0143",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0144",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0145",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0146",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0147",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0148",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0149",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0150",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0151",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0152",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0153",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0154",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0155",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0156",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Negative passenger count (-7)"
   },
   {
-    "record_id": "rec_0167",
+    "record_id": "syn_0157",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (226.6 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Negative passenger count (-9)"
   },
   {
-    "record_id": "rec_0168",
+    "record_id": "syn_0158",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0169",
+    "record_id": "syn_0159",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0170",
+    "record_id": "syn_0160",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0171",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0172",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0173",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0174",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0175",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0176",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0177",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0178",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0179",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0180",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0181",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0182",
+    "record_id": "syn_0161",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (180.4 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Extreme speed anomaly (205.5 km/h)"
   },
   {
-    "record_id": "rec_0183",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0184",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0185",
+    "record_id": "syn_0162",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (239.8 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Negative passenger count (-5)"
   },
   {
-    "record_id": "rec_0186",
+    "record_id": "syn_0163",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0164",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0187",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0188",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0189",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0190",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0191",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0192",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0193",
+    "record_id": "syn_0165",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (210.2 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Extreme speed anomaly (213.4 km/h)"
   },
   {
-    "record_id": "rec_0194",
+    "record_id": "syn_0166",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0167",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0168",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0169",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0170",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0171",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0172",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0173",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0174",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0175",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0176",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0177",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0178",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0179",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0180",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0181",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0182",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0183",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-12)",
-    "anomaly_type": "passenger"
+    "reason": "Extreme speed anomaly (214.1 km/h)"
   },
   {
-    "record_id": "rec_0195",
+    "record_id": "syn_0184",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0196",
+    "record_id": "syn_0185",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0197",
+    "record_id": "syn_0186",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0198",
+    "record_id": "syn_0187",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0199",
+    "record_id": "syn_0188",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0200",
+    "record_id": "syn_0189",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0201",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0202",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0203",
+    "record_id": "syn_0190",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-18)",
-    "anomaly_type": "passenger"
+    "reason": "Extreme speed anomaly (201.7 km/h)"
   },
   {
-    "record_id": "rec_0204",
+    "record_id": "syn_0191",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0205",
+    "record_id": "syn_0192",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0206",
+    "record_id": "syn_0193",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0207",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0208",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0209",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0210",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0211",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0212",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0213",
+    "record_id": "syn_0194",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Extreme speed anomaly (210.0 km/h)"
   },
   {
-    "record_id": "rec_0214",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0215",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0216",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0217",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0218",
+    "record_id": "syn_0195",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Extreme speed anomaly (211.3 km/h)"
   },
   {
-    "record_id": "rec_0219",
+    "record_id": "syn_0196",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0220",
+    "record_id": "syn_0197",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0198",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0199",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (239.3 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Extreme speed anomaly (240.3 km/h)"
   },
   {
-    "record_id": "rec_0221",
+    "record_id": "syn_0200",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0222",
+    "record_id": "syn_0201",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0223",
+    "record_id": "syn_0202",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0224",
+    "record_id": "syn_0203",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0225",
+    "record_id": "syn_0204",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0226",
+    "record_id": "syn_0205",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0227",
+    "record_id": "syn_0206",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0228",
+    "record_id": "syn_0207",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0208",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0209",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0210",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0211",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0212",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0213",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0214",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-19)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0229",
+    "record_id": "syn_0215",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0230",
+    "record_id": "syn_0216",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0217",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0218",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0231",
+    "record_id": "syn_0219",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0220",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0221",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0222",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0223",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0224",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (236.7 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Negative passenger count (-7)"
   },
   {
-    "record_id": "rec_0232",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0233",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0234",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0235",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0236",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0237",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0238",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0239",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0240",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0241",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0242",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0243",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0244",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0245",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0246",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0247",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0248",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0249",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0250",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0251",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0252",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0253",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0254",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0255",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0256",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0257",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0258",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0259",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0260",
+    "record_id": "syn_0225",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-14)",
-    "anomaly_type": "passenger"
+    "reason": "Negative passenger count (-16)"
   },
   {
-    "record_id": "rec_0261",
+    "record_id": "syn_0226",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0262",
+    "record_id": "syn_0227",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0263",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0264",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0265",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0266",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0267",
+    "record_id": "syn_0228",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (203.5 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Negative passenger count (-15)"
   },
   {
-    "record_id": "rec_0268",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0269",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0270",
+    "record_id": "syn_0229",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-17)",
-    "anomaly_type": "passenger"
+    "reason": "Negative passenger count (-8)"
   },
   {
-    "record_id": "rec_0271",
+    "record_id": "syn_0230",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0272",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0273",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0274",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0275",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0276",
+    "record_id": "syn_0231",
     "ground_truth": 0,
-    "reason": "Latitude out of bounds (99.9999)",
-    "anomaly_type": "lat"
+    "reason": "Negative passenger count (-20)"
   },
   {
-    "record_id": "rec_0277",
-    "ground_truth": 1,
-    "reason": "Normal record"
-  },
-  {
-    "record_id": "rec_0278",
+    "record_id": "syn_0232",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-12)",
-    "anomaly_type": "passenger"
+    "reason": "Extreme speed anomaly (183.2 km/h)"
   },
   {
-    "record_id": "rec_0279",
+    "record_id": "syn_0233",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0280",
+    "record_id": "syn_0234",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0281",
+    "record_id": "syn_0235",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0282",
+    "record_id": "syn_0236",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0283",
+    "record_id": "syn_0237",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0284",
+    "record_id": "syn_0238",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0285",
+    "record_id": "syn_0239",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0286",
+    "record_id": "syn_0240",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0287",
+    "record_id": "syn_0241",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0288",
+    "record_id": "syn_0242",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0289",
+    "record_id": "syn_0243",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0244",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0245",
     "ground_truth": 0,
-    "reason": "Extreme speed anomaly (203.6 km/h)",
-    "anomaly_type": "speed"
+    "reason": "Extreme speed anomaly (205.9 km/h)"
   },
   {
-    "record_id": "rec_0290",
+    "record_id": "syn_0246",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0247",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0248",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0249",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0250",
     "ground_truth": 0,
-    "reason": "Negative passenger count (-11)",
-    "anomaly_type": "passenger"
+    "reason": "Latitude out of bounds (99.9999)"
   },
   {
-    "record_id": "rec_0291",
+    "record_id": "syn_0251",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0292",
+    "record_id": "syn_0252",
+    "ground_truth": 0,
+    "reason": "Latitude out of bounds (99.9999)"
+  },
+  {
+    "record_id": "syn_0253",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0293",
+    "record_id": "syn_0254",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0294",
+    "record_id": "syn_0255",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0295",
+    "record_id": "syn_0256",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0296",
+    "record_id": "syn_0257",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0297",
+    "record_id": "syn_0258",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0298",
+    "record_id": "syn_0259",
     "ground_truth": 1,
     "reason": "Normal record"
   },
   {
-    "record_id": "rec_0299",
+    "record_id": "syn_0260",
     "ground_truth": 1,
     "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0261",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0262",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0263",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0264",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0265",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0266",
+    "ground_truth": 0,
+    "reason": "Extreme speed anomaly (214.2 km/h)"
+  },
+  {
+    "record_id": "syn_0267",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0268",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0269",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0270",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0271",
+    "ground_truth": 0,
+    "reason": "Latitude out of bounds (99.9999)"
+  },
+  {
+    "record_id": "syn_0272",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0273",
+    "ground_truth": 0,
+    "reason": "Latitude out of bounds (99.9999)"
+  },
+  {
+    "record_id": "syn_0274",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0275",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0276",
+    "ground_truth": 0,
+    "reason": "Latitude out of bounds (99.9999)"
+  },
+  {
+    "record_id": "syn_0277",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0278",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0279",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0280",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0281",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0282",
+    "ground_truth": 0,
+    "reason": "Latitude out of bounds (99.9999)"
+  },
+  {
+    "record_id": "syn_0283",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0284",
+    "ground_truth": 0,
+    "reason": "Latitude out of bounds (99.9999)"
+  },
+  {
+    "record_id": "syn_0285",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0286",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0287",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0288",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0289",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0290",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0291",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0292",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0293",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0294",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0295",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0296",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0297",
+    "ground_truth": 1,
+    "reason": "Normal record"
+  },
+  {
+    "record_id": "syn_0298",
+    "ground_truth": 0,
+    "reason": "Extreme speed anomaly (219.8 km/h)"
+  },
+  {
+    "record_id": "syn_0299",
+    "ground_truth": 0,
+    "reason": "Extreme speed anomaly (217.9 km/h)"
   }
 ]

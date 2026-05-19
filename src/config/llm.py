@@ -1,32 +1,35 @@
-"""LLM configuration for MAS-DQA semantic validation.
+"""LLM configuration for MAS-DQA Semantic Validator.
 
-Reference: MAS-DQA Knowledge Base §3.4 (Semantic Validator)
+Centralized config for model selection, API keys, and inference parameters.
 """
+import os
 from dataclasses import dataclass
 from typing import Optional
 
-
-@dataclass(frozen=True)
+@dataclass
 class LLMConfig:
-    """Configuration for LLM-based validation."""
+    """Configuration for LLM-based semantic validation."""
     
-    # Default model (litellm-compatible)
-    DEFAULT_MODEL: str = "gpt-4o-mini"
+    # Model selection
+    DEFAULT_MODEL: str = "gpt-4o-mini"  # or "mistral-small", "llama-3-8b-instruct"
     
-    # Deterministic output for validation
-    DEFAULT_TEMPERATURE: float = 0.0
+    # API configuration
+    API_KEY: Optional[str] = os.getenv("LITELLM_API_KEY")
+    API_BASE: Optional[str] = os.getenv("LITELLM_API_BASE")  # For local vLLM/Ollama
     
-    # Retry settings
-    MAX_RETRIES: int = 3
-    RETRY_BACKOFF_SECONDS: float = 1.0
+    # Inference parameters
+    DEFAULT_TEMPERATURE: float = 0.0  # Deterministic output for validation
+    MAX_TOKENS: int = 250  # Concise reasoning, prevent truncation
+    MAX_RETRIES: int = 2  # Autorater loop max attempts
     
-    # Response constraints
-    MAX_TOKENS: int = 500
-    RESPONSE_FORMAT: str = "json"
+    # Performance tuning
+    TIMEOUT_SECONDS: int = 30  # Prevent hanging on slow responses
+    CACHE_PROMPTS: bool = True  # Cache identical prompts to reduce API calls
     
-    # Optional API key override (for testing)
-    API_KEY: Optional[str] = None
+    # Safety/quality
+    REQUIRE_JSON_OUTPUT: bool = True  # Enforce structured output
+    EXCLUSION_CONSTRAINTS: bool = True  # Reduce hallucinations
 
 
-# Default instance
+# Default instance for easy import
 DEFAULT_LLM_CONFIG = LLMConfig()

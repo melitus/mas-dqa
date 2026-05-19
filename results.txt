@@ -65,3 +65,61 @@ INFO:src.ingestion:📊 Streamed 300 records...
 🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍
 (venv) sunday@sunday-Inspiron-5502:~/workspace/masters-polytechnique/imen/mas-dqa$ 
 
+When I run with buspas data:
+
+this is my resulst:
+ Streamed 49600 records...
+📊 Streamed 49700 records...
+📊 Streamed 49800 records...
+📊 Streamed 49900 records...
+📊 Streamed 50000 records...
+
+🔍 DEBUG: First 3 Record Decisions
+#   ID                        Speed    Prof.Dev  Prof.V   Conf   Val.V    Routing      GT   Reason
+--------------------------------------------------------------------------------------------------------------------------------------------
+1   1_15765_2026-05-07_5      N/A      0.68      Valid    0.68   Invalid  JUDGE        1    Latitude out of bounds (39.37951 not in 
+
+2   10_15765_2026-05-07_5     N/A      0.68      Valid    0.68   Invalid  JUDGE        1    Latitude out of bounds (39.37951 not in 
+
+3   10_113_2026-05-07_2       N/A      0.66      Valid    0.66   Invalid  JUDGE        1    Latitude out of bounds (39.37959 not in 
+
+📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊
+   STAKEHOLDER TEST REPORT
+📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊
+
+✅ Records Processed: 50000
+⏱️  Avg Latency: 0.2 ms/record  ✅ MEETS TARGET (<100ms)
+🕒 Total Time: 75.10 sec
+
+🔀 Routing Distribution:
+   TRUST        ████████████████████████████████████████████████ 48790 (98%)
+   JUDGE        █ 1210 (2%)
+   QUARANTINE      0 (0%)
+   AMBIGUOUS       0 (0%)
+
+📈 Phase I Validation Metrics (Detection Accuracy):
+   • Precision:  1.000  ✅ PASS (≥0.85)
+   • Recall:     0.995  ✅ PASS (≥0.80)
+   • F1-Score:   0.997  ✅ PASS (≥0.82)
+   • Accuracy:   0.995
+   • False Positive Rate:  0.000
+   • False Negative Rate:  0.005
+   • Confusion Matrix: TP=1990, TN=0, FP=0, FN=10
+
+📈 Quality & Safety Metrics:
+   • Trust Rate (Clean Data):  97.6% ✅ PASS (≥75%)
+   • Anomaly Capture Rate:     2.4%
+   • Quarantined/Blocked:      0
+   • Escalated to Judge:       1210
+   • XAI Audit Trail:          ✅ Enabled
+
+💡 Key Insights for Leadership:
+   • Profiler catches statistical outliers automatically
+   • Validator enforces semantic/business rules
+   • Conflicts route to Judge Agent (no guessing)
+   • All decisions logged for compliance & debugging
+   • Phase I F1-Score: 0.997 — detection quality validated
+
+🎯 Phase I Readiness: ✅ READY FOR PHASE I
+🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍
+

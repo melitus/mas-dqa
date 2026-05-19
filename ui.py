@@ -1,270 +1,254 @@
-#!/usr/bin/env python3
-"""
-MAS-DQA: Executive Dashboard
-============================
-A clean, intuitive Streamlit app to visualize pipeline results for leadership.
-
-Run: streamlit run app.py
-"""
-
+# ui.py - MAS-DQA Executive Dashboard (Complete Version)
 import streamlit as st
-import pandas as pd
-import numpy as np
 import json
 import os
-from datetime import datetime
+import subprocess
+import time
 
-# ──────────────────────────────────────────────────────────────────────────────
-# PANDAS COMPATIBILITY PATCH (No direct Styler import needed)
-# ──────────────────────────────────────────────────────────────────────────────
-def _style_dataframe(df, style_func, subset=None):
-    """Version-agnostic DataFrame styling for pandas >= 2.0"""
-    styler = df.style
-    # pandas >= 2.1 uses .map(), older versions use .applymap()
-    if hasattr(styler, 'map'):
-        return styler.map(style_func, subset=subset)
-    else:
-        return styler.applymap(style_func, subset=subset)
-
-# Page config - clean, professional
 st.set_page_config(
     page_title="MAS-DQA Dashboard",
     page_icon="🛡️",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    layout="wide"
 )
 
-# Custom CSS for clean, executive look
-st.markdown("""
-<style>
-    .main-header { font-size: 2.2rem; font-weight: 600; color: #1e3a5f; margin-bottom: 1rem; }
-    .sub-header { font-size: 1.4rem; font-weight: 500; color: #2d5a87; margin: 1.5rem 0 0.5rem 0; }
-    .metric-card { background: #f8fafc; border-left: 4px solid #3b82f6; padding: 1rem; border-radius: 0.5rem; }
-    .pass { color: #16a34a; font-weight: 600; }
-    .warn { color: #d97706; font-weight: 600; }
-    .fail { color: #dc2626; font-weight: 600; }
-    .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 0.9rem; }
-    .dataframe { font-size: 0.9rem; }
-</style>
-""", unsafe_allow_html=True)
+st.title("🛡️ MAS-DQA Executive Dashboard")
+st.markdown("*Multi-Agent System for Verifiable Data Quality Governance*")
+
+# ==================== SIDEBAR CONTROLS ====================
+st.sidebar.header("⚙️ Pipeline Configuration")
+
+# Data source selector - mapped to main.py --data argument
+data_mode = st.sidebar.radio(
+    "📊 Data Source",
+    options=["synthetic", "real"],
+    format_func=lambda x: "🧪 Synthetic Data" if x == "synthetic" else "🚌 Real BusPas Data",
+    horizontal=True,
+    key="data_mode"
+)
+
+# Validator selector - mapped to main.py --validator argument
+validator_mode = st.sidebar.radio(
+    "🤖 Validator",
+    options=["mock", "llm"],
+    format_func=lambda x: "🤖 Mock (Rule-based)" if x == "mock" else "🧠 Real LLM",
+    horizontal=True,
+    key="validator_mode"
+)
+
+# Sample size slider - aligned with main.py default
+sample_size = st.sidebar.slider(
+    "📏 Records to Process",
+    min_value=100, max_value=50000, value=300, step=100,
+    help="Number of records to process in this run"
+)
+
+# API key warning for LLM mode
+if validator_mode == "llm" and not os.getenv("LITELLM_API_KEY"):
+    st.sidebar.warning("⚠️ Set `LITELLM_API_KEY` env var for LLM mode:\n\n`export LITELLM_API_KEY='sk-...'`")
+
+# Run button
+run_clicked = st.sidebar.button("🚀 Run Pipeline", type="primary", use_container_width=True)
+
+# ==================== SESSION STATE ====================
+if "running" not in st.session_state:
+    st.session_state.running = False
+if "results" not in st.session_state:
+    st.session_state.results = None
+if "logs" not in st.session_state:
+    st.session_state.logs = ""
+
+# ==================== MAIN LAYOUT ====================
+col1, col2 = st.columns([1.1, 1])
 
 # ──────────────────────────────────────────────────────────────────────────────
-# HEADER
+# LEFT: Live Output
 # ──────────────────────────────────────────────────────────────────────────────
-st.markdown('<div class="main-header">🛡️ MAS-DQA Executive Dashboard</div>', unsafe_allow_html=True)
-st.markdown("*Multi-Agent Framework for Verifiable Data Quality Governance*")
-st.markdown(f"*Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
-
-# ──────────────────────────────────────────────────────────────────────────────
-# LOAD OR GENERATE RESULTS
-# ──────────────────────────────────────────────────────────────────────────────
-@st.cache_data(ttl=300)  # Cache for 5 minutes
-def load_or_run_pipeline():
-    """Load results from file or run pipeline and return metrics."""
-    
-    results_path = "data/dashboard_results.json"
-    
-    if os.path.exists(results_path):
-        with open(results_path, "r") as f:
-            return json.load(f)
-    
-    # Simulate realistic results matching your actual pipeline output
-    np.random.seed(42)
-    total_records = 300
-    trust_count = 251
-    judge_count = 23
-    quarantine_count = 26
-    
-    return {
-        "summary": {
-            "records_processed": total_records,
-            "avg_latency_ms": 0.2,
-            "total_time_sec": 0.44,
-            "trust_rate": trust_count / total_records,
-            "anomaly_capture_rate": 1 - (trust_count / total_records)
-        },
-        "routing": {
-            "TRUST": trust_count,
-            "JUDGE": judge_count,
-            "QUARANTINE": quarantine_count,
-            "AMBIGUOUS": 0
-        },
-        "phase1_metrics": {
-            "precision": 1.000,
-            "recall": 1.000,
-            "f1_score": 1.000,
-            "accuracy": 1.000,
-            "false_positive_rate": 0.000,
-            "false_negative_rate": 0.000,
-            "confusion_matrix": {"TP": 251, "TN": 49, "FP": 0, "FN": 0}
-        },
-        "sample_decisions": [
-            {"id": "rec_0000", "speed": 45.3, "prof_dev": 0.83, "prof_verdict": "Valid", "val_verdict": "Valid", "routing": "TRUST", "ground_truth": 1, "reason": "All checks passed"},
-            {"id": "rec_0001", "speed": 38.1, "prof_dev": 0.87, "prof_verdict": "Valid", "val_verdict": "Valid", "routing": "TRUST", "ground_truth": 1, "reason": "All checks passed"},
-            {"id": "rec_0002", "speed": 42.2, "prof_dev": 0.90, "prof_verdict": "Valid", "val_verdict": "Valid", "routing": "TRUST", "ground_truth": 1, "reason": "All checks passed"},
-            {"id": "rec_0015", "speed": 195.2, "prof_dev": 0.15, "prof_verdict": "Invalid", "val_verdict": "Invalid", "routing": "QUARANTINE", "ground_truth": 0, "reason": "Speed exceeds 150 km/h limit"},
-            {"id": "rec_0023", "speed": 88.5, "prof_dev": 0.45, "prof_verdict": "Unknown", "val_verdict": "Valid", "routing": "JUDGE", "ground_truth": 1, "reason": "Borderline deviation - escalated for review"}
-        ],
-        "phase1_ready": True
-    }
-
-# Load results
-results = load_or_run_pipeline()
-
-# ──────────────────────────────────────────────────────────────────────────────
-# KEY METRICS ROW
-# ──────────────────────────────────────────────────────────────────────────────
-st.markdown('<div class="sub-header">📊 Key Performance Indicators</div>', unsafe_allow_html=True)
-
-col1, col2, col3, col4 = st.columns(4)
-
 with col1:
-    st.metric(label="Records Processed", value=f"{results['summary']['records_processed']:,}")
+    st.subheader("📡 Live Pipeline Output")
     
+    if run_clicked and not st.session_state.running:
+        st.session_state.running = True
+        st.session_state.logs = ""
+        
+        # Build command matching main.py arguments
+        cmd = ["python", "main.py"]
+        cmd.extend(["--data", data_mode])
+        cmd.extend(["--validator", validator_mode])
+        cmd.extend(["--sample", str(sample_size)])
+        
+        # Show command for transparency
+        with st.expander("🔧 Command", expanded=False):
+            st.code(" ".join(cmd), language="bash")
+        
+        # Run process with live output
+        scroll = st.container(height=500)
+        with scroll:
+            log_area = st.empty()
+        
+        try:
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                cwd=os.path.dirname(os.path.abspath(__file__)),
+                bufsize=1
+            )
+            
+            while True:
+                line = process.stdout.readline()
+                if not line and process.poll() is not None:
+                    break
+                if line:
+                    st.session_state.logs += line
+                    with log_area:
+                        st.code(st.session_state.logs, language="text")
+            
+            process.wait()
+            
+            if process.returncode == 0:
+                st.success("✅ Pipeline completed successfully!")
+                # Load results
+                results_path = "data/dashboard_results.json"
+                if os.path.exists(results_path):
+                    with open(results_path, "r") as f:
+                        st.session_state.results = json.load(f)
+            else:
+                st.error(f"❌ Pipeline failed with code {process.returncode}")
+                
+        except Exception as e:
+            st.error(f"❌ Error: {e}")
+        finally:
+            st.session_state.running = False
+    
+    # Show previous logs if not running
+    elif st.session_state.logs and not st.session_state.running:
+        with st.container(height=500):
+            st.code(st.session_state.logs, language="text")
+
+# ──────────────────────────────────────────────────────────────────────────────
+# RIGHT: Results Dashboard - COMPLETE VERSION
+# ──────────────────────────────────────────────────────────────────────────────
 with col2:
-    latency = results['summary']['avg_latency_ms']
-    st.metric(label="Avg Latency", value=f"{latency:.1f} ms", 
-              delta="✅ <100ms target" if latency < 100 else "⚠️ Exceeds target",
-              delta_color="normal" if latency < 100 else "inverse")
+    st.subheader("📊 Phase I REPORT")
     
-with col3:
-    trust_rate = results['summary']['trust_rate'] * 100
-    st.metric(label="Trust Rate", value=f"{trust_rate:.1f}%", 
-              delta="✅ ≥75% target" if trust_rate >= 75 else "⚠️ Below target",
-              delta_color="normal" if trust_rate >= 75 else "inverse")
-    
-with col4:
-    f1 = results['phase1_metrics']['f1_score']
-    st.metric(label="Phase I F1-Score", value=f"{f1:.3f}", 
-              delta="✅ ≥0.82 target" if f1 >= 0.82 else "⚠️ Below target",
-              delta_color="normal" if f1 >= 0.82 else "inverse")
+    if st.session_state.results:
+        results = st.session_state.results
+        config = results.get("config", {})
+        summary = results.get("summary", {})
+        routing = results.get("routing", {})
+        metrics = results.get("phase1_metrics", {})
+        quality = results.get("quality_safety", {})  # NEW SECTION
+        insights = results.get("key_insights", [])    # NEW SECTION
+        
+        # Config summary with emojis
+        st.markdown(f"""
+**Configuration**  
+• Data: {'🧪 Synthetic' if config.get('data_mode') == 'synthetic' else '🚌 Real BusPas'}  
+• Validator: {'🤖 Mock' if config.get('validator_mode') == 'mock' else '🧠 Real LLM'}  
+• Sample: {config.get('sample_size', 0):,} records
+        """)
+        
+        # Summary metrics
+        st.markdown(f"""
+**Performance**  
+• ✅ Processed: {summary.get('records_processed', 0):,}  
+• ⏱️ Latency: {summary.get('avg_latency_ms', 0):.1f} ms/record  
+• 🕒 Total: {summary.get('total_time_sec', 0):.1f} sec
+        """)
+        
+        # ── QUALITY & SAFETY METRICS SECTION ─────────────────────────────
+        if quality:
+            st.markdown("**📈 Quality & Safety Metrics:**")
+            trust_pct = quality.get('trust_rate_percent', 0)
+            anomaly_pct = quality.get('anomaly_capture_rate_percent', 0)
+            quarantined = quality.get('quarantined_count', 0)
+            judge_count = quality.get('judge_escalations', 0)
+            xai_enabled = quality.get('xai_enabled', False)
+            
+            st.markdown(f"""
+• Trust Rate (Clean Data):  {trust_pct:.1f}% {'✅ PASS (≥75%)' if trust_pct >= 75 else '⚠️ REVIEW'}  
+• Anomaly Capture Rate:     {anomaly_pct:.1f}%  
+• Quarantined/Blocked:      {quarantined}  
+• Escalated to Judge:       {judge_count}  
+• XAI Audit Trail:          {'✅ Enabled' if xai_enabled else '❌ Disabled'}
+            """)
+        
+        # ── KEY INSIGHTS FOR LEADERSHIP SECTION ──────────────────────────
+        if insights:
+            st.markdown("**💡 Key Insights for Leadership:**")
+            for insight in insights:
+                st.markdown(f"• {insight}")
+        # ────────────────────────────────────────────────────────────────
+        
+        # Routing distribution with progress bars
+        st.markdown("**🔀 Routing Distribution:**")
+        total = summary.get("records_processed", 1)
+        for decision, count in routing.items():
+            pct = (count / total) * 100 if total > 0 else 0
+            color = "🟢" if decision == "TRUST" else "🟡" if decision == "JUDGE" else "🔴"
+            bar = "█" * int(pct / 3)
+            st.markdown(f"   {color} **{decision}** {bar} {count} ({pct:.1f}%)")
+        
+        # Phase I metrics with target indicators
+        st.markdown("**📈 Phase I Validation Metrics:**")
+        col_m1, col_m2 = st.columns(2)
+        with col_m1:
+            st.metric("Precision", f"{metrics.get('precision', 0):.3f}", 
+                     delta="≥0.85 ✓" if metrics.get('precision', 0) >= 0.85 else "≥0.85 ✗")
+            st.metric("Recall", f"{metrics.get('recall', 0):.3f}",
+                     delta="≥0.80 ✓" if metrics.get('recall', 0) >= 0.80 else "≥0.80 ✗")
+        with col_m2:
+            st.metric("F1-Score", f"{metrics.get('f1_score', 0):.3f}",
+                     delta="≥0.82 ✓" if metrics.get('f1_score', 0) >= 0.82 else "≥0.82 ✗",
+                     delta_color="normal")
+            st.metric("Accuracy", f"{metrics.get('accuracy', 0):.3f}")
+        
+        # Sample decisions (collapsible, with full reasons)
+        if results.get("sample_decisions"):
+            with st.expander("🔍 Sample Decisions", expanded=True):  # Expanded by default for demos
+                for d in results["sample_decisions"][:5]:  # Show first 5 for clarity
+                    # Display as formatted text instead of JSON for better readability
+                    st.markdown(f"""
+**Record:** `{d.get('record_id', 'N/A')}`  
+• Speed: {d.get('speed', 'N/A')}  
+• Profiler: {d.get('prof_verdict', 'N/A')} (dev={d.get('prof_dev', 'N/A')})  
+• Validator: {d.get('val_verdict', 'N/A')}  
+• Routing: **{d.get('routing', 'N/A')}**  
+• Reason: *{d.get('reason', 'No reason provided')}*  
+• Ground Truth: {d.get('ground_truth', 'N/A')}
+                    """)
+                    st.divider()
+        
+        # Final status badge
+        if results.get("phase1_ready"):
+            st.success("🎯 **Phase I Readiness: ✅ READY FOR PHASE I**")
+        else:
+            st.warning("⚠️ **Phase I Readiness: Needs Tuning**")
+            
+    else:
+        st.info("👈 Run the pipeline to see results here.")
+        
+        # Quick start guide
+        with st.expander("💡 Quick Start Guide", expanded=True):
+            st.markdown("""
+**4 Demo Modes:**
 
-# ──────────────────────────────────────────────────────────────────────────────
-# ROUTING DISTRIBUTION CHART
-# ──────────────────────────────────────────────────────────────────────────────
-st.markdown('<div class="sub-header">🔀 Routing Distribution</div>', unsafe_allow_html=True)
+| Mode | Command | Use Case |
+|------|---------|----------|
+| 🧪 Synthetic + Mock | `--data synthetic --validator mock` | Fast debugging, no API |
+| 🤖 Synthetic + LLM | `--data synthetic --validator llm` | Show LLM reasoning |
+| 🚌 Real + Mock | `--data real --validator mock` | Validate pipeline on real data |
+| 🚀 Real + LLM | `--data real --validator llm` | Full production demo |
 
-routing_df = pd.DataFrame([
-    {"Decision": k, "Count": v, "Percentage": v/results['summary']['records_processed']*100}
-    for k, v in results['routing'].items()
-])
+**Before running Real modes:**  
+1. Run adapter: `python scripts/test_adapter_flow.py`  
+2. Ensure `data/normalised.buspas.ndjson` exists
 
-col_chart, col_table = st.columns([2, 1])
+**For LLM modes:**  
+`export LITELLM_API_KEY='sk-your-key-here'`
+            """)
 
-with col_chart:
-    st.bar_chart(routing_df.set_index("Decision")["Count"], use_container_width=True, color="#3b82f6")
-
-with col_table:
-    st.dataframe(routing_df[["Decision", "Count", "Percentage"]].style.format({"Percentage": "{:.1f}%"}), 
-                 use_container_width=True, hide_index=True)
-
-# ──────────────────────────────────────────────────────────────────────────────
-# PHASE I METRICS
-# ──────────────────────────────────────────────────────────────────────────────
-# ──────────────────────────────────────────────────────────────────────────────
-# PHASE I METRICS (WITH FPR/FNR)
-# ──────────────────────────────────────────────────────────────────────────────
-st.markdown('<div class="sub-header">📈 Phase I Validation Metrics</div>', unsafe_allow_html=True)
-
-metrics = results['phase1_metrics']
-
-# 6 metrics in 2 rows of 3 for better layout
-col1, col2, col3 = st.columns(3)
-col4, col5, col6 = st.columns(3)
-
-with col1:
-    status = "✅ PASS" if metrics['precision'] >= 0.85 else "⚠️ REVIEW"
-    st.markdown(f"""<div class="metric-card"><div style="font-size:0.85rem;color:#6b7280">Precision</div>
-    <div style="font-size:1.8rem;font-weight:600">{metrics['precision']:.3f}</div>
-    <div class="{'pass' if metrics['precision'] >= 0.85 else 'warn'}">{status} (≥0.85)</div></div>""", unsafe_allow_html=True)
-
-with col2:
-    status = "✅ PASS" if metrics['recall'] >= 0.80 else "⚠️ REVIEW"
-    st.markdown(f"""<div class="metric-card"><div style="font-size:0.85rem;color:#6b7280">Recall</div>
-    <div style="font-size:1.8rem;font-weight:600">{metrics['recall']:.3f}</div>
-    <div class="{'pass' if metrics['recall'] >= 0.80 else 'warn'}">{status} (≥0.80)</div></div>""", unsafe_allow_html=True)
-
-with col3:
-    status = "✅ PASS" if metrics['f1_score'] >= 0.82 else "⚠️ REVIEW"
-    st.markdown(f"""<div class="metric-card"><div style="font-size:0.85rem;color:#6b7280">F1-Score</div>
-    <div style="font-size:1.8rem;font-weight:600">{metrics['f1_score']:.3f}</div>
-    <div class="{'pass' if metrics['f1_score'] >= 0.82 else 'warn'}">{status} (≥0.82)</div></div>""", unsafe_allow_html=True)
-
-with col4:
-    status = "✅ PASS" if metrics['accuracy'] >= 0.90 else "⚠️ REVIEW"
-    st.markdown(f"""<div class="metric-card"><div style="font-size:0.85rem;color:#6b7280">Accuracy</div>
-    <div style="font-size:1.8rem;font-weight:600">{metrics['accuracy']:.3f}</div>
-    <div class="{'pass' if metrics['accuracy'] >= 0.90 else 'warn'}">{status} (≥0.90)</div></div>""", unsafe_allow_html=True)
-
-with col5:
-    # FPR target: < 0.05 (5% false alarms)
-    fpr = metrics.get('false_positive_rate', 0.0)
-    status = "✅ PASS" if fpr <= 0.05 else "⚠️ REVIEW"
-    st.markdown(f"""<div class="metric-card"><div style="font-size:0.85rem;color:#6b7280">False Positive Rate</div>
-    <div style="font-size:1.8rem;font-weight:600">{fpr:.3f}</div>
-    <div class="{'pass' if fpr <= 0.05 else 'warn'}">{status} (≤0.05)</div></div>""", unsafe_allow_html=True)
-
-with col6:
-    # FNR target: < 0.20 (miss ≤20% of anomalies)
-    fnr = metrics.get('false_negative_rate', 0.0)
-    status = "✅ PASS" if fnr <= 0.20 else "⚠️ REVIEW"
-    st.markdown(f"""<div class="metric-card"><div style="font-size:0.85rem;color:#6b7280">False Negative Rate</div>
-    <div style="font-size:1.8rem;font-weight:600">{fnr:.3f}</div>
-    <div class="{'pass' if fnr <= 0.20 else 'warn'}">{status} (≤0.20)</div></div>""", unsafe_allow_html=True)
-
-# Confusion Matrix (unchanged)
-cm = metrics['confusion_matrix']
-st.markdown(f"""
-<div style="background:#f8fafc;padding:1rem;border-radius:0.5rem;margin:1rem 0">
-    <div style="font-weight:500;margin-bottom:0.5rem">Confusion Matrix</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;font-size:0.9rem">
-        <div></div><div style="text-align:center;font-weight:500">Predicted Valid</div><div style="text-align:center;font-weight:500">Predicted Invalid</div>
-        <div style="font-weight:500">Actual Valid</div>
-        <div style="text-align:center;background:#dcfce7;padding:0.5rem;border-radius:0.25rem">{cm['TP']} TP</div>
-        <div style="text-align:center;background:#fee2e2;padding:0.5rem;border-radius:0.25rem">{cm['FN']} FN</div>
-        <div style="font-weight:500">Actual Invalid</div>
-        <div style="text-align:center;background:#fee2e2;padding:0.5rem;border-radius:0.25rem">{cm['FP']} FP</div>
-        <div style="text-align:center;background:#dcfce7;padding:0.5rem;border-radius:0.25rem">{cm['TN']} TN</div>
-    </div>
-</div>""", unsafe_allow_html=True)
-
-# ──────────────────────────────────────────────────────────────────────────────
-# SAMPLE DECISIONS (COMPATIBLE STYLING)
-# ──────────────────────────────────────────────────────────────────────────────
-st.markdown('<div class="sub-header">🔍 Sample Decisions</div>', unsafe_allow_html=True)
-
-sample_df = pd.DataFrame(results['sample_decisions'])
-
-def color_routing(val):
-    if val == 'TRUST': return 'background-color: #dcfce7'
-    if val == 'JUDGE': return 'background-color: #fef3c7'
-    if val == 'QUARANTINE': return 'background-color: #fee2e2'
-    return ''
-
-# ✅ Version-agnostic styling applied here
-styled_df = _style_dataframe(sample_df, color_routing, subset=['routing'])
-
-st.dataframe(styled_df, use_container_width=True, hide_index=True)
-
-# ──────────────────────────────────────────────────────────────────────────────
-# PHASE I READINESS & NEXT STEPS
-# ──────────────────────────────────────────────────────────────────────────────
-st.markdown('<div class="sub-header">🎯 Phase I Readiness</div>', unsafe_allow_html=True)
-
-if results['phase1_ready']:
-    st.success("✅ **READY FOR PHASE I** — All targets met. Pipeline validated on synthetic data.")
-else:
-    st.warning("⚠️ **NEEDS TUNING** — Some metrics below target. Review configuration.")
-
-st.markdown("""
-**Next Steps:**
-1.  Run validation on 2,000 expert-labeled BusPas records
-2.  Integrate LLM-based Semantic Validator (`MOCK_MODE = False`)
-3.  Begin Phase II: Measure downstream ML accuracy gain
-4.  Add statistical significance testing (paired t-test, Cohen's Kappa)
-""")
-
-# ──────────────────────────────────────────────────────────────────────────────
-# FOOTER
-# ──────────────────────────────────────────────────────────────────────────────
-st.markdown('<div class="footer">MAS-DQA Dashboard • Multi-Agent Framework for Verifiable Data Quality Governance • Aroh Sunday Melitus</div>', unsafe_allow_html=True)
+# ==================== FOOTER ====================
+st.markdown("---")
+st.caption("MAS-DQA • Multi-Agent Framework for Verifiable Data Quality Governance • v2.0")
