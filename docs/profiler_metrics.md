@@ -34,3 +34,23 @@ def calculate_z_score(value: float, mean: float, std: float) -> float:
     """Compute z-score with std floor to avoid div-by-zero."""
     std = max(std, 1e-8)  # Prevent division by zero
     return (value - mean) / std
+
+```
+
+## Interpretation:
+    - |z| ≤ 1: Within 1σ → very normal
+    - 1 < |z| ≤ 3: Within 3σ → acceptable variation
+    - |z| > 3: Beyond 3σ → potential anomaly (flagged)
+
+## ❓ FAQ
+Q: Why use z-scores instead of raw thresholds?
+A: Z-scores normalize across features with different scales (speed vs. lat vs. passenger count), enabling fair comparison and automatic anomaly detection without manual per-feature tuning.
+
+Q: What if baseline stats are stale?
+A: The Profiler supports update_baseline() for adaptive re-onboarding when schema drift is detected (triggered by Orchestrator).
+
+Q: How do I add a new feature to profile?
+A: Ensure it's numeric in the normalized schema → Profiler auto-includes it in z-score computation. No code change needed.
+
+Q: Can I use this for non-numeric fields?
+A: Not directly. For categorical fields, use the Semantic Validator (LLM-based) for semantic rule checking.

@@ -21,6 +21,8 @@ import sys
 import random
 from typing import Dict, List, Optional
 from datetime import datetime
+from typing import Dict, List, Optional, Any  # ← ADD 'Any' HERE
+
 
 import pandas as pd
 import numpy as np
@@ -230,35 +232,170 @@ def compute_phase1_metrics(
     }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# SYNTHETIC LABELING: Rule-based ground truth generation for real data
+# ──────────────────────────────────────────────────────────────────────────────
+def synthetic_label_record(record: Dict[str, Any]) -> tuple[int, str]:
+    """
+    Apply heuristic rules to assign synthetic ground truth label.
+    
+    Returns:
+        (ground_truth: 1=Valid/0=Invalid, reason: str)
+    
+    Rules based on transit domain knowledge + MAS-DQA validation rules:
+    - Valid: All required fields present, values within plausible bounds
+    - Invalid: Missing required fields, extreme outliers, logical violations
+    """
+    # Rule 1: Required fields must be present
+    required = ["timestamp", "lat", "lon", "route_id", "trip_id", "stop_id"]
+    if not all(k in record and record[k] is not None for k in required):
+        missing = [k for k in required if k not in record or record[k] is None]
+        return 0, f"Missing required fields: {missing}"
+    
+    # Rule 2: Coordinates must be within plausible NJ bounds
+    lat, lon = record.get("lat"), record.get("lon")
+    if lat is not None and not (39.0 <= lat <= 41.0):
+        return 0, f"Latitude out of NJ bounds: {lat}"
+    if lon is not None and not (-75.0 <= lon <= -73.0):
+        return 0, f"Longitude out of NJ bounds: {lon}"
+    
+    # Rule 3: Speed must be plausible for scheduled stops (≤150 km/h)
+    speed = record.get("speed_kmh")
+    if speed is not None and speed > 150:
+        return 0, f"Extreme speed for scheduled stop: {speed} km/h"
+    
+    # Rule 4: Passenger count must be non-negative
+    pax = record.get("passenger_count")
+    if pax is not None and pax < 0:
+        return 0, f"Negative passenger count: {pax}"
+    
+    # Rule 5: Timestamp must be valid ISO 8601 UTC
+    ts = record.get("timestamp")
+    if ts and not ts.endswith("Z") and "+" not in ts:
+        return 0, f"Timestamp not in UTC format: {ts}"
+    
+    # Rule 6: Stop sequence must be non-negative integer
+    seq = record.get("stop_sequence")
+    if seq is not None and (not isinstance(seq, (int, float)) or seq < 0):
+        return 0, f"Invalid stop sequence: {seq}"
+    
+    # Default: Valid (passes all heuristic rules)
+    return 1, "Passes all synthetic labeling rules"
+
+
+def generate_synthetic_labels(
+    records: List[Dict[str, Any]], 
+    output_path: str = "data/buspas_labels_synthetic.json"
+) -> Dict[str, int]:
+    """
+    Generate synthetic ground truth labels for a list of records.
+    
+    Returns:
+        Dict mapping record_id → ground_truth (1=Valid, 0=Invalid)
+    """
+    labels = []
+    for rec in records:
+        record_id = rec.get("record_id")
+        if not record_id:
+            continue  # Skip records without ID
+        ground_truth, reason = synthetic_label_record(rec)
+        labels.append({
+            "record_id": record_id,
+            "ground_truth": ground_truth,
+            "reason": reason,
+            "labeling_method": "synthetic_heuristic",
+            "timestamp": datetime.utcnow().isoformat() + "Z"
+        })
+    
+    # Save labels for auditability
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(labels, f, indent=2)
+    
+    logger.info(f"🏷️  Generated {len(labels)} synthetic labels → {output_path}")
+    
+    # Return dict for fast lookup
+    return {lbl["record_id"]: lbl["ground_truth"] for lbl in labels}
+
+# ──────────────────────────────────────────────────────────────────────────────
 # MAIN RUNNER WITH PHASE I METRICS
 # ──────────────────────────────────────────────────────────────────────────────
 async def run_pipeline_and_test(
-    stream_path: str = "data/buspas_stream.json",
+    stream_path: str = "data/normalised.buspas.ndjson",  # ← CHANGED: real data path
     baseline_path: str = "data/buspas_baseline.csv",
-    labels_path: str = "data/buspas_labels.json",
-    sample_size: int = 300
+    labels_path: str = "data/buspas_labels_synthetic.json",  # ← CHANGED: synthetic labels
+    sample_size: int = 2000,  # ← CHANGED: process 2,000 real records
+    use_synthetic_labels: bool = True  # ← NEW: toggle synthetic labeling
 ):
     print("\n" + "🔍"*50)
-    print("   MAS-DQA: Automated Pipeline Test & Demo")
+    print("   MAS-DQA: Real Data Phase I Validation")
     print("   Testing: 'Bad Data = No Data' → 'Trusted Data = Confident Decisions'")
     print("🔍"*50 + "\n")
     
-    # Generate or load test data
-    if not os.path.exists(stream_path) or not os.path.exists(baseline_path):
-        baseline_path, stream_path, labels_path = _generate_test_files()
+    # ──────────────────────────────────────────────────────────────────────
+    # LOAD REAL DATA (instead of generating synthetic)
+    # ──────────────────────────────────────────────────────────────────────
+    if not os.path.exists(stream_path):
+        logger.error(f"❌ Real data not found: {stream_path}")
+        logger.info("💡 Run adapter first: python scripts/test_adapter_flow.py")
+        return
     
-    # Load ground truth labels
-    ground_truth = {}
-    if os.path.exists(labels_path):
-        with open(labels_path, "r") as f:
-            labels_data = json.load(f)
-            for label in labels_data:
-                ground_truth[label["record_id"]] = label["ground_truth"]
-        logger.info(f"🏷️  Loaded {len(ground_truth)} ground truth labels")
+    # Load normalized records (limit to sample_size for efficiency)
+    records = []
+    with open(stream_path, "r", encoding="utf-8") as f:
+        for i, line in enumerate(f):
+            if i >= sample_size:
+                break
+            line = line.strip()
+            if line:
+                try:
+                    records.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
     
+    if not records:
+        logger.error(f"❌ No valid records found in {stream_path}")
+        return
+    
+    logger.info(f"📄 Loaded {len(records)} records from {stream_path}")
+    
+    # ──────────────────────────────────────────────────────────────────────
+    # GENERATE OR LOAD SYNTHETIC LABELS
+    # ──────────────────────────────────────────────────────────────────────
+    if use_synthetic_labels:
+        logger.info("🏷️  Generating synthetic ground truth labels...")
+        ground_truth = generate_synthetic_labels(records, labels_path)
+    else:
+        # Fallback: load existing labels file
+        ground_truth = {}
+        if os.path.exists(labels_path):
+            with open(labels_path, "r") as f:
+                labels_data = json.load(f)
+                ground_truth = {lbl["record_id"]: lbl["ground_truth"] for lbl in labels_data}
+            logger.info(f"🏷️  Loaded {len(ground_truth)} ground truth labels from {labels_path}")
+        else:
+            logger.warning(f"⚠️  No labels found at {labels_path} and synthetic labeling disabled")
+    
+    # ──────────────────────────────────────────────────────────────────────
+    # COMPUTE BASELINE FROM REAL DATA (first 70% assumed "clean")
+    # ──────────────────────────────────────────────────────────────────────
+    baseline_records = [r for r in records[:int(len(records)*0.7)] if synthetic_label_record(r)[0] == 1]
+    if baseline_records:
+        baseline_df = pd.DataFrame(baseline_records)
+        # Keep only numeric columns for Profiler
+        numeric_cols = baseline_df.select_dtypes(include=[np.number]).columns.tolist()
+        baseline_df = baseline_df[numeric_cols]
+        baseline_df.to_csv(baseline_path, index=False)
+        logger.info(f"📊 Computed baseline from {len(baseline_df)} clean records → {baseline_path}")
+    else:
+        logger.warning("⚠️  No clean records found for baseline; using empty baseline")
+        baseline_df = pd.DataFrame()
+    
+    # ──────────────────────────────────────────────────────────────────────
+    # REST OF PIPELINE INITIALIZATION (unchanged)
+    # ──────────────────────────────────────────────────────────────────────
     print("⚙️  Initializing MAS-DQA components...")
     ingestor = StreamIngestor(required_fields=["timestamp"])
-    profiler = Profiler(baseline_df=pd.read_csv(baseline_path), thresholds=DEFAULT_THRESHOLDS)
+    profiler = Profiler(baseline_df=baseline_df, thresholds=DEFAULT_THRESHOLDS)
     
     if MOCK_MODE:
         print("🤖 Using SIMPLE RULE‑BASED Validator")
@@ -266,13 +403,17 @@ async def run_pipeline_and_test(
     else:
         validator = SemanticValidator(llm_model="gpt-4o-mini", max_autorater_retries=1, thresholds=DEFAULT_THRESHOLDS)
     
-    domain_context = DomainContext(rules={
+        domain_context = DomainContext(rules={
         "max_speed_kmh": "speed <= 150",
-        "lat_range": "40 <= lat <= 50",
-        "lon_range": "-80 <= lon <= -70",
-        "passenger_positive": "passengers >= 0"
-    }, contracts={}, schedules=[])
-    
+        "lat_bounds_nj": "39.0 <= lat <= 41.0",  # ← NJ bounds
+        "lon_bounds_nj": "-75.0 <= lon <= -73.0",  # ← NJ bounds
+        "passenger_positive": "passengers >= 0",
+        "stop_sequence_valid": "stop_sequence >= 0"
+    }, contracts={
+        "coordinate_validity": "All scheduled stops must have valid lat/lon coordinates",
+        "time_consistency": "Departure time must be >= arrival time for same stop"
+    }, schedules=[])
+            
     routing_counts = {dec: 0 for dec in RoutingDecision}
     latencies, debug_log = [], []
     
@@ -361,14 +502,24 @@ async def run_pipeline_and_test(
     
     # ─── DEBUG PRINT (First 3 records) ────────────────────────────────────────
     print("\n🔍 DEBUG: First 3 Record Decisions")
-    print(f"{'#':<3} {'ID':<10} {'Speed':<8} {'Prof.Dev':<9} {'Prof.V':<8} {'Conf':<6} {'Val.V':<8} {'Routing':<12} {'GT':<4} {'Reason'}")
-    print("-" * 130)
+    print(f"{'#':<3} {'ID':<25} {'Speed':<8} {'Prof.Dev':<9} {'Prof.V':<8} {'Conf':<6} {'Val.V':<8} {'Routing':<12} {'GT':<4} {'Reason'}")
+    print("-" * 140)
     for d in debug_log:
-        print(f"{d['idx']:<3} {d['record_id'] or 'N/A':<10} {d['payload_speed'] or 'N/A':<8.1f} "
-              f"{d['prof_deviation']:<9.2f} {d['prof_verdict']:<8} {d['prof_conf']:<6.2f} "
-              f"{d['val_verdict']:<8} {d['routing']:<12} {d['ground_truth'] if d['ground_truth'] != 'N/A' else '-':<4} "
-              f"{d['val_reason']}")
-    print()
+        # Safe formatting: handle None/non-numeric values
+        record_id = d.get('record_id') or 'N/A'
+        speed = d.get('payload_speed')
+        speed_str = f"{float(speed):.1f}" if isinstance(speed, (int, float)) else str(speed or 'N/A')
+        prof_dev = f"{d.get('prof_deviation', 0):.2f}" if isinstance(d.get('prof_deviation'), (int, float)) else 'N/A'
+        prof_conf = f"{d.get('prof_conf', 0):.2f}" if isinstance(d.get('prof_conf'), (int, float)) else 'N/A'
+        val_conf = f"{d.get('val_conf', 0):.2f}" if isinstance(d.get('val_conf'), (int, float)) else 'N/A'
+        gt = d.get('ground_truth')
+        gt_str = str(gt) if gt is not None else '-'
+        
+        print(f"{d['idx']:<3} {record_id:<25} {speed_str:<8} {prof_dev:<9} "
+            f"{d.get('prof_verdict', 'N/A'):<8} {prof_conf:<6} "
+            f"{d.get('val_verdict', 'N/A'):<8} {d.get('routing', 'N/A'):<12} {gt_str:<4} "
+            f"{d.get('val_reason', '')[:40]}")
+        print()
     
     # ─── BOSS REPORT ──────────────────────────────────────────────────────────
     print("📊"*50 + "\n   STAKEHOLDER TEST REPORT\n" + "📊"*50 + "\n")
@@ -429,4 +580,18 @@ async def run_pipeline_and_test(
     print(f"🎯 Phase I Readiness: {status}\n" + "🔍"*50)
 
 if __name__ == "__main__":
-    asyncio.run(run_pipeline_and_test())
+    import argparse
+    parser = argparse.ArgumentParser(description="MAS-DQA Phase I Validation")
+    parser.add_argument("--data", type=str, default="data/normalised.buspas.ndjson", help="Path to normalized data")
+    parser.add_argument("--labels", type=str, default="data/buspas_labels_synthetic.json", help="Path to labels file")
+    parser.add_argument("--sample", type=int, default=2000, help="Number of records to process")
+    parser.add_argument("--synthetic-labels", action="store_true", default=True, help="Generate synthetic labels")
+    parser.add_argument("--mock", action="store_true", default=True, help="Use mock validator (no LLM)")
+    args = parser.parse_args()
+    
+    asyncio.run(run_pipeline_and_test(
+    stream_path=args.data,
+    labels_path=args.labels,
+    sample_size=args.sample,
+    use_synthetic_labels=args.synthetic_labels
+))
